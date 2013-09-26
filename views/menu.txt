@@ -1,0 +1,31 @@
+
+<?php ob_start() ?>
+	<?php foreach ($comunicados as $comunicado): ?>
+	<li>
+		<a class="toogle" href="/show?id=<?php echo $comunicado['intId'] ?>">
+			<?php echo $comunicado['vchName'] ?>
+		</a>
+	</li>
+	<?php endforeach; ?>
+<?php $contenido = ob_get_clean() ?>
+
+<?php include 'layout.php' ?>
+
+-----------------------------------lista
+<?php $titulo = 'Licoreria San viernes' ?>
+
+<?php ob_start() ?>
+<h1>Lista de comunicados</h1>
+<ul>
+	<?php foreach ($comunicados as $comunicado): ?>
+	<li>
+		<a href="/show?id=<?php echo $comunicado['id'] ?>">
+			<?php echo $comunicado['titulo'] ?>
+		</a>
+	</li>
+	<?php endforeach; ?>
+</ul>
+<?php $contenido = ob_get_clean() ?>
+
+<?php include 'layout.php' ?>
+
