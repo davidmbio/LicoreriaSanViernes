@@ -3,14 +3,14 @@
 <?php ob_start() ?>	
 <style>
 .Posicion{
-margin-left: 30px;
-margin-right: 30px;
+margin-left: 5px;
+margin-right: 20px;
 }
 </style>
 
 <div class="row" id="tiles" style="background-color: rgba(0,0,0,0.2);">
 	<div class="row">
-		<div class="four columns"></div>
+		<div class="three columns"></div>
 		<div class="Posicion">																	
 			<div class="then columns"><br>
 				<table class="rounded">

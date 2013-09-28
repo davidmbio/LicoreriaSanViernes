@@ -36,6 +36,22 @@
     		});
 		});
 	</script>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));	
+	</script>
+	<script>
+		!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+	</script>
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+ {lang: 'es-419'}
+	</script>
+
+	
 </head>
 
 <body>
@@ -47,6 +63,17 @@
 			<img src="../img/banner.png">
 		</div>
 	</div>	
+	<!-- 
+	<div class="row">
+		<div class="swf swf-full swf-rounded swf-photo">
+			<object type="application/x-shockwave-flash" data="../img/Banner.swf">
+				<param name="movie" value="Banner.swf" />
+				<param name="menu" value="true" />
+				<param name="quality" value="high" />
+			</object>
+		</div>
+	</div>
+	 -->
 	<!-- menu de la pagina -->						
 	<nav class="clearfix">
 		<ul class="clearfix">
@@ -61,21 +88,29 @@
 	</nav>
 	
 	<!-- cuerpo de contenido de la pagina  -->
-	<div class="row">
+	<div class="row" style="background-color: rgba(0,0,0,0.2);">
 		<div class="row">
-			<div class="eight columns">
+			<div class="nine columns">
 						<?php echo $contenido ?>
 			</div>
-			<div class="four columns">
-				<h4 class="lead">Redes sociales</h4><br>
+			<div class="two columns">
+				<p class="lead">Perfil social:</hp><br>
 					<p>Facebook</p>
-					<p>
-						<div id="fb-root"></div><script src="http://connect.facebook.net/es_ES/all.js#appId=128897243865016&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="110" show_faces="false" font=""></fb:like>
-				<p class="lead">Acceso</p>
+					<p><div class="fb-like" data-href="http://licoreria.sanviernes/" data-width="100" data-show-faces="true" data-send="false"></div></p>
+					<p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://licoreria.sanviernes/" data-text="Licoreria" data-lang="es">Twittear</a></p>
+					<p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>
 					
-					<p>Usuario:</p>	<div class="field"><input class="text input" type="text" placeholder="Usuario" /></div>
-					<p>Contrase&ntilde;a</p><div class="field"><input class="password input" type="password" placeholder="Contrase&ntilde;a" /></div>
+					<p class="lead">Acceso</p>
+					<form>
+						<p>Usuario:</p>	
+						<div class="field"><input class="text input" type="text" placeholder="Usuario" required /></div>
+						<p>Contrase&ntilde;a</p>
+						<div class="field"><input class="password input" type="password" required placeholder="Contrase&ntilde;a" /></div>
+			
+						<div class="pretty medium default btn icon-logout"><input type="submit" value="Submit" /></div>
+					</form>
 			</div>
+			
 		</div>
 	</div>
 	<div class="row" >

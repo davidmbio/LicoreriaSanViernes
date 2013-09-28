@@ -20,7 +20,7 @@ margin-right: 30px;
 						</tr>
 					</thead>
 					<tbody>
-						<form>
+						<form action="../controller/admin/index.php">
 							<tr>
 								<td>Usuario:</td>
 								<td class="field"><input class="text input" type="text" placeholder="Nombre del cliente" required /></td>
@@ -30,7 +30,7 @@ margin-right: 30px;
 								<td class="field"><input class="text input" type="text" placeholder="Primer apellido" required /></td>
 							</tr>
 							<tr>
-								<td><div class="pretty medium info btn"><button>Entrar</button></div></td>
+								<td><div class="pretty medium info btn"><button onclick="" >Entrar</button></div></td>
 								<td><div class="pretty medium info btn"><a href="../views/news.php">Cancelar</a></div></td>
 							</tr>
 						</form>

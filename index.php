@@ -11,11 +11,8 @@
 
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link rel="stylesheet" href="css/gumby.css"/>
-    
-  </head>
-
-<style>
+  <link rel="stylesheet" href="css/gumby.css"/>    
+  <style>
 		h3, h2,h4 {
 		  	text-align: center;
 		    letter-spacing: -.09em;
@@ -45,7 +42,8 @@
 			margin: 5% auto 5%;
 		}
 	</style>
-		
+  
+</head>		
 <body>    
 	<div class="container">
 		<h1 id="fittext2">Licoreria<br> San Viernes</h1>
