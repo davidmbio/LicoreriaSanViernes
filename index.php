@@ -47,7 +47,7 @@
 <body>    
 	<div class="container">
 		<h1 id="fittext2">Licoreria<br> San Viernes</h1>
-		<h4 id="fittext3">¿Eres mayor de edad?</h4>
+		<h4 id="fittext3">¿Eres mayor de edad?Esto es solo una prueba</h4>
 		<div class="row" align="center">
 			<div class="pretty medium danger btn"><a href="#">Soy menor</a></div>
 				<div class="pretty medium success btn"><a href="controller/index.php">Soy mayor</a></div>
