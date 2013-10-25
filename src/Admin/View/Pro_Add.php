@@ -2,9 +2,9 @@
 	include "../Model/conexion.php";
 ?>
 
-<form action="javascript: Agregar_Pro();" method="post" id="FProducto" class="modal fade in" >  
+<form action="javascript: Agregar_Pro();" method="post" id="FProducto" class="modal fade in" enctype="multipart/form-data" >  
     <div class="alert alert-info"><h4>Agregar nuevo Producto</h4></div>
-    <ul style="margin: 10px;">
+    <ul style="padding-right: 50px; text-align: right;">
        <li class="field">
          <label class="inline">Categoria:</label>
          <select name="IdCategoria" id="IdCategoria" class="required wide text input">
@@ -28,6 +28,9 @@
             <label class="inline">Precio:</label>
             <input name="Precio" type="text" id="Precio" class="required wide text input" placeholder="Precio del producto" />
         </li>        
+        <li class="field" style="text-align: right">
+            <input  type="file" name="Imagen" id="Imagen" required="required"/>
+        </li>        
         <li class="field">
             <label class="inline">Caducidad:</label>
             <input name="Caducidad" type="text" id="Caducidad" placeholder="Fecha de caducidad" class="required wide input" />
@@ -35,7 +38,7 @@
       </ul>
     <div class="modal-footer">
         <input name="agregar" type="submit" id="agregar" class="btn btn-primary" value="Agregar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Producto();" />
     </div>
 </form>
 
@@ -68,9 +71,9 @@
 			type: 'post',
 			success: function(data){
 				if(data != "")
-                                    
-				Cerrar();
-				Buscar();
+                                    alert(data);
+				Cerrar_Producto();
+				Buscar_Producto();
 			}
 		});
 	};

@@ -1,26 +1,17 @@
-// JavaScript Document
+$(document).ready(function(){Buscar_Empleados();});
 
-$(document).ready(function(){
-	Buscar();
-	$("#grilla tbody tr").mouseover(function(){
-		$(this).addClass("over");
-	}).mouseout(function(){
-		$(this).removeClass("over");
-	});
-});
-
-function Cerrar(){
+function Cerrar_Empleado(){
 	$.unblockUI({ 
 		onUnblock: function(){
-			$("#div_oculto").html("");
+			$("#emp_oculto").html("");
 		}
 	}); 
 };
 
 function Agregar_Empleado(){
-	$("#div_oculto").load("../View/Emp_Add.php", function(){
+	$("#emp_oculto").load("../View/Emp_Add.php", function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#emp_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -29,9 +20,9 @@ function Agregar_Empleado(){
 };
 
 function Modificar_Empleado($Empleado){
-	$("#div_oculto").load("../View/Emp_Update.php", {IdEmpleado: $Empleado}, function(){
+	$("#emp_oculto").load("../View/Emp_Update.php", {IdEmpleado: $Empleado}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#emp_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -42,13 +33,6 @@ function Modificar_Empleado($Empleado){
 function Paginar(var_div, url){
 	var div = $("#" + var_div);
 	$(div).load(url);
-	/*
-	div.fadeOut("fast", function(){
-		$(div).load(url, function(){
-			$(div).fadeIn("fast");
-		});
-	});
-	*/
 }
 
 function Eliminar_Empleado(ide_per){
@@ -61,20 +45,20 @@ function Eliminar_Empleado(ide_per){
 			success: function(data){
 				if(data!="")
 					alert(data);
-				Buscar()
+				Buscar_Empleados();
 			}
 		});
 	}
 }
 
-function Buscar(){
-	var str = $("#FBuscar").serialize();
+function Buscar_Empleados(){
+	var str = $("#BEmpleado").serialize();
 	$.ajax({
 		url: '../View/Emp_Lista.php',
 		type: 'get',
 		data: str,
 		success: function(data){
-			$("#Listado").html(data);
-		}
-	});
+			$("#Empleados").html(data);
+                }
+	});        
 }

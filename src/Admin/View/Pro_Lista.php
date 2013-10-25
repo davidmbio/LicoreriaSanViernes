@@ -33,7 +33,7 @@ on Cat.IdCategoria=Pro.IdCategoria";
                 <div class="span3">Nombre</div>
                 <div class="span2">Precio</div>
                 <div class="span2">Caducidad</div>                 
-                <div class="span2"><a href="javascript: Agregar_Producto();" role="button" class="btn" data-toggle="modal"><i class="icon-plus"></i>Nuevo</a></div>                 
+                <div class="span2"><a href="javascript: Agregar_Producto();" role="button" class="btn" ><i class="icon-plus"></i>Nuevo</a></div>                 
                 </div>
               </div>
           </div>

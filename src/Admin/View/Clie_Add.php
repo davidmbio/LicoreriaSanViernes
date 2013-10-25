@@ -4,7 +4,7 @@
 
 <form action="javascript: Agregar_Clie();" method="post" id="FCliente" class="modal fade in" >  
     <div class="alert alert-info"><h4>Agregar nuevo Empleado</h4></div>
-    <ul style="margin: 10px;">                
+    <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
             <input name="Nombre" type="text" id="Nombre" placeholder="Nombre del empleado" class="required wide text input" />
@@ -37,7 +37,7 @@
       </ul>
     <div class="modal-footer">
         <input name="agregar" type="submit" id="agregar" class="btn btn-primary" value="Agregar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Cliente();" />
     </div>
 </form>
 
@@ -71,8 +71,8 @@
 			success: function(data){
 				if(data != "")
 					alert(data);
-				Cerrar();
-				Buscar();
+				Cerrar_Cliente();
+                                Buscar_Cientes();
 			}
 		});
 	};

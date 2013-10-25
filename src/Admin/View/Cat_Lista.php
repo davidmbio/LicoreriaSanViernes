@@ -13,7 +13,7 @@
 	else
 		$sql .= " order by IdCategoria desc";
 	$Paginacion->agregarConsulta($sql); 
-	$Paginacion->div('Listado');
+	$Paginacion->div('Categoria');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
 		$Paginacion->porPagina(fn_filtro((int)$_GET['Cantidad_Filas_Mostrar']));

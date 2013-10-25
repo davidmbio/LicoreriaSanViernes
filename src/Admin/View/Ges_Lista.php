@@ -20,38 +20,45 @@
 	$Paginacion->verPost(true);
 	$Paginacion->mantenerVar("Busqueda_por_Nombre", "Ordenar_por", "Ordenacion", "Cantidad_Filas_Mostrar");
 	$Paginacion->ejecutar();
+        
+        $rs_gest=$Paginacion->fetchResultado()
 ?>
 
-<div class="row-fluid show-grid" id=grilla"">        
+        <div class="row-fluid show-grid" id=grilla"">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
-                <div class="span1">Clave</div>
-                <div class="span3">Mision</div>                 
-                <div class="span3">Vision</div>                           
-                <div class="span3">Valores</div>                                                         
+                <div class="span6">Mision</div>                 
+                <div class="span6">Vision</div>                                                                                    
               </div>                 
             </div>
           </div>
-</div>
-        
+        </div>
+        <div class="row-fluid show-grid">
+            <div class="span6"><?=$rs_gest['Mision']?> <br> 
+                <a class="btn" href="javascript: Modificar_Gestion(1);"><i class="icon-pencil"></i> Modificar</a></div>
+            <div class="span6"><?=$rs_gest['Vision']?> <br>
+                <a class="btn" href="javascript: Modificar_Gestion(2);"><i class="icon-pencil"></i> Modificar</a></div>
+        </div>
 
-    <?
-      $rs_gest = $Paginacion->fetchResultado()
-    ?>
-          <div class="row-fluid show-grid">
-            <div class="span1" id="<?=$rs_gest['IdGestion']?>"><a href="1"><span class="badge"><?=$rs_gest['IdGestion']?></span></a></div>
-            <div class="span3"><?=$rs_gest['Mision']?></div>
-            <div class="span3"><?=$rs_gest['Vision']?></div>
-            <div class="span3"><?=$rs_gest['Valores']?></div>
-                            <div class="span2">
-                       <div class="btn-group">
-                          <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
-                          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            <li><a href="javascript: Modificar_Gestion(<?=$rs_gest['IdGestion']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                            <li><a href="javascript: Mostrar_Gestion(<?=$rs_gest['IdGestion']?>);"><i class="icon-pencil"></i> Mostrar Todo</a></li>
-                          </ul>
-                        </div>                      
-                 </div>
-          </div>
+        <div class="row-fluid show-grid" id=grilla"">        
+          <div class="span12">
+            <div class="row-fluid show-grid">
+              <div class="row-fluid show-grid">
+                <div class="span3">Email</div>                 
+                <div class="span2">Telefono</div>                                                                                    
+                <div class="span4">Direccion</div>                                                                                    
+                <div class="span3">Valores</div>                                                                                    
+              </div>                 
+           </div>
+        </div>
+        <div class="row-fluid show-grid">
+            <div class="span3"><?=$rs_gest['Email']?> <br> 
+                <a class="btn" href="javascript: Modificar_Gestion(3);"><i class="icon-pencil"></i> Modificar</a></div>
+            <div class="span2"><?=$rs_gest['Telefono']?> <br>
+                <a class="btn" href="javascript: Modificar_Gestion(4);"><i class="icon-pencil"></i> Modificar</a></div>
+            <div class="span4"><?=$rs_gest['Direccion']?> <br>
+                <a class="btn" href="javascript: Modificar_Gestion(5);"><i class="icon-pencil"></i> Modificar</a></div>
+            <div class="span3"><?=$rs_gest['Valores']?> <br>
+                <a class="btn" href="javascript: Modificar_Gestion(6);"><i class="icon-pencil"></i> Modificar</a></div>
+        </div>

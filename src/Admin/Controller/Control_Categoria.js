@@ -1,26 +1,17 @@
-// JavaScript Document
+$(document).ready(function(){Buscar_Categoria();});
 
-$(document).ready(function(){
-	Buscar();
-	$("#grilla tbody tr").mouseover(function(){
-		$(this).addClass("over");
-	}).mouseout(function(){
-		$(this).removeClass("over");
-	});
-});
-
-function Cerrar(){
+function Cerrar_Categoria(){
 	$.unblockUI({ 
 		onUnblock: function(){
-			$("#div_oculto").html("");
+			$("#cat_oculto").html("");
 		}
 	}); 
 };
 
 function Agregar_Categoria(){
-	$("#div_oculto").load("../View/Cat_Add.php", function(){
+	$("#cat_oculto").load("../View/Cat_Add.php", function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#cat_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -29,9 +20,9 @@ function Agregar_Categoria(){
 };
 
 function Modificar_Categoria($Categoria){
-	$("#div_oculto").load("../View/Cat_Update.php", {IdCategoria: $Categoria}, function(){
+	$("#cat_oculto").load("../View/Cat_Update.php", {IdCategoria: $Categoria}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#cat_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -42,13 +33,6 @@ function Modificar_Categoria($Categoria){
 function Paginar(var_div, url){
 	var div = $("#" + var_div);
 	$(div).load(url);
-	/*
-	div.fadeOut("fast", function(){
-		$(div).load(url, function(){
-			$(div).fadeIn("fast");
-		});
-	});
-	*/
 }
 
 function Eliminar_Categoria(ide_ccategoria){
@@ -60,21 +44,21 @@ function Eliminar_Categoria(ide_ccategoria){
 			type: 'post',
 			success: function(data){
 				if(data!="")
-					alert(data);
-				Buscar()
+					alert('No se puede eliminar, Hay producto con esta categoria');
+				Buscar_Categoria();
 			}
 		});
 	}
 }
 
-function Buscar(){
-	var str = $("#FBuscar").serialize();
+function Buscar_Categoria(){
+	var str = $("#BCategoria").serialize();
 	$.ajax({
 		url: '../View/Cat_Lista.php',
 		type: 'get',
 		data: str,
 		success: function(data){
-			$("#Listado").html(data);
+			$("#Categoria").html(data);
 		}
 	});
 }

@@ -4,7 +4,7 @@
 
 <form action="javascript: Agregar_Promo();" method="post" id="FPromocion" class="modal fade in" >  
     <div class="alert alert-info"><h4>Agregar nueva promocion</h4></div>
-    <ul style="margin: 10px;">
+    <ul style="padding-right: 50px; text-align: right;">        
         <li class="field">
             <label class="inline">Titulo:</label>
             <input name="Titulo" type="text" id="Titulo" placeholder="Titulo de la promocion" class="required wide text input" />
@@ -15,7 +15,7 @@
         </li>       
         <li class="field">
             <label class="inline">F. Inicial:</label>
-            <input name="FInicio" type="text"  id="FInicio" placeholder="Inicio del promocion" class="required wide text input" />
+            <input name="FInicio" type="text" id="FInicio" placeholder="Inicio del promocion" class="required wide text input" />
         </li>        
         <li class="field">
             <label class="inline">F. Final:</label>
@@ -33,7 +33,7 @@
       </ul>
     <div class="modal-footer">
         <input name="agregar" type="submit" id="agregar" class="btn btn-primary" value="Agregar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Promocion();" />
     </div>
 </form>
 
@@ -49,7 +49,7 @@
 		});
 	});
 	
-	function Agregar_Pro(){
+	function Agregar_Promo(){
 		var str = $("#FPromocion").serialize();
 		$.ajax({
 			url: '../Model/promocion/Promo_Agregar.php',
@@ -58,8 +58,8 @@
 			success: function(data){
 				if(data != "")
                                     
-				Cerrar();
-				Buscar();
+				Cerrar_Promocion();
+				Buscar_Promocion();
 			}
 		});
 	};

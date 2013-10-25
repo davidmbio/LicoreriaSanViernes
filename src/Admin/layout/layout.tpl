@@ -18,15 +18,15 @@
     <script language="javascript" type="text/javascript" src="../../../web/js/lib/jquery.validate.1.5.2.js"></script>
     <link href="../../../web/js/lib/PHPPaging.lib.css" rel="stylesheet" type="text/css" />
   
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Producto.js"></script>     
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Empleado.js"></script>    
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Categoria.js"></script>    
     <script language="javascript" type="text/javascript" src="../Controller/Control_Clientes.js"></script>    
     <script language="javascript" type="text/javascript" src="../Controller/Control_Gestion.js"></script>    
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Promocion.js"></script>
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Text.js"></script>
     
-    <script language="javascript" type="text/javascript" src="../Controller/Control_Categoria.js"></script>        
-    <script language="javascript" type="text/javascript" src="../Controller/Control_Empleado.js"></script>    
-    <script language="javascript" type="text/javascript" src="../Controller/Control_Promocion.js"></script>        
-   
-     <script language="javascript" type="text/javascript" src="../Controller/Control_Producto.js"></script>     
-   
+    
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">

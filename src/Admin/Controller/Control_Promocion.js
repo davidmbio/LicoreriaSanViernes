@@ -1,15 +1,8 @@
 // JavaScript Document
 
-$(document).ready(function(){
-	Buscar();
-	$("#grilla tbody tr").mouseover(function(){
-		$(this).addClass("over");
-	}).mouseout(function(){
-		$(this).removeClass("over");
-	});
-});
+$(document).ready(function(){Buscar_Promocion();});
 
-function Cerrar(){
+function Cerrar_Promocion(){
 	$.unblockUI({ 
 		onUnblock: function(){
 			$("#div_oculto").html("");
@@ -18,9 +11,20 @@ function Cerrar(){
 };
 
 function Agregar_Promocion(){
-	$("#div_oculto").load("../View/Promo_Add.php", function(){
+	$("#promo_oculto").load("../View/Promo_Add.php", function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#promo_oculto'),
+			css:{
+				top: '20%'
+			}
+		}); 
+	});
+};
+
+function Promocionar_por($Id,$Tipo){
+	$("#promo_oculto").load("../View/Promocionar_Add.php", {Id: $Id, Tipo: $Tipo}, function(){
+		$.blockUI({
+			message: $('#promo_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -29,9 +33,9 @@ function Agregar_Promocion(){
 };
 
 function Modificar_Promocion($Promocion){
-	$("#div_oculto").load("../View/Promo_Update.php", {IdPromocion: $Promocion}, function(){
+	$("#promo_oculto").load("../View/Promo_Update.php", {IdPromocion: $Promocion}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#promo_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -42,13 +46,6 @@ function Modificar_Promocion($Promocion){
 function Paginar(var_div, url){
 	var div = $("#" + var_div);
 	$(div).load(url);
-	/*
-	div.fadeOut("fast", function(){
-		$(div).load(url, function(){
-			$(div).fadeIn("fast");
-		});
-	});
-	*/
 }
 
 function Eliminar_Promocion(ide_promocion){
@@ -61,20 +58,20 @@ function Eliminar_Promocion(ide_promocion){
 			success: function(data){
 				if(data!="")
 					alert(data);
-				Buscar()
+                                Buscar_Promocion();
 			}
 		});
 	}
 }
 
-function Buscar(){
-	var str = $("#FBuscar").serialize();
+function Buscar_Promocion(){
+	var str = $("#BPromocion").serialize();
 	$.ajax({
 		url: '../View/Promo_Lista.php',
 		type: 'get',
 		data: str,
 		success: function(data){
-			$("#Listado").html(data);
+			$("#Promocion").html(data);
 		}
 	});
 }

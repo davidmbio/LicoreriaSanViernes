@@ -24,7 +24,7 @@
 <form action="javascript: Modificar_Clie();" method="post" id="FCliente" class="modal fade in" >  
     <input type="hidden" id="IdCliente" name="IdCliente" value="<?=$rs_clie['IdCliente']?>" />
     <div class="alert alert-info"><h4>Modificar producto</h4></div>
-    <ul style="margin: 10px;">                
+    <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
             <input name="Nombre" value="<?=$rs_clie['Nombre']?>" type="text" id="Nombre" placeholder="Nombre del empleado" class="requisssred wide text input" />
@@ -48,7 +48,8 @@
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>
-            <label class="inline"><strong><?=$rs_clie['Usuario']?></strong></label>
+            <input type="text"  placeholder="<?=$rs_clie['Usuario']?>" class="required wide input" disabled="disabled"/>
+
         </li>
         <li class="field">
             <label class="inline">Contrase&ntilde;a:</label>
@@ -57,7 +58,7 @@
       </ul>
     <div class="modal-footer">
         <input name="modificar" type="submit" id="modificar" class="btn btn-primary" value="Modificar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Cliente();" />
     </div>
 </form>
 
@@ -81,8 +82,8 @@
 			success: function(data){
 				if(data != "")
 					alert(data);
-				Cerrar();
-				Buscar();
+				Cerrar_Cliente();   
+                                Buscar_Cientes()
 			}
 		});
 	};

@@ -7,7 +7,7 @@ $temp->set('header', 'Listado de Empleados');
 $temp->set('content','
        <div style="text-align: center;">            
     <section id="fluidGridSystem">
-      <form class="form-search" action="javascript: Buscar();" id="FBuscar" name="FBuscar">        
+      <form class="form-search" action="javascript: Buscar_Empleados();" id="BEmpleado" name="BEmpleado">        
         <div class="input-append">
             <input type="text" name="Busqueda_por_Nombre" id="Busqueda_por_Nombre" class="span6 search-query">
           <button type="submit" class="btn"><i class="icon-search"></i>Buscar</button>
@@ -36,8 +36,8 @@ $temp->set('content','
                    <select name="Cantidad_Filas_Mostrar" id="Cantidad_Filas_Mostrar">
                         <option value="3">3</option>
                         <option value="5">5</option>
-                        <option value="7">7</option>
-                        <option value="10" selected="selected">10</option>
+                        <option value="7" selected="selected">7</option>
+                        <option value="10">10</option>
                         <option value="15">15</option>
                     </select>
                 </div>                    
@@ -46,8 +46,8 @@ $temp->set('content','
         </div>
       </div>
       </form> 
-      <div id="Listado"></div>
-      <div id="div_oculto" style="display: none;"></div>    
+      <div id="Empleados"></div>
+      <div id="emp_oculto" style="display: none;"></div>    
     </section>
 </div>
 

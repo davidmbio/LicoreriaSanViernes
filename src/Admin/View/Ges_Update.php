@@ -7,9 +7,9 @@
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
 
-	$sql = sprintf("select * from tblGestion where IdGestion=%d",
-		(int)$_POST['IdGestion']
-	);
+        
+
+	$sql ="select * from tblGestion where IdGestion=1";
 	$gest = mysql_query($sql);
 	$num_rs_gest= mysql_num_rows($gest);
 	
@@ -17,39 +17,46 @@
 		echo "No existen personas con ese IDE";
 		exit;
 	}
+        
+        
+        if($_POST['IdGestion']==1){
+            $Nom="Mision";
+            $tam=7;
+        }
+        elseif($_POST['IdGestion']==2){
+            $Nom="Vision";
+            $tam=7;
+        }
+        elseif($_POST['IdGestion']==3){   
+            $Nom="Email";
+            $tam=3;
+        }
+        elseif($_POST['IdGestion']==4){   
+            $Nom="Telefono";
+            $tam=3;
+        }
+        elseif($_POST['IdGestion']==5){   
+            $Nom="Direccion";
+            $tam=4; 
+        }
+        elseif($_POST['IdGestion']==6){
+            $Nom="Valores";
+            $tam=5;
+        }
 	
 	$rs_gest = mysql_fetch_assoc($gest);
 	
 ?>
 <form action="javascript: Modificar_Ges();" method="post" id="FGestion" class="modal fade in" >  
-    <input type="hidden" id="IdCategoria" name="IdGestion" value="<?=$rs_gest['IdGestion']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
+    <input type="hidden" id="IdCategoria" name="IdGestion" value="<?=$Nom?>" />
+    <div class="alert alert-info"><h4>Modificar <? echo $Nom; ?></h4></div>
     <ul style="margin: 10px;">                
         <li class="field">
-            <label class="inline">Mision:</label>
-            <input name="Mision" value="<?=$rs_gest['Mision']?>" type="text" id="Mision" placeholder="Mision de la empresa" class="requisssred wide text input" />
-        </li>           
-        <li class="field">
-            <label class="inline">Vision:</label>
-            <input name="Vision" value="<?=$rs_gest['Vision']?>" type="text" id="Vision" placeholder="Vision de la empresa" class="requisssred wide text input" />
-        </li>           
-        <li class="field">
-            <label class="inline">Telefono:</label>
-            <input name="Telefono" value="<?=$rs_gest['Telefono']?>" type="text" id="Telefono" placeholder="Telefono de la empresa" class="requisssred wide text input" />
-        </li>           
-        <li class="field">
-            <label class="inline">Email:</label>
-            <input name="Email" value="<?=$rs_gest['Email']?>" type="text" id="Email" placeholder="Email de la empresa" class="requisssred wide text input" />
-        </li>           
-        </li>           
-        <li class="field">
-            <label class="inline">Direccion:</label>
-            <input name="Direccion" value="<?=$rs_gest['Direccion']?>" type="text" id="Direccion" placeholder="Direccion de la empresa" class="requisssred wide text input" />
-        </li>           
-        <li class="field">
-            <label class="inline">Valores:</label>
-            <input name="Valores" value="<?=$rs_gest['Valores']?>" type="text" id="Valores" placeholder="Valores de la empresa" class="requisssred wide text input" />
-        </li>           
+            <label class="inline"><? echo $Nom; ?>:</label>
+            <textarea style="text-align: left;" name="Campo" class="wide input textarea" placeholder="<? echo $Nom; ?> de la empresa" rows="<? echo $tam;?>">
+                <?=$rs_gest[$Nom]?>
+            </textarea>
+        </li>                              
       </ul>
     <div class="modal-footer">
         <input name="modificar" type="submit" id="modificar" class="btn btn-primary" value="Modificar" />
@@ -77,8 +84,8 @@
 			success: function(data){
 				if(data != "")
 					alert(data);
-				Cerrar();
-				Buscar();
+				Cerrar_Gestion();
+				Buscar_Gestion();
 			}
 		});
 	};

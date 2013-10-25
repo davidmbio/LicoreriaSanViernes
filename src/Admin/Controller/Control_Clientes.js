@@ -1,26 +1,17 @@
-// JavaScript Document
+$(document).ready(function(){Buscar_Cientes();});
 
-$(document).ready(function(){
-	Buscar();
-	$("#grilla tbody tr").mouseover(function(){
-		$(this).addClass("over");
-	}).mouseout(function(){
-		$(this).removeClass("over");
-	});
-});
-
-function Cerrar(){
+function Cerrar_Cliente(){
 	$.unblockUI({ 
 		onUnblock: function(){
-			$("#div_oculto").html("");
+			$("#clie_oculto").html("");
 		}
 	}); 
 };
 
 function Agregar_Cliente(){
-	$("#div_oculto").load("../View/Clie_Add.php", function(){
+	$("#clie_oculto").load("../View/Clie_Add.php", function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#clie_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -29,9 +20,9 @@ function Agregar_Cliente(){
 };
 
 function Modificar_Cliente($Cliente){
-	$("#div_oculto").load("../View/Clie_Update.php", {IdCliente: $Cliente}, function(){
+	$("#clie_oculto").load("../View/Clie_Update.php", {IdCliente: $Cliente}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#clie_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -42,13 +33,6 @@ function Modificar_Cliente($Cliente){
 function Paginar(var_div, url){
 	var div = $("#" + var_div);
 	$(div).load(url);
-	/*
-	div.fadeOut("fast", function(){
-		$(div).load(url, function(){
-			$(div).fadeIn("fast");
-		});
-	});
-	*/
 }
 
 function Eliminar_Cliente(ide_cliente){
@@ -61,20 +45,21 @@ function Eliminar_Cliente(ide_cliente){
 			success: function(data){
 				if(data!="")
 					alert(data);
-				Buscar()
+                                    
+                                Buscar_Cientes()
 			}
 		});
 	}
 }
 
-function Buscar(){
-	var str = $("#FBuscar").serialize();
+function Buscar_Cientes(){
+	var str = $("#BClientes").serialize();
 	$.ajax({
 		url: '../View/Clie_Lista.php',
 		type: 'get',
 		data: str,
 		success: function(data){
-			$("#Listado").html(data);
+			$("#Clientes").html(data);
 		}
 	});
 }

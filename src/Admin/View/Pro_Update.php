@@ -24,7 +24,7 @@
 <form action="javascript: Modificar_Pro();" method="post" id="FProducto" class="modal fade in" >  
     <input type="hidden" id="IdProducto" name="IdProducto" value="<?=$rs_pro['IdProducto']?>" />
     <div class="alert alert-info"><h4>Modificar producto</h4></div>
-    <ul style="margin: 10px;">                
+    <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Categoria:</label>
             <select name="IdCategoria" ide="IdCategoria" class="required wide text input">
@@ -57,7 +57,7 @@
       </ul>
     <div class="modal-footer">
         <input name="modificar" type="submit" id="modificar" class="btn btn-primary" value="Modificar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Producto();" />
     </div>
 </form>
 
@@ -81,8 +81,8 @@
 			success: function(data){
 				if(data != "")
 					alert(data);
-				Cerrar();
-				Buscar();
+				Cerrar_Producto();
+				Buscar_Producto();
 			}
 		});
 	};

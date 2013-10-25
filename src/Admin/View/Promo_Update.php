@@ -1,69 +1,66 @@
 <?
-	if(empty($_POST['IdProducto'])){
+	if(empty($_POST['IdPromocion'])){
 		echo "Por favor no altere el fuente";
 		exit;
 	}
+        
 
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
 
-	$sql = sprintf("select * from tblProductos where IdProducto=%d",
-		(int)$_POST['IdProducto']
+	$sql = sprintf("select * from tblPromocion where IdPromocion=%d",
+		(int)$_POST['IdPromocion']
 	);
-	$pro = mysql_query($sql);
-	$num_rs_pro = mysql_num_rows($pro);
+	$promo = mysql_query($sql);
+	$num_rs_promo = mysql_num_rows($promo);
 	
-        if ($num_rs_pro==0){
+        if ($num_rs_promo==0){
 		echo "No existen personas con ese IDE";
-		exit;
+                exit;
 	}
 	
-	$rs_pro = mysql_fetch_assoc($pro);
+	$rs_promo = mysql_fetch_assoc($promo);
 	
 ?>
-<form action="javascript: Modificar_Pro();" method="post" id="FProducto" class="modal fade in" >  
-    <input type="hidden" id="IdProducto" name="IdProducto" value="<?=$rs_pro['IdProducto']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
-    <ul style="margin: 10px;">                
+<form action="javascript: Modificar_Promo();" method="post" id="FPromocion" class="modal fade in" >  
+    <input type="hidden" id="IdPromocion" name="IdPromocion" value="<?=$rs_promo['IdPromocion']?>" />
+    <div class="alert alert-info"><h4>Modificar Promocion</h4></div>
+    <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
-            <label class="inline">Categoria:</label>
-            <select name="IdCategoria" ide="IdCategoria" class="required wide text input">
-                <option value="Elije un opcion"></option><?
-                    $sql = "select * from tblCategorias order by Categoria asc";
-                    $Cat = mysql_query($sql);
-                    while($rs_cat = mysql_fetch_assoc($Cat)){?>
-                    <option value="<?=$rs_pro['IdCategoria']?>" <? if($rs_cat['IdCategoria']==$rs_pro['IdCategoria']) echo "selected='selected'";?>><?=$rs_cat['Categoria']?></option>
-                <? } ?>
-            </select>
-	</li>
-        <li class="field">
-            <label class="inline">Nombre:</label>
-            <input name="Nombre" id="Nombre" value="<?=$rs_pro['Nombre']?>" type="text" id="Descripcion" placeholder="Nombre del producto" class="required wide text input" />
-        </li>   
-        
+            <label class="inline">Titulo:</label>
+            <input name="Titulo" value="<? echo $rs_promo['Titulo']; ?>" type="text" id="Titulo" placeholder="Titulo de la promocion" class="required wide text input" />
+        </li>        
         <li class="field">
             <label class="inline">Descripcion:</label>
-            <input name="Descripcion" id="Descripcion" value="<?=$rs_pro['Descripcion']?>" type="text" id="Descripcion" placeholder="Descripcion del producto" class="requisssred wide text input" />
+            <input name="Descripcion" type="text" id="Descripcion" value="<? echo $rs_promo['Descripcion']; ?>" placeholder="Descripcion de la promocion" class="required wide input textarea" />
+        </li>       
+        <li class="field">
+            <label class="inline">F. Inicial:</label>
+            <input name="FInicio" value="<? echo $rs_promo['Inicio']; ?>" type="text" id="FInicio" placeholder="Inicio del promocion" class="required wide text input" />
+        </li>        
+        <li class="field">
+            <label class="inline">F. Final:</label>
+            <input name="FFinal" value="<? echo $rs_promo['Final']; ?>" type="text" id="FFinal" placeholder="Final de la promocion" class="required wide text input" />
+        </li>
+        <li class="field">
+            <label class="inline">Descuento:</label>
+            <input name="Descuento" value="<? echo $rs_promo['Descuento']; ?>" type="text" id="Descuento" placeholder="Descuento de la promocion" class="required wide text input" />
         </li>
         
         <li class="field">
-            <label class="inline">Precio:</label>
-            <input name="Precio" type="text" id="Precio" class="required wide text input" value="<?=$rs_pro['Precio']?>" placeholder="Precio del producto" />           
-        </li>        
-        <li class="field">
-            <label class="inline">Caducidad:</label>
-            <input name="Caducidad" type="text" id="Caducidad" placeholder="Caducidad del producto" class="required wide input" value="<?=$rs_pro['Caducidad']?>" />
+            <label class="inline">Imagen:</label>
+            <input name="Ruta" type="text" id="Ruta" value="<? echo $rs_promo['Imagen']; ?>" class="required wide text input" placeholder="Ruta de la promocion" />
         </li>
       </ul>
     <div class="modal-footer">
         <input name="modificar" type="submit" id="modificar" class="btn btn-primary" value="Modificar" />
-        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar();" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Promocion();" />
     </div>
 </form>
 
 <script language="javascript" type="text/javascript">
 	$(document).ready(function(){
-		$("#FProducto").validate({
+		$("#FPromocion").validate({
 			submitHandler: function(form) {
 				var respuesta = confirm('\xBFDesea realmente modificar a esta nueva persona?')
 				if (respuesta)
@@ -72,8 +69,8 @@
 		});
 	});
 	
-	function Modificar_Pro(){
-		var str = $("#FProducto").serialize();
+	function Modificar_Promo(){
+		var str = $("#FPromocion").serialize();
 		$.ajax({
 			url: '../Model/producto/Pro_Modificar.php',
 			data: str,
@@ -81,8 +78,8 @@
 			success: function(data){
 				if(data != "")
 					alert(data);
-				Cerrar();
-				Buscar();
+				Cerrar_Promocion();
+				Buscar_Promocion();
 			}
 		});
 	};

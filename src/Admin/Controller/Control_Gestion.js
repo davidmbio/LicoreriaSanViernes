@@ -1,21 +1,17 @@
-// JavaScript Document
+$(document).ready(function(){Buscar_Gestion();});
 
-$(document).ready(function(){
-        Buscar_Gestion();
-});
-
-function Cerrar(){
+function Cerrar_Gestion(){
 	$.unblockUI({ 
 		onUnblock: function(){
-			$("#div_oculto").html("");
+			$("#ges_oculto").html("");
 		}
 	}); 
 };
 
 function Modificar_Gestion($Gestion){
-	$("#div_oculto").load("../View/Ges_Update.php", {IdGestion: $Gestion}, function(){
+	$("#ges_oculto").load("../View/Ges_Update.php", {IdGestion: $Gestion}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#ges_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -23,9 +19,9 @@ function Modificar_Gestion($Gestion){
 	});
 };
 function Mostrar_Gestion($Gestion){
-	$("#div_oculto").load("../View/Ges_Mostrar.php", {IdGestion: $Gestion}, function(){
+	$("#ges_oculto").load("../View/Ges_Mostrar.php", {IdGestion: $Gestion}, function(){
 		$.blockUI({
-			message: $('#div_oculto'),
+			message: $('#ges_oculto'),
 			css:{
 				top: '20%'
 			}
@@ -36,23 +32,16 @@ function Mostrar_Gestion($Gestion){
 function Paginar(var_div, url){
 	var div = $("#" + var_div);
 	$(div).load(url);
-	/*
-	div.fadeOut("fast", function(){
-		$(div).load(url, function(){
-			$(div).fadeIn("fast");
-		});
-	});
-	*/
 }
 
 function Buscar_Gestion(){
-	var str = $("#FBuscar").serialize();
+	var str = $("#BGestion").serialize();
 	$.ajax({
 		url: '../View/Ges_Lista.php',
 		type: 'get',
 		data: str,
 		success: function(data){
-			$("#Listado").html(data);
+			$("#Gestion").html(data);
 		}
 	});
 }

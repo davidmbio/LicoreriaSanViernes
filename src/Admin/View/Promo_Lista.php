@@ -12,7 +12,7 @@
 	else
 		$sql .= " order by Pro.IdPromocion desc";
 	$Paginacion->agregarConsulta($sql); 
-	$Paginacion->div('Listado');
+	$Paginacion->div('Promocion');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
 		$Paginacion->porPagina(fn_filtro((int)$_GET['Cantidad_Filas_Mostrar']));
@@ -27,9 +27,9 @@
               <div class="row-fluid show-grid">
                 <div class="span1">Id</div>
                 <div class="span3">Titulo</div>
-                <div class="span2">Inicial</div>
                 <div class="span2">Final</div>
-                <div class="span2">Rebaja</div>
+                <div class="span1">Desc. %</div>
+                <div class="span3">A promocionar</div>
                 <div class="span2"><a href="javascript: Agregar_Promocion();" role="button" class="btn" data-toggle="modal"><i class="icon-plus"></i>Nuevo</a></div>                 
                 </div>
               </div>
@@ -42,17 +42,20 @@
           <div class="row-fluid show-grid">
             <div class="span1" id="<?=$rs_promo['Pro.IdPromocion']?>"><a href="1"><span class="badge"><?=$rs_promo['IdPromocion']?></span></a></div>
             <div class="span3"><?=$rs_promo['Titulo']?></div>
-            <div class="span2"><?=$rs_promo['FInicio']?></div>
             <div class="span2"><?=$rs_promo['FFin']?></div>
-            <div class="span2"><?=$rs_promo['Descuento']?></div>
+            <div class="span1"><?=$rs_promo['Descuento']?></div>
+            <div class="span3">
+                <a href="javascript: Promocionar_por(<?=$rs_promo['IdPromocion']?>,'IdCategoria');" role="button" class="btn" data-toggle="modal"><i class="icon-th-large"></i>Categorias</a>
+                <a href="javascript: Promocionar_por(<?=$rs_promo['IdPromocion']?>,'IdProducto');" role="button" class="btn" data-toggle="modal"><i class="icon-glass"></i>Productos</a>
+            </div>
             
             <div class="span2">
                <div class="btn-group">
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Promocion(<?=$rs_per['IdPromocion']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Promocion(<?=$rs_per['IdPromocion']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Promocion(<?=$rs_promo['IdPromocion']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Promocion(<?=$rs_promo['IdPromocion']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>

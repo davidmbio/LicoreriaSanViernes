@@ -7,7 +7,7 @@ $temp->set('header', 'Listado de Categorias');
 $temp->set('content','
        <div style="text-align: center;">            
     <section id="fluidGridSystem">
-      <form class="form-search" action="javascript: Buscar();" id="FBuscar" name="FBuscar">        
+      <form class="form-search" action="javascript: Buscar_Categoria();" id="BCategoria" name="BCategoria">        
         <div class="input-append">
             <input type="text" name="Busqueda_por_Nombre" id="Busqueda_por_Nombre" class="span6 search-query">
           <button type="submit" class="btn"><i class="icon-search"></i>Buscar</button>
@@ -44,8 +44,8 @@ $temp->set('content','
         </div>
       </div>
       </form> 
-      <div id="Listado"></div>
-      <div id="div_oculto" style="display: none;"></div>    
+      <div id="Categoria"></div>
+      <div id="cat_oculto" style="display: none;"></div>    
     </section>
 </div>
 

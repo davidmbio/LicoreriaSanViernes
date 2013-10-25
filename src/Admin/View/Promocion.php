@@ -7,7 +7,7 @@ $temp->set('header', 'Listado de Promociones');
 $temp->set('content','
        <div style="text-align: center;">            
     <section id="fluidGridSystem">
-      <form class="form-search" action="javascript: Buscar();" id="FBuscar" name="FBuscar">
+      <form class="form-search" action="javascript: Buscar_Promocion();" id="BPromocion" name="BPromocion">
         
         <div class="input-append">
             <input type="text" name="Busqueda_por_Nombre" id="Busqueda_por_Nombre" class="span6 search-query">
@@ -45,8 +45,8 @@ $temp->set('content','
         </div>
       </div>
       </form> 
-      <div id="Listado"></div>
-      <div id="div_oculto" style="display: none;"></div>    
+      <div id="Promocion"></div>
+      <div id="promo_oculto" style="display: none;"></div>    
     </section>
 </div>
 

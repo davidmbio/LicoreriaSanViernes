@@ -8,8 +8,8 @@ $temp->set('content','
   <div style="text-align: center;">            
         <section id="fluidGridSystem">
         
-      <div id="Listado"></div>
-      <div id="div_oculto" style="display: none;"></div>    
+      <div id="Gestion"></div>
+      <div id="ges_oculto" style="display: none;"></div>    
   </section>
 </div>
 
