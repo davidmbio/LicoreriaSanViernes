@@ -19,7 +19,7 @@ $temp->set('content','
               <div class="row-fluid show-grid">                                     
                 <div class="span4">Ordenar:
                     <select name="Ordenar_por" id="Ordenar_por">
-                        <option value="Pro.IdPromocion">Id</option>
+                        <option value="IdPromocion">Id</option>
                         <option value="Titulo">Titulo</option>
                         <option value="FInicio">Fecha Inicial</option>
                         <option value="Descuento">Descuento</option>

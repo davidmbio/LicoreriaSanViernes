@@ -14,22 +14,13 @@
             <input name="Descripcion" type="text" id="Descripcion" placeholder="Descripcion de la promocion" class="required wide input textarea" />
         </li>       
         <li class="field">
-            <label class="inline">F. Inicial:</label>
-            <input name="FInicio" type="text" id="FInicio" placeholder="Inicio del promocion" class="required wide text input" />
-        </li>        
-        <li class="field">
             <label class="inline">F. Final:</label>
             <input name="FFinal" type="text" id="FFinal" placeholder="Final de la promocion" class="required wide text input" />
         </li>
         <li class="field">
             <label class="inline">Descuento:</label>
             <input name="Descuento" type="text" id="Descuento" placeholder="Descuento de la promocion" class="required wide text input" />
-        </li>
-        
-        <li class="field">
-            <label class="inline">Imagen:</label>
-            <input name="Ruta" type="text" id="Ruta" class="required wide text input" placeholder="Ruta de la promocion" />
-        </li>        
+        </li>                
       </ul>
     <div class="modal-footer">
         <input name="agregar" type="submit" id="agregar" class="btn btn-primary" value="Agregar" />
@@ -57,7 +48,7 @@
 			type: 'post',
 			success: function(data){
 				if(data != "")
-                                    
+                                    alert(data);
 				Cerrar_Promocion();
 				Buscar_Promocion();
 			}

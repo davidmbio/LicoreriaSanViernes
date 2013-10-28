@@ -1,4 +1,10 @@
 <?php
+include '../Controller_master.php';
+
+if(isset($_SESSION['IdUser'])) 
+    $Contenido= Regresa_Logeado();
+else
+    $Contenido= Regresa_Logeo();
 
 require '../templates/tamplates.php';
 
@@ -6,60 +12,68 @@ require '../templates/tamplates.php';
 $temp= new Template('../layout/layout.tpl');
 $temp->set('title','Registro');
 $temp->set('header', 'Registro de clientes');
+$temp->set('Tipo_Sesion', $Contenido);
 $temp->set('content','
-    
-
-
-<form class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label" for="inputText">Nombre:</label>
-        <div class="controls">
-          <input type="text" id="inputText" placeholder="Nombre">
-        </div>
-      </div>
-          <div class="control-group">
-          <label class="control-label" for="inputText">A. Paterno:</label>
-        <div class="controls">
-          <input type="text" id="inputText" placeholder="Apellido Paterno">
-        </div>
-      </div>
-          <div class="control-group">
-          <label class="control-label" for="inputText">A. Materno:</label>
-        <div class="controls">
-          <input type="text" id="inputText" placeholder="Apellido Materno">
-        </div>
-      </div>
-          <div class="control-group">
-          <label class="control-label" for="inputText">Nacimiento:</label>
-        <div class="controls">
-            <input type="text" id="inputText" placeholder="Fecha de nacimiento">
-        </div>
-      </div>
-      <div class="control-group">
-          <label class="control-label" for="inputText">Tel&eacute;fono:</label>
-        <div class="controls">
-          <input type="text" id="inputText" placeholder="Numero del telefono">
-        </div>
-      </div>
-     <div class="control-group">
-        <label class="control-label" for="inputEmail">Email</label>
-        <div class="controls">
-          <input type="text" id="inputEmail" placeholder="Correo electronico">
-        </div>
-      </div>
-      <div class="control-group">
-          <label class="control-label" for="inputPassword">Contrase&ntilde;a: </label>
-        <div class="controls">
-            <input type="password" id="inputPassword" placeholder="Contrase&ntilde;a de cliente">
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <button type="submit" class="btn">Registrarme</button>
-        </div>
-      </div><br>
-    </form>  
-    
+<form action="javascript: Agregar_Clie();" method="post" id="FCliente" class="modal fade in" >  
+    <div class="alert alert-info"><h4>Registro de clientes</h4></div>
+    <ul style="padding-right: 50px; text-align: center;">                
+            <input name="Nombre" type="text" id="Nombre" placeholder="Nombre" class="input text" />
+            <input name="Apellidos" type="text" id="Apellidos" placeholder="Tus apellidos" class="required wide text input" />
+            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Tu numero de telefono" />
+            <input name="Email" type="text" id="Email" placeholder="Tu correo electronico" class="required email wide input" />
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Tu fecha de nacimiento" class="required wide input" />
+            <input name="Usuario" type="text" id="Usuario" placeholder="Un nombre de usuario " class="required wide input" />
+            <input name="Password" type="password" id="Password" placeholder="Una contrase&ntilde;a" class="required wide input" />        
+            <input name="Password2" type="password" id="Password2" placeholder="Repite la contrase&ntilde;a" class="required wide input" />        
+      </ul>
+    <div class="modal-footer">
+        <input name="agregar" type="submit" id="agregar" class="btn btn-primary" value="Agregar" />
+        <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="history.back();" />
+    </div>
+</form>  
 ');
 echo $temp->output();
 ?>
+
+
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+		$("#FCliente").validate({
+			rules:{
+				usu_per:{
+					required: true,
+					remote: "../Model/cliente/Clie_verificar_usu_per.php"
+				}
+			},
+			messages: {
+				usu_per: "x"
+			},
+			onkeyup: false,
+			submitHandler: function(form) {
+				var respuesta = confirm('\xBFRegistrar ahora?')
+				if (respuesta)
+					form.submit();
+			}
+		});
+	});
+	
+	function Agregar_Clie(){
+		var str = $("#FCliente").serialize();
+		$.ajax({
+			url: '../model/cliente/Clie_Agregar.php',
+			data: str,
+			type: 'post',
+			success: function(data){
+				if(data != "")
+					alert(data);
+                                 else   
+                                    Cerrar_Ventana();
+			}
+		});
+	};
+        
+        
+        function Cerrar_Ventana(){
+            history.back();
+        }
+</script>

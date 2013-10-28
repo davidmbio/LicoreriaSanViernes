@@ -1,13 +1,5 @@
 <?php
 
-function Abrir_Conexion(){
 	$conex = mysql_connect('localhost', 'root', 'dave');
-	mysql_select_db('bdLicoreria', $conex);
+	mysql_select_db('bdLicoreria', $conex) or die("Error al conectarse con el servidor");
 	
-	return $conex;
-}
-
-function Cerrar_Conexion($conex){
-	mysql_close($conex);	
-}
-?>

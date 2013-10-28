@@ -2,7 +2,7 @@
 	include "../Model/conexion.php";
 ?>
 
-<form action="javascript: Agregar_Pro();" method="post" id="FProducto" class="modal fade in" enctype="multipart/form-data" >  
+<form action="javascript: Agregar_Pro();" method="POST" id="FProducto" class="modal fade in" enctype="multipart/form-data" >  
     <div class="alert alert-info"><h4>Agregar nuevo Producto</h4></div>
     <ul style="padding-right: 50px; text-align: right;">
        <li class="field">
@@ -27,9 +27,6 @@
         <li class="field">
             <label class="inline">Precio:</label>
             <input name="Precio" type="text" id="Precio" class="required wide text input" placeholder="Precio del producto" />
-        </li>        
-        <li class="field" style="text-align: right">
-            <input  type="file" name="Imagen" id="Imagen" required="required"/>
         </li>        
         <li class="field">
             <label class="inline">Caducidad:</label>
@@ -70,8 +67,7 @@
 			data: str,
 			type: 'post',
 			success: function(data){
-				if(data != "")
-                                    alert(data);
+				    
 				Cerrar_Producto();
 				Buscar_Producto();
 			}

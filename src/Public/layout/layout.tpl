@@ -87,7 +87,7 @@
                     </section>
                 </div>
            </div>
-           <div class="span3"><br>
+           <div class="span3" style="text-align: left;"><br>
            <legend>Redes Sociales</legend>
                 <p>Facebook</p>
                 <p><div class="fb-like" data-href="http://licoreria.sanviernes/" data-width="100" data-show-faces="true" data-send="false"></div></p>
@@ -96,16 +96,8 @@
                 <p>Google Plus</p>
                 <p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>
 
-            <form>
-                <legend>Acceso</legend>
-                    <input type="text" class="input-small" placeholder="Email">
-                    <input type="password" class="input-small" placeholder="Password">
-                    <label class="checkbox">
-                      <input type="checkbox"> Recordarme
-                    </label>
-                    <button type="submit" class="btn">Inciar Sesion</button>
-                  </fieldset>
-             </form>
+            [Tipo_Sesion]
+
             <legend>Mejores calificados</legend>               
             <ul class="nav nav-list">
                 <li><a href="#"><i class="icon-star"></i> Library</a></li>

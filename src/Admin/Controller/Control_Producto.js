@@ -19,7 +19,18 @@ function Agregar_Producto(){
 	});
 };
 
-function Modificar_Producto($Producto){
+ function Agrega_Imagenes($Producto){
+	$("#prod_oculto").load("../View/Pro_Upload.php", {IdProducto: $Producto}, function(){
+		$.blockUI({
+			message: $('#prod_oculto'),
+			css:{
+				top: '20%'
+			}
+		}); 
+	});
+};
+
+ function Modificar_Producto($Producto){
 	$("#prod_oculto").load("../View/Pro_Update.php", {IdProducto: $Producto}, function(){
 		$.blockUI({
 			message: $('#prod_oculto'),

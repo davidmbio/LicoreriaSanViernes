@@ -3,7 +3,8 @@
 	include "../basico.php";
 	
 	/*verificamos si las variables se envian*/
-	if(empty($_POST['IdProducto']) || empty($_POST['IdCategoria']) || empty($_POST['Nombre']) || empty($_POST['Descripcion']) || empty($_POST['Precio'])
+	if(empty($_POST['IdProducto']) || empty($_POST['IdCategoria']) || empty($_POST['Nombre']) || 
+                empty($_POST['Descripcion']) || empty($_POST['Precio'])
                 || empty($_POST['Caducidad'])){
 		echo "Usted no a llenado todos los campos";
 		exit;

@@ -21,12 +21,23 @@ function Agregar_Promocion(){
 	});
 };
 
+ function Promocion_Imagen($Producto){
+	$("#promo_oculto").load("../View/Promo_Upload.php", {IdPromocion: $Producto}, function(){
+		$.blockUI({
+			message: $('#promo_oculto'),
+			css:{
+				top: '20%'
+			}
+		}); 
+	});
+};
+
 function Promocionar_por($Id,$Tipo){
 	$("#promo_oculto").load("../View/Promocionar_Add.php", {Id: $Id, Tipo: $Tipo}, function(){
 		$.blockUI({
 			message: $('#promo_oculto'),
 			css:{
-				top: '20%'
+				top: '10%'
 			}
 		}); 
 	});

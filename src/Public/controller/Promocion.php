@@ -15,7 +15,7 @@
             else{?>
                 <div class="item"><?                
             } ?>         
-            <img src="../../../<?php echo $row['Ruta']; ?>" alt="">                     
+                    <img src="../../Admin/View/promociones/img/2013-09-26-114429.jpg" alt="">                     
                 <div class="container">
                     <div class="carousel-caption">
                         <h2 style="color: white;"><?php echo $row['Titulo']; ?></h2>
@@ -29,4 +29,5 @@
      </div>
      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+ </div>
  </div>

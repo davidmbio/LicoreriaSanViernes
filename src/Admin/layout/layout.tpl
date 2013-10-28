@@ -16,6 +16,7 @@
     <script language="javascript" type="text/javascript" src="../../../web/js/lib/jquery-1.3.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="../../../web/js/lib/jquery.blockUI.js"></script>
     <script language="javascript" type="text/javascript" src="../../../web/js/lib/jquery.validate.1.5.2.js"></script>
+    <script language="javascript" type="text/javascript" src="../View/productos/resources/js/jquery-1.10.2.min.js"></script>
     <link href="../../../web/js/lib/PHPPaging.lib.css" rel="stylesheet" type="text/css" />
   
     <script language="javascript" type="text/javascript" src="../Controller/Control_Producto.js"></script>     

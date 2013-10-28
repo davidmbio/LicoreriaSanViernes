@@ -15,7 +15,7 @@ on Cat.IdCategoria=Pro.IdCategoria";
 	else
 		$sql .= " order by IdProducto desc";
 	$Paginacion->agregarConsulta($sql); 
-	$Paginacion->div('Listado');
+	$Paginacion->div('Productos');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
 		$Paginacion->porPagina(fn_filtro((int)$_GET['Cantidad_Filas_Mostrar']));
@@ -36,8 +36,7 @@ on Cat.IdCategoria=Pro.IdCategoria";
                 <div class="span2"><a href="javascript: Agregar_Producto();" role="button" class="btn" ><i class="icon-plus"></i>Nuevo</a></div>                 
                 </div>
               </div>
-          </div>
-        
+          </div>        
 
     <?
         while ($rs_per = $Paginacion->fetchResultado()){
@@ -47,7 +46,7 @@ on Cat.IdCategoria=Pro.IdCategoria";
             <div class="span2"><?=$rs_per['Categoria']?></div>
             <div class="span3"><?=$rs_per['Nombre']?></div>
             <div class="span2"><?=$rs_per['Precio']?></div>
-            <div class="span2"><?=$rs_per['Caducidad']?></div>
+            <div class="span2"><a href="javascript: Agrega_Imagenes(<?=$rs_per['IdProducto']?>);" role="button" class="btn" ><i class="icon-picture"></i>Imagenes</a></div>
             
             <div class="span2">
                <div class="btn-group">
