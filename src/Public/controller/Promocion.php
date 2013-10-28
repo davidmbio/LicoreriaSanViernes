@@ -15,12 +15,12 @@
             else{?>
                 <div class="item"><?                
             } ?>         
-                    <img src="../../Admin/View/promociones/img/2013-09-26-114429.jpg" alt="">                     
+                    <img src="../../Admin/View/promociones/<?=$row['Ruta'].$row['Imagen']?>" alt="">                     
                 <div class="container">
                     <div class="carousel-caption">
                         <h2 style="color: white;"><?php echo $row['Titulo']; ?></h2>
                       <p><small><?php echo $row['Descripcion']; ?></small></p>
-                      <a class="btn btn-large btn-primary" href="../views/Prueba.php">Sign up today</a>
+                      <a class="btn btn-large btn-primary" href="javascript: Detallazo(<?=$row['IdPromocion']?>);">Detalle</a>
                     </div>
                 </div>
           </div>
@@ -31,3 +31,18 @@
      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
  </div>
  </div>
+
+<script>
+function Detallazo($Id){
+    $("#divConsulta").load("../views/PromoDetalle.php", {Id: $Id}, function(){
+		$.blockUI({
+			message: $('#divConsulta'),
+			css:{
+				top: '10%'
+			}
+		}); 
+	});
+        
+    	
+}
+</script>

@@ -98,11 +98,10 @@
 
             [Tipo_Sesion]
 
-            <legend>Mejores calificados</legend>               
+            <legend>En Promocion</legend>               
             <ul class="nav nav-list">
-                <li><a href="#"><i class="icon-star"></i> Library</a></li>
-                <li><a href="#"><i class="icon-star"></i> Applications</a></li>
-                <li><a href="#"><i class="icon-star"></i> Misc</a></li>
+                <li><a href="#"><i class="icon-star"></i>Torres</a></li>
+                <li><a href="#"><i class="icon-star"></i>Jose Cuervo</a></li>
             </ul>
           </div>
        </div>

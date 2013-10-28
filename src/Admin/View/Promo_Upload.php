@@ -7,24 +7,19 @@
 <div class="alert alert-info"><h4>Imagen de Promocion</h4></div>
     <ul style="padding-right: 50px; text-align: center;">     
         <?php  
-        $pro=$_POST['IdPromocion'];
-        
-        echo $pro.' estes es mi ide';
+       $pro=$_POST['IdPromocion'];        
         $images = getImages($pro);?>
             <table class="table table-striped">
-                <thead>
-                    <tr>
+                
                         <?php
                         $image = mysql_fetch_array($images)?>
-                        <th>
-                            <a class="image-delete" href="?delete=<?php echo $image['IdImagen'];?>">                                
+                        <a class="image-delete" href="?delete=<?php echo $image['IdImagen'];?>">                                
                                 <div class="image img-polaroid">
                                     <img src="promociones/<?=$image['Ruta'].$image['Imagen']?>">
                                 </div>
                             </a>
-                        </th>                    
-                    </tr>
-                </thead>>
+                        
+                
             </table>
         
         <form action="promociones/src/upload.php" name="form" method="POST" enctype="multipart/form-data">

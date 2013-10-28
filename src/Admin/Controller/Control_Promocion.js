@@ -26,7 +26,7 @@ function Agregar_Promocion(){
 		$.blockUI({
 			message: $('#promo_oculto'),
 			css:{
-				top: '20%'
+				top: '10x'
 			}
 		}); 
 	});
