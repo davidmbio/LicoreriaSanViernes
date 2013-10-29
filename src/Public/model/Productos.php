@@ -2,15 +2,10 @@
 
 include 'Config.php';
 
-function obt_Productos()
-{       
-	$resultado = mysql_query('select * from tblProductos where IdCategoria=1');
-	
-	return $resultado;
+function getProductsByCategory($idCategory){
+    return mysql_query('select * from tblProductos where IdCategoria='.$idCategory);
 }
 
-function obt_Categorias(){
-    $sql=  mysql_query("select * from tblCategorias");
-    return $sql;
+function getCategories(){
+    return mysql_query("select * from tblCategorias");
 }
-?>
