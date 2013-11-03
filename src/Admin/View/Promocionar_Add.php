@@ -43,18 +43,26 @@
             <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Promocion();" />
         </div>
 
-<script language="javascript" type="text/javascript">	
-	function Promocionar(){
-		var str = $("#FPromocion").serialize();
-		$.ajax({
-			url: '../Model/producto/Pro_Modificar.php',
-			data: str,
+<script language="javascript" type="text/javascript">
+    
+    $(document).ready(function(){
+        $(".save-promo").live('click', function(){
+            var _idPromo = $(this).attr('data-promo');
+            var _type = $(this).attr('data-type');
+            var _idType = $(this).attr('data-type_id');
+            
+            var _data = {idPromo: _idPromo, type: _type, idType: _idType, action:"agregar" };
+            
+            $.ajax({
+			url: '../Model/promocion/Promo_detalles.php',
+			data: _data,
 			type: 'post',
 			success: function(data){
-				if(data != "")
-					alert(data);
-
+                alert(data);
 			}
 		});
-	};
+            
+        });
+    });
+	function Promocionar(){};
 </script>
