@@ -24,11 +24,16 @@
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
-    <div class="jumbotron masthead">
-        <div style="color: white">
+    <div>
+        <img class="img-full" src="../../../web/img/background/banner.png"/>
+    </div>
+    
+    <!--<div class="jumbotron masthead">
+        <div style="">
           <h1>Licoreria San Viernes</h1>
           <p>Lider en venta de licores</p>
         </div>
+        -->
       </div>
     <div class="navbar navbar-inverse">
       <div class="navbar-inner">
@@ -46,34 +51,11 @@
                         <li class=""><a href="Empresa.php"><i class="icon-eye-open icon-white"></i> Quienes somos</a></li>
                         <li class=""><a href="Contacto.php"><i class="icon-briefcase icon-white"></i> Conctactanos</a></li>
                         <li class=""><a href="Registro.php"><i class="icon-user icon-white"></i> Registro</a></li>
-                        <li class=""><a href="#myModal" data-toggle="modal"><i class="icon-share icon-white"></i> Acceso</a></li>
-                    </ul>
+                     </ul>
                 </div>
            </div>
       </div>
-    </div>
-    
-<!-- Modal -->
-    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Acceso</h3>
-      </div>
-      <div class="modal-body">
-          <form action="../../Admin/View/Empleados.php">
-            <fieldset>
-              <label>Usuario:</label>
-              <input type="text" placeholder="Nombre de usuario o Email">
-              <label>Contrase&ntilde;a:</label>
-              <input type="text" placeholder="Contrase&ntilde;a">
-            </fieldset>
-            <div class="modal-footer">
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-                <button class="btn" type="submit" >Acceder</button>
-            </div>
-          </form>
-      </div>            
-    </div>
+    </div>   
     
     <div class="container-fluid">
        <div class="row-fluid">

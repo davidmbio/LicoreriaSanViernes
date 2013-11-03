@@ -20,7 +20,12 @@
                     <div class="carousel-caption">
                         <h2 style="color: white;"><?php echo $row['Titulo']; ?></h2>
                       <p><small><?php echo $row['Descripcion']; ?></small></p>
-                      <a class="btn btn-large btn-primary" href="javascript: Detallazo(<?=$row['IdPromocion']?>);">Detalle</a>
+                      <?php 
+                         if (isset($_SESSION['IdUser']))
+                            echo '<a class="btn btn-large btn-primary" href="javascript: Detallazo('.$row['IdPromocion'].');">Detalle</a>'; 
+                         else
+                             echo '<a class="btn btn-large btn-primary" href="javascript: Msj();">Detalle</a>'; 
+                      ?>                      
                     </div>
                 </div>
           </div>
@@ -44,5 +49,9 @@ function Detallazo($Id){
 	});
         
     	
+}
+
+function Msj(){ 
+alert('Inicia Session para ver el detalle de la promocion');
 }
 </script>

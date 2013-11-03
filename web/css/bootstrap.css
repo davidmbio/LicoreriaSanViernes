@@ -256,6 +256,13 @@ a:focus {
      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
+.img-full {
+      border-top-left-radius:15px; 
+  border-top-right-radius:15px; 
+    padding-top: 7px;
+  display: block;
+  width: 100%; 
+  margin: 0 0 0 0;}
 
 .img-circle {
   -webkit-border-radius: 500px;
@@ -636,7 +643,7 @@ a:focus {
   padding-right: 20px;
   padding-left: 20px;
   *zoom: 1;
-  background-color: #eddedf;
+  background-color: #f3d3d7;
 }
 
 .container-fluid:before,
@@ -806,9 +813,9 @@ h4 small {
 }
 
 .page-header {
-  padding-bottom: 9px;
-  margin: 20px 0 30px;
-  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 0px;
+  margin: 10px 0 10px;
+  border-bottom: 1px solid #9e9787;
 }
 
 ul,
@@ -6047,7 +6054,7 @@ a.badge:focus {
   line-height: 30px;
   color: #ffffff;
   text-align: center;
-  background: #222222;
+  background: #9e2132;
   border: 3px solid #ffffff;
   -webkit-border-radius: 23px;
      -moz-border-radius: 23px;
@@ -6101,7 +6108,7 @@ a.badge:focus {
   left: 0;
   padding: 15px;
   background: #333333;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.50);
 }
 
 .carousel-caption h4,

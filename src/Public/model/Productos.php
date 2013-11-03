@@ -9,3 +9,15 @@ function getProductsByCategory($idCategory){
 function getCategories(){
     return mysql_query("select * from tblCategorias");
 }
+
+function getImages($Producto){
+    $query=  mysql_query("select * from tblImagen where IdProducto=$Producto limit 1");
+    $rowscount= mysql_num_rows($query);
+    if($rowscount==0)
+        return 'img/default.jpg';
+    else
+    {
+        $path=  mysql_fetch_array($query);
+        return $path['Ruta'].$path['Imagen'];
+    }
+}

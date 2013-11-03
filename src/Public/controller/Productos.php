@@ -1,7 +1,6 @@
 <?php
     include '../model/Productos.php';
 ?>
-
 <div style="background-color:white;">    
     <ul id="myTab" class="nav nav-tabs" style="color: #ad2525">
       <?php $categorias = getCategories(); ?>
@@ -12,6 +11,7 @@
         </li> 
       <?php endwhile;?>              
     </ul>
+    
     <div id="myTabContent" class="tab-content">
     <?php $categorias2 = getCategories(); $first = true;?>
     <?php while ($categoria = mysql_fetch_array($categorias2)): ?>
@@ -24,7 +24,7 @@
                     <?php if (($i%3) == 0): ?> <ul class="thumbnails"> <?php endif; ?>
                         <li class="span4">
                             <div class="thumbnail">
-                                <img data-src="holder.js/300x200" src="../../../web/img/productos/1.jpg">
+                                <img data-src="holder.js/300x200" src="../../Admin/View/productos/<?php echo getImages($producto['IdProducto']);?>">
                                 <div class="caption">
                                 <h3><?php echo $producto['Nombre']; ?></h3>
                                 <div class="btn-group">
@@ -32,7 +32,7 @@
                                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                                   <ul class="dropdown-menu">
                                       <li><a href="#"><i class="icon-shopping-cart"></i>Agrega</a></li>
-                                      <li><a href="javascript: Ver_Detalle(<?php $producto['IdProducto']; ?>);"> <i class="icon-eye-open"></i>Ver mas..</a></li>
+                                      <li><a href="javascript: Ver_Detalle(<?php echo $producto['IdProducto']; ?>);"> <i class="icon-eye-open"></i>Ver mas..</a></li>
                                  </ul>
                                 </div>
                                 </div>
@@ -57,8 +57,6 @@ function Ver_Detalle($Id){
 				top: '20%'
 			}
 		}); 
-	});
-        
-    	
+	});   
 }
 </script>
