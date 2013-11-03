@@ -1,12 +1,9 @@
 <?php
 	include "../Model/basico.php";
-	include "../Model/conexion.php";
-        
-        
-        
+	include "../Model/conexion.php";        
         
         if($_POST['Tipo']=="IdCategoria"){
-            $query="select * from tblCategorias";
+            $query="select * from tblCategorias where IdCategoria not in(select IdCategoria from tblProm_Detalle)";
             $Colum="Categoria";
         }
         else{
