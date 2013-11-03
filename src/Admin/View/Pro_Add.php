@@ -8,11 +8,12 @@
        <li class="field">
          <label class="inline">Categoria:</label>
          <select name="IdCategoria" id="IdCategoria" class="required wide text input">
-            <option value=""></option><?
-                $sql = "select * from tblCategorias order by Categoria asc";
-                $Cat = mysql_query($sql);
-                while($rs_cat = mysql_fetch_assoc($Cat)){?>
-            <option value="<?php echo $rs_cat['IdCategoria']?>"><?=$rs_cat['Categoria']?></option><? } ?>
+            <option value=""></option><?php
+                $query = "select * from tblCategorias order by Categoria asc";
+                $PromoCategoria = mysql_query($query);
+                while($rs_cat = mysql_fetch_assoc($PromoCategoria)){?>
+            <option value="<?php echo $rs_cat['IdCategoria']?>"><?php echo $rs_cat['Categoria']?></option>
+                <?php } ?>
          </select>
 	</li>
         <li class="field">

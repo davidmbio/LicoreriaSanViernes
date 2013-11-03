@@ -17,8 +17,8 @@ if(!empty($_FILES)){
         
         move_uploaded_file($_FILES["image"]["tmp_name"], "../img/".$_FILES["image"]["name"]);
         
-        $sql = "insert into tblImagen values('','{$producto}','$path','$name')";
-        mysql_query($sql) or die(mysql_error());
+        $query = "insert into tblImagen values('','{$producto}','$path','$name')";
+        mysql_query($query) or die(mysql_error());
         header('Location: ../../Productos.php');        
     }
 }

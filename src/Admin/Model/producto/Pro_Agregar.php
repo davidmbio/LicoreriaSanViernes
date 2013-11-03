@@ -1,5 +1,4 @@
-
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
         
@@ -11,11 +10,11 @@
         $name = $_FILES['Imagen']['name'];
         $path = "img/";     
         
-	$sql = "select IdProducto from tblProductos order by IdProducto desc limit 1";	
-        $pro = mysql_query($sql);        
+	$query = "select IdProducto from tblProductos order by IdProducto desc limit 1";	
+        $pro = mysql_query($query);        
 	$rs_pro = mysql_fetch_assoc($pro);
 	$ide_pro = $rs_pro['IdProducto'] + 1;
-        $sql = sprintf("INSERT INTO tblProductos VALUES (%d, %d, '%s', '%s', '%s', '%s');",		
+        $query = sprintf("INSERT INTO tblProductos VALUES (%d, %d, '%s', '%s', '%s', '%s');",		
                 fn_filtro((int)$ide_pro),
 		fn_filtro((int)$_POST['IdCategoria']),
 		fn_filtro(substr($_POST['Nombre'], 0, 60)),
@@ -24,7 +23,7 @@
                 fn_filtro(substr($_POST['Caducidad'], 0, 70))
 	);
 
-	if(!mysql_query($sql))
-		echo "Error al insertar el nuevo producto:\n$sql";        
+	if(!mysql_query($query))
+		echo "Error al insertar el nuevo producto:\n$query";        
         exit;
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -10,13 +10,13 @@
 		exit;
 	}
 	
-	$sql = "select IdPromocion from tblPromocion order by IdPromocion desc limit 1";
-	$promo = mysql_query($sql);
+	$query = "select IdPromocion from tblPromocion order by IdPromocion desc limit 1";
+	$promo = mysql_query($query);
 	$rs_promo = mysql_fetch_assoc($promo);
 	
 	$ide_promo = $rs_promo['IdPromocion'] + 1;
         
-	$sql = sprintf("INSERT INTO tblPromocion VALUES (%d, '%s', '%s', '%s', '%s','','');",
+	$query = sprintf("INSERT INTO tblPromocion VALUES (%d, '%s', '%s', '%s', '%s','','');",
 		
                 fn_filtro((int)$ide_promo),
 		fn_filtro(substr($_POST['Titulo'], 0, 50)),
@@ -25,8 +25,8 @@
 		fn_filtro(substr($_POST['Descuento'], 0, 70))
 	);
 
-	if(!mysql_query($sql))
-		echo "Error al insertar a la nueva persona:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al insertar a la nueva persona:\n$query";
 
 	exit;
 ?>

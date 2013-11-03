@@ -7,10 +7,10 @@
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
 
-	$sql = sprintf("select * from tblEmpleados where IdEmpleado=%d",
+	$query = sprintf("select * from tblEmpleados where IdEmpleado=%d",
 		(int)$_POST['IdEmpleado']
 	);
-	$per = mysql_query($sql);
+	$per = mysql_query($query);
 	$num_rs_per = mysql_num_rows($per);
 	
         if ($num_rs_per==0){

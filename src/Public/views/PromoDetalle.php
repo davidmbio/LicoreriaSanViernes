@@ -8,14 +8,14 @@ if(isset($_SESSION['IdUser']))
 else
     $Contenido= Regresa_Logeo();
 
-$sql="select * from tblPromocion as pr inner join tblProm_Detalle as pd
+$query="select * from tblPromocion as pr inner join tblProm_Detalle as pd
 on pr.IdPromocion=pd.IdPromocion where pr.IdPromocion=".$_POST['Id'];
 
-$detalle=  mysql_query($sql);
-$dddd= mysql_fetch_array($detalle);
+$Productos=  mysql_query($query);
+$RowProduct= mysql_fetch_array($Productos);
 
-$Cat=  ObtieneResultado("select * from tblPromocion as pro inner join tblProm_Detalle as pd on pd.IdPromocion=pro.IdPromocion where IdCategoria=".$dddd['IdCategoria']);
-$Pro=  ObtieneResultado("select * from tblPromocion as pro inner join tblProm_Detalle as pd 
+$PromoCategoria=  ObtieneResultado("select * from tblPromocion as pro inner join tblProm_Detalle as pd on pd.IdPromocion=pro.IdPromocion where IdCategoria=".$RowProduct['IdCategoria']);
+$PromoProducto=  ObtieneResultado("select * from tblPromocion as pro inner join tblProm_Detalle as pd 
 on pd.IdPromocion=pro.IdPromocion where IdProducto=".$_POST['Id']);
 
 function ObtieneResultado($query){
@@ -26,7 +26,7 @@ function ObtieneResultado($query){
         else
             return TRUE;
 }
-function ObtieneDetallado($query){
+function ObtieneDetalles($query){
         $ress=  mysql_query($query);
         return mysql_fetch_array($ress) ;
 }
@@ -34,22 +34,22 @@ function ObtieneDetallado($query){
 ?>
 
 <div class="span12" style="background-color: white;">
-    <h2 class="min"><?=$dddd['Titulo'] ?></h2>
+    <h2 class="min"><?=$RowProduct['Titulo'] ?></h2>
                 <div class="image img-polaroid">
-                    <img src="../../Admin/View/promociones/<?=$dddd['Ruta'].$dddd['Imagen']?>">
+                    <img src="../../Admin/View/promociones/<?=$RowProduct['Ruta'].$RowProduct['Imagen']?>">
                 </div>
-                <p class="lead"><strong>Descripcion: </strong> <?=$dddd['Descripcion'] ?></p>
+                <p class="lead"><strong>Descripcion: </strong> <?=$RowProduct['Descripcion'] ?></p>
                 
 <?
 $Promocion=NULL;
-if($dddd['IdProducto']==0)
+if($RowProduct['IdProducto']==0)
 {
-    $Promocion=  ObtieneDetallado("Select * from tblCategorias where IdCategoria=".$dddd['IdCategoria']);
+    $Promocion=  ObtieneDetalles("Select * from tblCategorias where IdCategoria=".$RowProduct['IdCategoria']);
  
 }
 echo '<p class="lead"><strong>En promocion: </strong><br> Categorias: <br>'.$Promocion['Categoria'].'</p>';
-echo '<p class="lead"><strong>Termina el: </strong><br>'.$dddd['Fin'].'</p>';
-echo '<p class="lead"><strong>Descuento del: </strong><br><h2>'.$dddd['Descuento'].'% </h2></p>';
+echo '<p class="lead"><strong>Termina el: </strong><br>'.$RowProduct['Fin'].'</p>';
+echo '<p class="lead"><strong>Descuento del: </strong><br><h2>'.$RowProduct['Descuento'].'% </h2></p>';
 ?>
 
 </div>

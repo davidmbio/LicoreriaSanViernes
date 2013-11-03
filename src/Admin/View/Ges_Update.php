@@ -1,4 +1,4 @@
-<?
+<?php
 	if(empty($_POST['IdGestion'])){
 		echo "Por favor no altere el fuente";
 		exit;
@@ -9,8 +9,8 @@
 
         
 
-	$sql ="select * from tblGestion where IdGestion=1";
-	$gest = mysql_query($sql);
+	$query ="select * from tblGestion where IdGestion=1";
+	$gest = mysql_query($query);
 	$num_rs_gest= mysql_num_rows($gest);
 	
         if ($num_rs_gest==0){
@@ -48,13 +48,13 @@
 	
 ?>
 <form action="javascript: Modificar_Ges();" method="post" id="FGestion" class="modal fade in" >  
-    <input type="hidden" id="IdCategoria" name="IdGestion" value="<?=$Nom?>" />
-    <div class="alert alert-info"><h4>Modificar <? echo $Nom; ?></h4></div>
+    <input type="hidden" id="IdCategoria" name="IdGestion" value="<?php echo $Nom?>" />
+    <div class="alert alert-info"><h4>Modificar <?php echo $Nom; ?></h4></div>
     <ul style="margin: 10px;">                
         <li class="field">
-            <label class="inline"><? echo $Nom; ?>:</label>
-            <textarea style="text-align: left;" name="Campo" class="wide input textarea" placeholder="<? echo $Nom; ?> de la empresa" rows="<? echo $tam;?>">
-                <?=$rs_gest[$Nom]?>
+            <label class="inline"><?php echo $Nom; ?>:</label>
+            <textarea style="text-align: left;" name="Campo" class="wide input textarea" placeholder="<?php echo $Nom; ?> de la empresa" rows="<?php echo $tam;?>">
+                <?php echo $rs_gest[$Nom]?>
             </textarea>
         </li>                              
       </ul>

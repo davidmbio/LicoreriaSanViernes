@@ -5,14 +5,14 @@
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
-	$sql = "select * from tblEmpleados";
+	$query = "select * from tblEmpleados";
 	if (isset($_GET['Busqueda_por_Nombre']))
-		$sql .= " where Nombre like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
+		$query .= " where Nombre like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
 	if (isset($_GET['Ordenar_por']))
-		$sql .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
+		$query .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
 	else
-		$sql .= " order by IdEmpleado desc";
-	$Paginacion->agregarConsulta($sql); 
+		$query .= " order by IdEmpleado desc";
+	$Paginacion->agregarConsulta($query); 
 	$Paginacion->div('Empleados');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))

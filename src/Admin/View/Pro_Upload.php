@@ -24,7 +24,7 @@
             </table>
         
         <form action="productos/src/upload.php" name="form" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="producto" id="producto" value="<? echo $pro;?>"/>
+                <input type="hidden" name="producto" id="producto" value="<?php echo $pro;?>"/>
                 <input  type="file" name="image" required="required"/> &nbsp; &nbsp;
                 <div class="modal-footer">
                     <input  type="submit" name="submit" value="Cargar imagen" class="btn btn-primary"/>

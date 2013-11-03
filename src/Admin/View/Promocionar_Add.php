@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
         
@@ -6,19 +6,19 @@
         
         
         if($_POST['Tipo']=="IdCategoria"){
-            $sql="select * from tblCategorias";
+            $query="select * from tblCategorias";
             $Colum="Categoria";
         }
         else{
-            $sql="select * from tblProductos";
+            $query="select * from tblProductos";
             $Colum="Nombre";            
         }
         
-        $Respue = mysql_query($sql);  
+        $Respue = mysql_query($query);  
 ?>
 
-<div class="alert alert-info"><h4>Lista de <? echo $Colum;?></h4></div>
-        <?
+<div class="alert alert-info"><h4>Lista de <?php echo $Colum;?></h4></div>
+<?php
         
         
         /*if(strtotime('2013-10-28')>=strtotime('2013-10-27'))
@@ -31,11 +31,11 @@
         while ($row = mysql_fetch_array($Respue)) {?>            
     <div class="span6">
             <div class="row-fluid show-grid">               
-                <div class="span3"><? echo $row[$Colum]?></div>
+                <div class="span3"><?php echo $row[$Colum]?></div>
                 <a href="" class="btn btn-primary"><i class="icon-gift icon-white"></i> &zwj;sPromocionar</a>
             </div>
         </div>   
-        <? }?>   
+        <?php }?>   
     
         <div class="modal-footer">
             <input name="cancelar" type="button" id="cancelar" class="btn" value="Cancelar" onclick="Cerrar_Promocion();" />

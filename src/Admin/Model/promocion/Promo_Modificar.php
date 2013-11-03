@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -11,7 +11,7 @@
 	
 	/*modificar el registro*/
 
-	$sql = sprintf("UPDATE tblPromocion SET  Titulo='%s', Descripcion='%s', Fin='%s', Descuento='%s' 
+	$query = sprintf("UPDATE tblPromocion SET  Titulo='%s', Descripcion='%s', Fin='%s', Descuento='%s' 
             where IdPromocion=%d;",
 		fn_filtro(substr($_POST['Titulo'], 0, 60)),
 		fn_filtro(substr($_POST['Descripcion'], 0, 60)),
@@ -19,7 +19,7 @@
 		fn_filtro(substr($_POST['Descuento'], 0, 60)),
 		fn_filtro((int)$_POST['IdPromocion'])
 	);
-	if(!mysql_query($sql))
-		echo "Error al modificar al la promocion:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al modificar al la promocion:\n$query";
 	exit;
 ?>?>

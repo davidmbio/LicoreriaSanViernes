@@ -12,8 +12,8 @@ if(!empty($_FILES)){
     }
     else{
         move_uploaded_file($_FILES["image"]["tmp_name"], "../img/".$_FILES["image"]["name"]);       
-        $sql = "UPDATE tblPromocion SET Ruta='{$path}', Imagen='{$name}' WHERE IdPromocion=".$producto;
-        mysql_query($sql) or die(mysql_error());
+        $query = "UPDATE tblPromocion SET Ruta='{$path}', Imagen='{$name}' WHERE IdPromocion=".$producto;
+        mysql_query($query) or die(mysql_error());
         header('Location: ../../Promocion.php');        
     }
 }

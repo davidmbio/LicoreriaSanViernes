@@ -1,16 +1,16 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
-        $sql = sprintf("delete from tblImagen where IdProducto=%d",
+        $query = sprintf("delete from tblImagen where IdProducto=%d",
 		(int)$_POST['IdProducto']
 	);
-	if(!mysql_query($sql))
-		echo "1.- Ocurrio un error\n$sql";
+	if(!mysql_query($query))
+		echo "1.- Ocurrio un error\n$query";
 	else{
-            $sql = sprintf("delete from tblProductos where IdProducto=%d",(int)$_POST['IdProducto']);
-	if(!mysql_query($sql))
-		echo "2.- Ocurrio un error\n$sql";
+            $query = sprintf("delete from tblProductos where IdProducto=%d",(int)$_POST['IdProducto']);
+	if(!mysql_query($query))
+		echo "2.- Ocurrio un error\n$query";
         }
         exit;
 ?>

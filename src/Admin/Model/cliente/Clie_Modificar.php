@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -11,7 +11,7 @@
 	
 	/*modificar el registro*/
 
-	$sql = sprintf("UPDATE tblClientes SET  Nombre='%s', Apellidos='%s', Telefono='%s', Email='%s' 
+	$query = sprintf("UPDATE tblClientes SET  Nombre='%s', Apellidos='%s', Telefono='%s', Email='%s' 
             , Nacimiento='%s', Password='%s'  where IdCliente=%d;",
 		fn_filtro(substr($_POST['Nombre'], 0, 60)),
 		fn_filtro(substr($_POST['Apellidos'], 0, 60)),
@@ -21,7 +21,7 @@
 		fn_filtro(substr($_POST['Password'], 0, 70)),
 		fn_filtro((int)$_POST['IdCliente'])
 	);
-	if(!mysql_query($sql))
-		echo "Error al modificar el cliente:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al modificar el cliente:\n$query";
 	exit;
 ?>?>

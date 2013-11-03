@@ -1,18 +1,17 @@
-
-<?
+<?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
-	$sql = "select * from tblCategorias";
+	$query = "select * from tblCategorias";
 	if (isset($_GET['Busqueda_por_Nombre']))
-		$sql .= " where Categoria like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
+		$query .= " where Categoria like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
 	if (isset($_GET['Ordenar_por']))
-		$sql .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
+		$query .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
 	else
-		$sql .= " order by IdCategoria desc";
-	$Paginacion->agregarConsulta($sql); 
+		$query .= " order by IdCategoria desc";
+	$Paginacion->agregarConsulta($query); 
 	$Paginacion->div('Categoria');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
@@ -34,24 +33,24 @@
           </div>
         
 
-    <?
+    <?php
         while ($rs_cate = $Paginacion->fetchResultado()){
     ?>
           <div class="row-fluid show-grid">
-            <div class="span2" id="<?=$rs_cate['IdCategoria']?>"><a href="1"><span class="badge"><?=$rs_cate['IdCategoria']?></span></a></div>
-            <div class="span7"><?=$rs_cate['Categoria']?></div>            
+            <div class="span2" id="<?php echo $rs_cate['IdCategoria']?>"><a href="1"><span class="badge"><?php echo $rs_cate['IdCategoria']?></span></a></div>
+            <div class="span7"><?php echo $rs_cate['Categoria']?></div>            
             <div class="span3">
                <div class="btn-group">
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Categoria(<?=$rs_cate['IdCategoria']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Categoria(<?=$rs_cate['IdCategoria']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Categoria(<?php echo $rs_cate['IdCategoria']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Categoria(<?php echo $rs_cate['IdCategoria']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>
           </div>
-    <? } ?>
+    <?php } ?>
     <div class="lead">
-                  <?=$Paginacion->fetchNavegacion()?>
+                  <?php echo $Paginacion->fetchNavegacion()?>
     </div>

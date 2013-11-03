@@ -11,7 +11,7 @@
 	
 	/*modificar el registro*/
 
-	$sql = sprintf("UPDATE tblEmpleados SET  Nombre='%s', Apellidos='%s', Telefono='%s', Email='%s' 
+	$query = sprintf("UPDATE tblEmpleados SET  Nombre='%s', Apellidos='%s', Telefono='%s', Email='%s' 
             , Nacimiento='%s', Password='%s'  where IdEmpleado=%d;",
 		fn_filtro(substr($_POST['Nombre'], 0, 60)),
 		fn_filtro(substr($_POST['Apellidos'], 0, 60)),
@@ -21,7 +21,7 @@
 		fn_filtro(substr($_POST['Password'], 0, 70)),
 		fn_filtro((int)$_POST['IdEmpleado'])
 	);
-	if(!mysql_query($sql))
-		echo "Error al modificar al empleado:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al modificar al empleado:\n$query";
 	exit;
 ?>?>

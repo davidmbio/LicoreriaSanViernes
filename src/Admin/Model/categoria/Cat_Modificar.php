@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -10,11 +10,11 @@
 	
 	/*modificar el registro*/
 
-	$sql = sprintf("UPDATE tblCategorias SET  Categoria='%s' where IdCategoria=%d;",
+	$query = sprintf("UPDATE tblCategorias SET  Categoria='%s' where IdCategoria=%d;",
 		fn_filtro(substr($_POST['Categoria'], 0, 60)),
 		fn_filtro((int)$_POST['IdCategoria'])
 	);
-	if(!mysql_query($sql))
-		echo "Error al modificar la categoria:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al modificar la categoria:\n$query";
 	exit;
 ?>?>

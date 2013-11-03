@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -12,7 +12,7 @@
 	
 	/*modificar el registro*/
 
-	$sql = sprintf("UPDATE tblProductos SET  IdCategoria=%d, Nombre='%s', Descripcion='%s', Precio='%s',
+	$query = sprintf("UPDATE tblProductos SET  IdCategoria=%d, Nombre='%s', Descripcion='%s', Precio='%s',
             Caducidad='%s'where IdProducto=%d;",
 		fn_filtro((int)$_POST['IdCategoria']),
 		fn_filtro(substr($_POST['Nombre'], 0, 60)),
@@ -21,7 +21,7 @@
 		fn_filtro(substr($_POST['Caducidad'], 0, 70)),
 		fn_filtro((int)$_POST['IdProducto'])
 	);
-	if(!mysql_query($sql))
-		echo "Error al insertar a la nueva persona:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al insertar a la nueva persona:\n$query";
 	exit;
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -11,14 +11,14 @@
 	}
 	
 	/*obtenemos el ide mayor*/
-	$sql = "select IdCliente from tblClientes order by IdCliente desc limit 1";
-	$clie = mysql_query($sql);
+	$query = "select IdCliente from tblClientes order by IdCliente desc limit 1";
+	$clie = mysql_query($query);
 	$rs_clie = mysql_fetch_assoc($clie);
 	
 	/*insertamos el nuevo registro*/
 	$ide_clie = $rs_clie['IdCliente'] + 1;
 
-	$sql = sprintf("INSERT INTO tblClientes VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+	$query = sprintf("INSERT INTO tblClientes VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
 		
                 fn_filtro((int)$ide_clie),
 		fn_filtro(substr($_POST['Nombre'], 0, 50)),
@@ -30,8 +30,8 @@
                 fn_filtro(substr($_POST['Password'], 0, 70))
 	);
 
-	if(!mysql_query($sql))
-		echo "Error al insertar a la nueva persona:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al insertar a la nueva persona:\n$query";
 
 	exit;
 ?>

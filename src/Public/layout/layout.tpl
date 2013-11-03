@@ -69,22 +69,32 @@
                     </section>
                 </div>
            </div>
-           <div class="span3" style="text-align: left;"><br>
-           <legend>Redes Sociales</legend>
-                <p>Facebook</p>
-                <p><div class="fb-like" data-href="http://licoreria.sanviernes/" data-width="100" data-show-faces="true" data-send="false"></div></p>
-                <p>Twitter</p>
-                <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://licoreria.sanviernes/" data-text="Licoreria" data-lang="es">Twittear</a></p>
-                <p>Google Plus</p>
-                <p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>
 
-            [Tipo_Sesion]
+           <div class="span3" style="text-align: left; border-left:#696262 solid; padding-top: 55px; padding-left: 15px;"><br>               
+               
+               <div class="">
+                   <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
+                        <legend>Redes Sociales</legend>
+                   </div> 
+                    <p>Facebook</p>
+                    <p><div class="fb-like" data-href="http://licoreria.sanviernes/" data-width="100" data-show-faces="true" data-send="false"></div></p>
+                    <p>Twitter</p>
+                    <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://licoreria.sanviernes/" data-text="Licoreria" data-lang="es">Twittear</a></p>
+                    <p>Google Plus</p>
+                    <p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>               
+               </div>               
+               <div class="">
+                                [Tipo_Sesion]
+               </div>
 
-            <legend>En Promocion</legend>               
+
+               <div class="">
+                           <legend>En Promocion</legend>               
             <ul class="nav nav-list">
                 <li><a href="#"><i class="icon-star"></i>Torres</a></li>
                 <li><a href="#"><i class="icon-star"></i>Jose Cuervo</a></li>
             </ul>
+               </div>
           </div>
        </div>
     </div>

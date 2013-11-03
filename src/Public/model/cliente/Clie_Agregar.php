@@ -1,4 +1,4 @@
-<?
+<?php
 	
 include "../../../Admin/Model/conexion.php";
 include "../../../Admin/Model/basico.php";
@@ -11,25 +11,20 @@ include '../../Controller_master.php';
                 || empty($_POST['Usuario']) || empty($_POST['Password']) || empty($_POST['Password2'])){
 		echo "Usted no a llenado todos los campos";
 	}
-        else
-        {
-            $sql = "select IdCliente from tblClientes order by IdCliente desc limit 1";
-            $clie = mysql_query($sql);
+        else{
+            $query = "select IdCliente from tblClientes order by IdCliente desc limit 1";
+            $clie = mysql_query($query);
             $rs_clie = mysql_fetch_assoc($clie);
-            $ide_clie = $rs_clie['IdCliente'] + 1;
-                    
-            
-            
+            $ide_clie = $rs_clie['IdCliente'] + 1;                    
+                        
             $Queryuser="SELECT * FROM tblClientes where Usuario='{$_POST['Usuario']}'";
             $NU = mysql_query($Queryuser);
-            $num_rs_user= mysql_num_rows($NU);
-
-            
+            $num_rs_user= mysql_num_rows($NU);            
             
             if ($num_rs_user==0){            
                 if($_POST['Password']==$_POST['Password2']){
                     
-                    $sql = sprintf("INSERT INTO tblClientes VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s','img/','default.jpg');",
+                    $query = sprintf("INSERT INTO tblClientes VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s','img/','default.jpg');",
                             fn_filtro((int)$ide_clie),
                             fn_filtro(substr($_POST['Nombre'], 0, 50)),
                             fn_filtro(substr($_POST['Apellidos'], 0, 60)),
@@ -40,8 +35,8 @@ include '../../Controller_master.php';
                             fn_filtro(substr($_POST['Password'], 0, 70))
                     );
 
-                    if(!mysql_query($sql))
-                            echo "Error al insertar a la nueva persona:\n$sql";       
+                    if(!mysql_query($query))
+                            echo "Error al insertar a la nueva persona:\n$query";       
                     A_Logearse($ide_clie);
                     exit;        
                    }
@@ -52,5 +47,4 @@ include '../../Controller_master.php';
                 Cierra_Session();
             }
         }
-
 ?>

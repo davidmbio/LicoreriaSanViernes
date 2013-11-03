@@ -2,10 +2,11 @@
 
 include '../Controller_master.php';
 
-echo 'hola esto es el logeo jejejeje... awevo putos';
+echo $_POST['user'].' '.$_POST['pass'];
 
-A_Logearse();
+//A_Logearse();
 
+header("../views/index.php");
 
 echo '<br><br> <a  href="../views/"> regresar</a>'
 ?>

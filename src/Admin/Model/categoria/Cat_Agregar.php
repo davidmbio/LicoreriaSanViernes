@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	include "../basico.php";
 	
@@ -10,21 +10,21 @@
 	}
 	
 	/*obtenemos el ide mayor*/
-	$sql = "select IdCategoria from tblCategorias order by IdCategoria desc limit 1";
-	$cate = mysql_query($sql);
+	$query = "select IdCategoria from tblCategorias order by IdCategoria desc limit 1";
+	$cate = mysql_query($query);
 	$rs_cate = mysql_fetch_assoc($cate);
 	
 	/*insertamos el nuevo registro*/
 	$ide_cate = $rs_cate['IdCategoria'] + 1;
 
-	$sql = sprintf("INSERT INTO tblCategorias VALUES (%d, '%s');",
+	$query = sprintf("INSERT INTO tblCategorias VALUES (%d, '%s');",
 		
                 fn_filtro((int)$ide_cate),
 		fn_filtro(substr($_POST['Categoria'], 0, 50))
 	);
 
-	if(!mysql_query($sql))
-		echo "Error al insertar a la nueva persona:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al insertar a la nueva persona:\n$query";
 
 	exit;
 ?>

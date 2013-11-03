@@ -7,10 +7,10 @@
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
 
-	$sql = sprintf("select * from tblProductos where IdProducto=%d",
+	$query = sprintf("select * from tblProductos where IdProducto=%d",
 		(int)$_POST['IdProducto']
 	);
-	$pro = mysql_query($sql);
+	$pro = mysql_query($query);
 	$num_rs_pro = mysql_num_rows($pro);
 	
         if ($num_rs_pro==0){
@@ -28,12 +28,12 @@
         <li class="field">
             <label class="inline">Categoria:</label>
             <select name="IdCategoria" ide="IdCategoria" class="required wide text input">
-                <option value="Elije un opcion"></option><?
-                    $sql = "select * from tblCategorias order by Categoria asc";
-                    $Cat = mysql_query($sql);
-                    while($rs_cat = mysql_fetch_assoc($Cat)){?>
+                <option value="Elije un opcion"></option><?php
+                    $query = "select * from tblCategorias order by Categoria asc";
+                    $PromoCategoria = mysql_query($query);
+                    while($rs_cat = mysql_fetch_assoc($PromoCategoria)){?>
                     <option value="<?php echo $rs_pro['IdCategoria']?>" <?php if($rs_cat['IdCategoria']==$rs_pro['IdCategoria']) echo "selected='selected'";?>><?php echo $rs_cat['Categoria']?></option>
-                <? } ?>
+                    <?php } ?>
             </select>
 	</li>
         <li class="field">

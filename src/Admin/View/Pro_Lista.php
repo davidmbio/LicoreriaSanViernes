@@ -4,16 +4,16 @@
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
-	$sql = "select Pro.IdProducto, Cat.Categoria, Pro.Nombre, Pro.Precio, Pro.Caducidad 
+	$query = "select Pro.IdProducto, Cat.Categoria, Pro.Nombre, Pro.Precio, Pro.Caducidad 
 from tblProductos as Pro inner join tblCategorias as Cat
 on Cat.IdCategoria=Pro.IdCategoria";
 	if (isset($_GET['Busqueda_por_Nombre']))
-		$sql .= " where Nombre like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
+		$query .= " where Nombre like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
 	if (isset($_GET['Ordenar_por']))
-		$sql .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
+		$query .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
 	else
-		$sql .= " order by IdProducto desc";
-	$Paginacion->agregarConsulta($sql); 
+		$query .= " order by IdProducto desc";
+	$Paginacion->agregarConsulta($query); 
 	$Paginacion->div('Productos');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
@@ -58,7 +58,7 @@ on Cat.IdCategoria=Pro.IdCategoria";
                 </div>                      
             </div>
           </div>
-    <? } ?>
+    <?php } ?>
     <div class="lead">
                   <?php echo $Paginacion->fetchNavegacion()?>
     </div>

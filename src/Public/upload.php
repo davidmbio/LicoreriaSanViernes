@@ -17,8 +17,8 @@ if(!empty($_FILES)){
         
         move_uploaded_file($_FILES["image"]["tmp_name"], "img/".$_FILES["image"]["name"]);
         
-        $sql = "UPDATE tblClientes SET Ruta='{$path}', Foto='{$name}' WHERE IdCliente={$_SESSION['IdUser']}";
-        mysql_query($sql) or die(mysql_error());
+        $query = "UPDATE tblClientes SET Ruta='{$path}', Foto='{$name}' WHERE IdCliente={$_SESSION['IdUser']}";
+        mysql_query($query) or die(mysql_error());
         A_Logearse($_SESSION['IdUser']);
         header('Location: views/index.php');  
         exit;

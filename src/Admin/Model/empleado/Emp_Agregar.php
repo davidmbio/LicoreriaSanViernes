@@ -11,14 +11,14 @@
 	}
 	
 	/*obtenemos el ide mayor*/
-	$sql = "select IdEmpleado from tblEmpleados order by IdEmpleado desc limit 1";
-	$per = mysql_query($sql);
+	$query = "select IdEmpleado from tblEmpleados order by IdEmpleado desc limit 1";
+	$per = mysql_query($query);
 	$rs_per = mysql_fetch_assoc($per);
 	
 	/*insertamos el nuevo registro*/
 	$ide_per = $rs_per['IdEmpleado'] + 1;
 
-	$sql = sprintf("INSERT INTO tblEmpleados VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
+	$query = sprintf("INSERT INTO tblEmpleados VALUES (%d, '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
 		
                 fn_filtro((int)$ide_per),
 		fn_filtro(substr($_POST['Nombre'], 0, 50)),
@@ -30,8 +30,8 @@
                 fn_filtro(substr($_POST['Password'], 0, 70))
 	);
 
-	if(!mysql_query($sql))
-		echo "Error al insertar a la nueva persona:\n$sql";
+	if(!mysql_query($query))
+		echo "Error al insertar a la nueva persona:\n$query";
 
 	exit;
 ?>

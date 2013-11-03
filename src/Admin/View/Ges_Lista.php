@@ -1,18 +1,17 @@
-
-<?
+<?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
-	$sql = "select * from tblGestion";
+	$query = "select * from tblGestion";
 	if (isset($_GET['Busqueda_por_Nombre']))
-		$sql .= " where Mision like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
+		$query .= " where Mision like '%".fn_filtro(substr($_GET['Busqueda_por_Nombre'], 0, 16))."%'";
 	if (isset($_GET['Ordenar_por']))
-		$sql .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
+		$query .= sprintf(" order by %s %s", fn_filtro($_GET['Ordenar_por']), fn_filtro($_GET['Ordenacion']));
 	else
-		$sql .= " order by IdGestion desc";
-	$Paginacion->agregarConsulta($sql); 
+		$query .= " order by IdGestion desc";
+	$Paginacion->agregarConsulta($query); 
 	$Paginacion->div('Listado');
 	$Paginacion->modo('desarrollo'); 
 	if (isset($_GET['Cantidad_Filas_Mostrar']))
@@ -35,9 +34,9 @@
           </div>
         </div>
         <div class="row-fluid show-grid">
-            <div class="span6"><?=$rs_gest['Mision']?> <br> 
+            <div class="span6"><?php echo $rs_gest['Mision']?> <br> 
                 <a class="btn" href="javascript: Modificar_Gestion(1);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span6"><?=$rs_gest['Vision']?> <br>
+            <div class="span6"><?php echo $rs_gest['Vision']?> <br>
                 <a class="btn" href="javascript: Modificar_Gestion(2);"><i class="icon-pencil"></i> Modificar</a></div>
         </div>
 
@@ -53,12 +52,12 @@
            </div>
         </div>
         <div class="row-fluid show-grid">
-            <div class="span3"><?=$rs_gest['Email']?> <br> 
+            <div class="span3"><?php echo $rs_gest['Email']?> <br> 
                 <a class="btn" href="javascript: Modificar_Gestion(3);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span2"><?=$rs_gest['Telefono']?> <br>
+            <div class="span2"><?php echo $rs_gest['Telefono']?> <br>
                 <a class="btn" href="javascript: Modificar_Gestion(4);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span4"><?=$rs_gest['Direccion']?> <br>
+            <div class="span4"><?php echo $rs_gest['Direccion']?> <br>
                 <a class="btn" href="javascript: Modificar_Gestion(5);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span3"><?=$rs_gest['Valores']?> <br>
+            <div class="span3"><?php echo $rs_gest['Valores']?> <br>
                 <a class="btn" href="javascript: Modificar_Gestion(6);"><i class="icon-pencil"></i> Modificar</a></div>
         </div>

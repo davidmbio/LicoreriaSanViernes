@@ -1,4 +1,4 @@
-<?
+<?php
 	if(empty($_POST['IdCategoria'])){
 		echo "Por favor no altere el fuente";
 		exit;
@@ -7,10 +7,10 @@
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
 
-	$sql = sprintf("select * from tblCategorias where IdCategoria=%d",
+	$query = sprintf("select * from tblCategorias where IdCategoria=%d",
 		(int)$_POST['IdCategoria']
 	);
-	$cate = mysql_query($sql);
+	$cate = mysql_query($query);
 	$num_rs_cate= mysql_num_rows($cate);
 	
         if ($num_rs_cate==0){
@@ -22,12 +22,12 @@
 	
 ?>
 <form action="javascript: Modificar_Cat();" method="post" id="FCategoria" class="modal fade in" >  
-    <input type="hidden" id="IdCategoria" name="IdCategoria" value="<?=$rs_cate['IdCategoria']?>" />
+    <input type="hidden" id="IdCategoria" name="IdCategoria" value="<?php echo $rs_cate['IdCategoria']?>" />
     <div class="alert alert-info"><h4>Modificar producto</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Categoria:</label>
-            <input name="Categoria" value="<?=$rs_cate['Categoria']?>" type="text" id="Categoria" placeholder="Nombre de la categoria" class="requisssred wide text input" />
+            <input name="Categoria" value="<?php echo $rs_cate['Categoria']?>" type="text" id="Categoria" placeholder="Nombre de la categoria" class="requisssred wide text input" />
         </li>           
       </ul>
     <div class="modal-footer">
