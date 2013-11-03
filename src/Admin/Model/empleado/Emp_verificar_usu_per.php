@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../conexion.php";
 	$usu_per = $_GET['Usuario'];
 	$sql = "select * from tblEmpleados where Usuario='$usu_per'";

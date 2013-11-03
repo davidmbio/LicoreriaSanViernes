@@ -52,8 +52,8 @@
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Empleado(<?php echo$rs_per['IdEmpleado']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Empleado(<?php echo$rs_per['IdEmpleado']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Empleado(<?php echo $rs_per['IdEmpleado']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Empleado(<?php echo $rs_per['IdEmpleado']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>
