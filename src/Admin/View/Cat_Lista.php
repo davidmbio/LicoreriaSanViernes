@@ -1,5 +1,4 @@
-
-<?
+<?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
 	include "../../../web/js/lib/PHPPaging.lib.php";
@@ -34,24 +33,24 @@
           </div>
         
 
-    <?
+    <?php
         while ($rs_cate = $Paginacion->fetchResultado()){
     ?>
           <div class="row-fluid show-grid">
-            <div class="span2" id="<?=$rs_cate['IdCategoria']?>"><a href="1"><span class="badge"><?=$rs_cate['IdCategoria']?></span></a></div>
-            <div class="span7"><?=$rs_cate['Categoria']?></div>            
+            <div class="span2" id="<?php echo $rs_cate['IdCategoria']?>"><a href="1"><span class="badge"><?php echo $rs_cate['IdCategoria']?></span></a></div>
+            <div class="span7"><?php echo $rs_cate['Categoria']?></div>            
             <div class="span3">
                <div class="btn-group">
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Categoria(<?=$rs_cate['IdCategoria']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Categoria(<?=$rs_cate['IdCategoria']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Categoria(<?php echo $rs_cate['IdCategoria']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Categoria(<?php echo $rs_cate['IdCategoria']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>
           </div>
-    <? } ?>
+    <?php } ?>
     <div class="lead">
-                  <?=$Paginacion->fetchNavegacion()?>
+                  <?php echo $Paginacion->fetchNavegacion()?>
     </div>
