@@ -15,7 +15,7 @@
                         <?php while ($image = mysql_fetch_array($images)){?>
                         <th>
                             <a class="image-delete" href="?delete=<?php echo $image['IdImagen'];?>">
-                                <image src="productos/<?=$image['Ruta'].$image['Imagen']?>" height="100px" width="120px"/>
+                                <image src="productos/<?php echo $image['Ruta'].$image['Imagen']?>" height="100px" width="120px"/>
                             </a>
                         </th>                    
                     <?php } ?>

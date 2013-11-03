@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../Model/conexion.php";
 ?>
 
@@ -12,7 +12,7 @@
                 $sql = "select * from tblCategorias order by Categoria asc";
                 $Cat = mysql_query($sql);
                 while($rs_cat = mysql_fetch_assoc($Cat)){?>
-            <option value="<?=$rs_cat['IdCategoria']?>"><?=$rs_cat['Categoria']?></option><? } ?>
+            <option value="<?php echo $rs_cat['IdCategoria']?>"><?=$rs_cat['Categoria']?></option><? } ?>
          </select>
 	</li>
         <li class="field">

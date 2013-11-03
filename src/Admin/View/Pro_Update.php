@@ -1,4 +1,4 @@
-<?
+<?php
 	if(empty($_POST['IdProducto'])){
 		echo "Por favor no altere el fuente";
 		exit;
@@ -22,7 +22,7 @@
 	
 ?>
 <form action="javascript: Modificar_Pro();" method="post" id="FProducto" class="modal fade in" >  
-    <input type="hidden" id="IdProducto" name="IdProducto" value="<?=$rs_pro['IdProducto']?>" />
+    <input type="hidden" id="IdProducto" name="IdProducto" value="<?php echo $rs_pro['IdProducto']?>" />
     <div class="alert alert-info"><h4>Modificar producto</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
@@ -32,27 +32,27 @@
                     $sql = "select * from tblCategorias order by Categoria asc";
                     $Cat = mysql_query($sql);
                     while($rs_cat = mysql_fetch_assoc($Cat)){?>
-                    <option value="<?=$rs_pro['IdCategoria']?>" <? if($rs_cat['IdCategoria']==$rs_pro['IdCategoria']) echo "selected='selected'";?>><?=$rs_cat['Categoria']?></option>
+                    <option value="<?php echo $rs_pro['IdCategoria']?>" <?php if($rs_cat['IdCategoria']==$rs_pro['IdCategoria']) echo "selected='selected'";?>><?php echo $rs_cat['Categoria']?></option>
                 <? } ?>
             </select>
 	</li>
         <li class="field">
             <label class="inline">Nombre:</label>
-            <input name="Nombre" id="Nombre" value="<?=$rs_pro['Nombre']?>" type="text" id="Descripcion" placeholder="Nombre del producto" class="required wide text input" />
+            <input name="Nombre" id="Nombre" value="<?php echo $rs_pro['Nombre']?>" type="text" id="Descripcion" placeholder="Nombre del producto" class="required wide text input" />
         </li>   
         
         <li class="field">
             <label class="inline">Descripcion:</label>
-            <input name="Descripcion" id="Descripcion" value="<?=$rs_pro['Descripcion']?>" type="text" id="Descripcion" placeholder="Descripcion del producto" class="requisssred wide text input" />
+            <input name="Descripcion" id="Descripcion" value="<?php echo $rs_pro['Descripcion']?>" type="text" id="Descripcion" placeholder="Descripcion del producto" class="requisssred wide text input" />
         </li>
         
         <li class="field">
             <label class="inline">Precio:</label>
-            <input name="Precio" type="text" id="Precio" class="required wide text input" value="<?=$rs_pro['Precio']?>" placeholder="Precio del producto" />           
+            <input name="Precio" type="text" id="Precio" class="required wide text input" value="<?php echo $rs_pro['Precio']?>" placeholder="Precio del producto" />           
         </li>        
         <li class="field">
             <label class="inline">Caducidad:</label>
-            <input name="Caducidad" type="text" id="Caducidad" placeholder="Caducidad del producto" class="required wide input" value="<?=$rs_pro['Caducidad']?>" />
+            <input name="Caducidad" type="text" id="Caducidad" placeholder="Caducidad del producto" class="required wide input" value="<?php echo $rs_pro['Caducidad']?>" />
         </li>
       </ul>
     <div class="modal-footer">

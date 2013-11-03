@@ -53,7 +53,9 @@ $temp->set('content','
 
 ');
 echo $temp->output();
+
 ?>
+
 <script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery-1.3.2.min.js"></script>
 <script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery.blockUI.js"></script>
 <script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery.validate.1.5.2.js"></script>
