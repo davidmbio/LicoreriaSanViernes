@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
 	include "../../../web/js/lib/PHPPaging.lib.php";
@@ -36,17 +36,17 @@
           </div>
         
 
-    <?
+    <?php
         while ($rs_promo = $Paginacion->fetchResultado()){
     ?>
           <div class="row-fluid show-grid">
-            <div class="span1" id="<?=$rs_promo['IdPromocion']?>"><a href="1"><span class="badge"><?=$rs_promo['IdPromocion']?></span></a></div>
-            <div class="span3"><?=$rs_promo['Titulo']?></div>
-            <div class="span2"><?=$rs_promo['Fin']?></div>
-            <div class="span1"><a href="javascript: Promocion_Imagen(<?=$rs_promo['IdPromocion']?>);" role="button" class="btn" data-toggle="modal"><i class="icon-picture"></i></a></div>           
+            <div class="span1" id="<?php echo $rs_promo['IdPromocion']?>"><a href="1"><span class="badge"><?php echo $rs_promo['IdPromocion']?></span></a></div>
+            <div class="span3"><?php echo $rs_promo['Titulo']?></div>
+            <div class="span2"><?php echo $rs_promo['Fin']?></div>
+            <div class="span1"><a href="javascript: Promocion_Imagen(<?php echo $rs_promo['IdPromocion']?>);" role="button" class="btn" data-toggle="modal"><i class="icon-picture"></i></a></div>           
             <div class="span3">                    
-                <a href="javascript: Promocionar_por(<?=$rs_promo['IdPromocion']?>,'IdCategoria');" role="button" class="btn" data-toggle="modal"><i class="icon-th-large"></i>Categorias</a>
-                <a href="javascript: Promocionar_por(<?=$rs_promo['IdPromocion']?>,'IdProducto');" role="button" class="btn" data-toggle="modal"><i class="icon-glass"></i>Productos</a>
+                <a href="javascript: Promocionar_por(<?php echo $rs_promo['IdPromocion']?>,'IdCategoria');" role="button" class="btn" data-toggle="modal"><i class="icon-th-large"></i>Categorias</a>
+                <a href="javascript: Promocionar_por(<?php echo $rs_promo['IdPromocion']?>,'IdProducto');" role="button" class="btn" data-toggle="modal"><i class="icon-glass"></i>Productos</a>
             </div>
             
             <div class="span2">
@@ -54,13 +54,13 @@
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Promocion(<?=$rs_promo['IdPromocion']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Promocion(<?=$rs_promo['IdPromocion']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Promocion(<?php echo $rs_promo['IdPromocion']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Promocion(<?php echo $rs_promo['IdPromocion']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>
           </div>
-    <? } ?>
+    <?php } ?>
     <div class="lead">
-                  <?=$Paginacion->fetchNavegacion()?>
+                  <?php echo $Paginacion->fetchNavegacion()?>
     </div>

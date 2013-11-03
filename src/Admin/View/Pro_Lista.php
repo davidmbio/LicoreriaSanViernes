@@ -1,5 +1,5 @@
 
-<?
+<?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
 	include "../../../web/js/lib/PHPPaging.lib.php";
@@ -42,24 +42,24 @@ on Cat.IdCategoria=Pro.IdCategoria";
         while ($rs_per = $Paginacion->fetchResultado()){
     ?>
           <div class="row-fluid show-grid">
-            <div class="span1" id="<?=$rs_per['IdProducto']?>"><a href="1"><span class="badge"><?=$rs_per['IdProducto']?></span></a></div>
-            <div class="span2"><?=$rs_per['Categoria']?></div>
-            <div class="span3"><?=$rs_per['Nombre']?></div>
-            <div class="span2"><?=$rs_per['Precio']?></div>
-            <div class="span2"><a href="javascript: Agrega_Imagenes(<?=$rs_per['IdProducto']?>);" role="button" class="btn" ><i class="icon-picture"></i>Imagenes</a></div>
+            <div class="span1" id="<?php echo $rs_per['IdProducto']?>"><a href="1"><span class="badge"><?php echo $rs_per['IdProducto']?></span></a></div>
+            <div class="span2"><?php echo $rs_per['Categoria']?></div>
+            <div class="span3"><?php echo $rs_per['Nombre']?></div>
+            <div class="span2"><?php echo $rs_per['Precio']?></div>
+            <div class="span2"><a href="javascript: Agrega_Imagenes(<?php echo $rs_per['IdProducto']?>);" role="button" class="btn" ><i class="icon-picture"></i>Imagenes</a></div>
             
             <div class="span2">
                <div class="btn-group">
                   <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Acci&oacute;n</a>
                   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="javascript: Modificar_Producto(<?=$rs_per['IdProducto']?>);"><i class="icon-pencil"></i> Editar</a></li>
-                    <li><a href="javascript: Eliminar_Producto(<?=$rs_per['IdProducto']?>);"><i class="icon-trash"></i> Eliminar</a></li>
+                    <li><a href="javascript: Modificar_Producto(<?php echo $rs_per['IdProducto']?>);"><i class="icon-pencil"></i> Editar</a></li>
+                    <li><a href="javascript: Eliminar_Producto(<?php echo $rs_per['IdProducto']?>);"><i class="icon-trash"></i> Eliminar</a></li>
                   </ul>
                 </div>                      
             </div>
           </div>
-    <? } ?>
+    <?php } ?>
     <div class="lead">
-                  <?=$Paginacion->fetchNavegacion()?>
+                  <?php echo $Paginacion->fetchNavegacion()?>
     </div>
