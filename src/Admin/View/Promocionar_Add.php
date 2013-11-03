@@ -32,7 +32,9 @@
     <div class="span6">
             <div class="row-fluid show-grid">               
                 <div class="span3"><?php echo $row[$Colum]?></div>
-                <a href="" class="btn btn-primary"><i class="icon-gift icon-white"></i> &zwj;sPromocionar</a>
+                <span class="btn btn-primary save-promo" data-promo="<?php echo $_POST['Id'] ?>" 
+                      data-type="<?php  echo $Colum?>" data-type_id="<?php echo $row[0]; ?>">
+                    <i class="icon-gift icon-white"></i> &zwj;sPromocionar</span>
             </div>
         </div>   
         <?php }?>   
