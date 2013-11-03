@@ -1,4 +1,4 @@
-<?
+<?php
 
 function fn_filtro($cadena) {
 	if(get_magic_quotes_gpc() != 0) {

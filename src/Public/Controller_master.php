@@ -1,16 +1,13 @@
 <?php
-include '../Admin/Model/conexion.php';
+include '../../Admin/Model/conexion.php';
 
 session_start();
 
+/*
 $_SESSION['IdUser'];
 $_SESSION['UserName'];
 $_SESSION['UserPass'];
-
-unset($_SESSION['IdUser']);
-unset($_SESSION['UserName']);
-unset($_SESSION['UserPass']);
-
+*/
 
 function Regresa_Logeo(){
     return $Cont_Login='<form action="../model/Login.php" method="POST">

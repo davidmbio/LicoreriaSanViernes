@@ -1,4 +1,4 @@
-<?
+<?php
 	$bd_host = "localhost";
 	$bd_usuario = "root";
 	$bd_password = "dave";
