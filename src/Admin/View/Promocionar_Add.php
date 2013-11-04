@@ -12,11 +12,16 @@
             $Colum="Categoria";
         }
         else{
-            $query="select * from tblProductos";
+            $query="SELECT * FROM tblProductos where IdCategoria not in "
+                    . "(select IdCategoria from tblProm_Detalle pd "
+                    . "inner join tblPromocion p on pd.IdPromocion = p.IdPromocion where p.Fin >= '{$today}') and IdProducto not in "
+                    . "(select IdProducto from tblProm_Detalle pd "
+                    . "inner join tblPromocion p on pd.IdPromocion = p.IdPromocion where p.Fin >= '{$today}')";
+            
             $Colum="Nombre";            
         }
         
-        $Respue = mysql_query($query);  
+        $Respue = mysql_query($query) or die(mysql_error());  
 ?>
 
 <div class="alert alert-info"><h4>Lista de <?php echo $Colum;?></h4></div>
