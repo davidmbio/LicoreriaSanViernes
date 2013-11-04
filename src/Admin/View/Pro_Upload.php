@@ -1,6 +1,4 @@
-<script type="text/javascript" src="productos/resources/js/main.js"></script>
-
-    <?php require_once './productos/src/upload.php';?>
+<?php require_once './productos/src/upload.php';?>
 
 
 <div class="modal fade in">

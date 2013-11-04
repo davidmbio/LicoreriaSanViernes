@@ -36,7 +36,7 @@
                 <div class="span3"><?php echo $row[$Colum]?></div>
                 <span class="btn btn-primary save-promo" data-promo="<?php echo $_POST['Id'] ?>" 
                       data-type="<?php  echo $Colum?>" data-type_id="<?php echo $row[0]; ?>">
-                    <i class="icon-gift icon-white"></i> &zwj;sPromocionar</span>
+                    <i class="icon-gift icon-white"></i> &nbsp; Promocionar</span>
             </div>
         </div>   
         <?php }?>   
