@@ -1,6 +1,4 @@
-<script type="text/javascript" src="promociones/resources/js/main.js"></script>
-
-    <?php require_once 'promociones/src/upload.php';?>
+<?php require_once 'promociones/src/upload.php';?>
 
 
 <div class="modal fade in">
