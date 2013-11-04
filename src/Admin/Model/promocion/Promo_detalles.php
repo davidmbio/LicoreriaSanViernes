@@ -20,6 +20,11 @@ function addPromoDetalles(){
     $_POST['type'] == "Categoria" ? 
             $idCategoria = $_POST['idType'] : $idProducto =  $_POST['idType'];
     
+    //AQUI ELIMINA EL REGISTRO ANTERIOR SI YA PERTENECIA A OTRA PROMOCION
+    $deletQuery = "DELETE FROM tblProm_Detalle WHERE IdProducto = {$idProducto} and IdCategoria = {$idCategoria}";
+    mysql_query($deletQuery) or die(mysql_errno());
+    //----------------------------------------------------------------/
+    
     $query = "INSERT INTO tblProm_Detalle VALUES ({$idPromo}, {$idProducto}, {$idCategoria})";
     mysql_query($query) or die(mysql_error());
     

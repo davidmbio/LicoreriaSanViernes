@@ -1,9 +1,14 @@
 <?php
 	include "../Model/basico.php";
-	include "../Model/conexion.php";        
+	include "../Model/conexion.php";
+    
+    $today = date("Y-m-d");
         
         if($_POST['Tipo']=="IdCategoria"){
-            $query="select * from tblCategorias where IdCategoria not in(select IdCategoria from tblProm_Detalle)";
+            $query="select * from tblCategorias where IdCategoria not in "
+                    . "(select IdCategoria from tblProm_Detalle pd "
+                    . "inner join tblPromocion p on pd.IdPromocion = p.IdPromocion where p.Fin >= '{$today}')";
+            
             $Colum="Categoria";
         }
         else{
@@ -43,23 +48,29 @@
 <script language="javascript" type="text/javascript">
     
     $(document).ready(function(){
-        $(".save-promo").live('click', function(){
+        $(".save-promo").click( function(){
             var _idPromo = $(this).attr('data-promo');
             var _type = $(this).attr('data-type');
             var _idType = $(this).attr('data-type_id');
             
             var _data = {idPromo: _idPromo, type: _type, idType: _idType, action:"agregar" };
             
+            var row = $(this).closest('.span6');
+            
             $.ajax({
 			url: '../Model/promocion/Promo_detalles.php',
 			data: _data,
 			type: 'post',
 			success: function(data){
-                alert(data);
+                if(data == "success"){
+                    deleteItemAdded(row);
+                }
 			}
 		});
             
         });
     });
-	function Promocionar(){};
+	function deleteItemAdded(element){
+        $(element).remove();
+    }
 </script>

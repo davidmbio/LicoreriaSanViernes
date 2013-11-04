@@ -10,6 +10,13 @@
 	}
 	
 	/*modificar el registro*/
+    $result = mysql_query("SELECT Fin FROM tblPromocion WHERE IdPromocion = {$_POST['IdPromocion']}");
+    
+    $lastDate = 0;
+    while ($row = mysql_fetch_array($result)){
+        $lastDate = $row[0];
+    }
+    
 
 	$query = sprintf("UPDATE tblPromocion SET  Titulo='%s', Descripcion='%s', Fin='%s', Descuento='%s' 
             where IdPromocion=%d;",
@@ -21,5 +28,17 @@
 	);
 	if(!mysql_query($query))
 		echo "Error al modificar al la promocion:\n$query";
+    else {
+        //AGREGUE ESTO PARA ELIMINAR LAS RELACIONES ANTERIORES
+        $today = date("Y-m-d");
+        $lastDate = date("Y-m-d", strtotime($lastDate));
+        $newDate = date("Y-m-d", strtotime($_POST['FFinal']));
+        
+        if(($lastDate < $today) && ($lastDate < $newDate)){
+            $sql = "DELETE FROM tblProm_Detalle WHERE IdPromocion = {$_POST['IdPromocion']}";
+            mysql_query($sql) or die(mysql_error());
+        }
+        //-------------------------------------------------//
+    }
 	exit;
 ?>?>
