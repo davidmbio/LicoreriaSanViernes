@@ -65,15 +65,21 @@ echo $temp->output();
 			type: 'post',
 			success: function(data){
 				if(data != "")
-					alert(data);
-                                 else   
-                                    Cerrar_Ventana();
+					//alert(data);
+                                 Logeado_user();
 			}
 		});
 	};
         
         
-        function Cerrar_Ventana(){
-            history.back();
-        }
+            function Logeado_user() 
+            {
+                location.href='index.php';
+            } 
+            setTimeout ("Logeado_user()", 20000);
 </script>
+
+<script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery-1.3.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery.blockUI.js"></script>
+<script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery.validate.1.5.2.js"></script>
+    

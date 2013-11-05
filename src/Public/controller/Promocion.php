@@ -1,5 +1,6 @@
 <?php
     include '../model/Promocion.php';
+    include '../Controller_master.php';
     
     $Res_Promocion= Promociones();?>
     

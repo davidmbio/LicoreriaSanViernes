@@ -8,7 +8,6 @@ else
 
 require '../templates/tamplates.php';
 
-
 $temp= new Template('../layout/layout.tpl');
 $temp->set('title','Registro');
 $temp->set('header', 'Informacion personal');
@@ -66,13 +65,13 @@ echo $temp->output();
 			type: 'post',
 			success: function(data){
 				if(data != "")
-					(data);
-                                 else   
-                                    Cerrar_Ventana();
+                                    {
+					alert(data);
+                                    }
+                                 Cerrar_Ventana();
 			}
 		});
 	};
-        
         
         function Cerrar_Ventana(){  
             history.back();

@@ -47,18 +47,30 @@ function ObtieneDetalles($query) {
     }
     else{
         if($PromoProducto==TRUE){
-        $da = ObtieneDetalles("select * from tblPromocion as pro inner join tblProm_Detalle as pd on pd.IdPromocion=pro.IdPromocion where IdPromocion=" . $RowProduct['IdCategoria']);
+        $da = ObtieneDetalles("select * from tblPromocion as pro inner join tblProm_Detalle as pd on pd.IdPromocion=pro.IdPromocion where IdProducto=" . $RowProduct['IdProducto']);
         
         $total = $RowProduct['Precio'] - ($RowProduct['Precio'] * ((int) $da['Descuento'] / 100));
         echo '<p class="lead"><strong>Producto en promocion: <br> Antes: </strong> <strike style="color: #cc0a0a" >' . $RowProduct['Precio'] . ' </strike> <br> Ahora: 
                      <h1 style="color: blue;">$ ' . $total . '</h1>';
         }
         else{    
-            echo 'no esta en proomocion';
+            echo '<p class="lead">    <strong>Precio: </strong> $ '.$RowProduct['Precio'] .'  </p>';
         } 
     }
     ?>
-
+    
+    <p>Puntuar</p>
+    <div class="btn-toolbar">
+  <div class="btn-group">
+    <a class="btn" href="#"><i class="icon-star"></i></a>
+    <a class="btn" href="#"><i class="icon-star"></i></a>
+    <a class="btn" href="#"><i class="icon-star"></i></a>
+    <a class="btn" href="#"><i class="icon-star"></i></a>
+    <a class="btn" href="#"><i class="icon-star"></i></a>
+  </div>
+</div>
+    <p>Hacer un comentario</p>
+    <div class="field"><textarea class="input textarea" placeholder="Comentar" rows="3"></textarea></div>
     <p class="lead">Imagenes</p>            
     <div class="span2" ></div>            
     <div style="background-color: #bc5454; padding: 10px;" class="span8" >            

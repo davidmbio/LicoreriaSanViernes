@@ -10,6 +10,7 @@
     <link href="../../../web/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="../../../web/css/docs.css" rel="stylesheet">
     <link href="../../../web/js/google-code-prettify/prettify.css" rel="stylesheet">    
+       
     <script>
         (function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -84,12 +85,13 @@
                     <p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>               
                </div>               
                <div class="">
-                                [Tipo_Sesion]
+                [Tipo_Sesion]
                </div>
 
-
                <div class="">
-                           <legend>En Promocion</legend>               
+                                              <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
+                        <legend>En Promocion</legend>
+                   </div>                
             <ul class="nav nav-list">
                 <li><a href="#"><i class="icon-star"></i>Torres</a></li>
                 <li><a href="#"><i class="icon-star"></i>Jose Cuervo</a></li>
@@ -97,7 +99,7 @@
                </div>
           </div>
        </div>
-    </div>
+    </div>      
     
 <!-- Footer
 ================================================== -->

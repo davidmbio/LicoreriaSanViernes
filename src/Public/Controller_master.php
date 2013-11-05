@@ -2,29 +2,27 @@
 include '../../Admin/Model/conexion.php';
 
 session_start();
-
-/*
-$_SESSION['IdUser'];
-$_SESSION['UserName'];
-$_SESSION['UserPass'];
-*/
+            
+function Verificador(){
+    if(isset($_SESSION['IdUser'])) 
+        return Regresa_Logeado();
+    else
+        return Regresa_Logeo();
+}
 
 function Regresa_Logeo(){
-    return $Cont_Login='<form action="../model/Login.php" method="POST">
-                <legend>Acceso</legend>
-                <fieldset>
-                    <input type="text" class="input-small" placeholder="Email">
-                    <input type="password" class="input-small" placeholder="Password">
-                    <label class="checkbox">
-                      <input type="checkbox"> Recordarme
-                    </label>
-                    <button type="submit" class="btn">Inciar Sesion</button>
-                  </fieldset>                
-          </form>';
+    return '
+        <div class="">
+            <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
+            <legend>Acceso</legend>
+        </div><br>
+        <a class="btn btn-large btn-block btn-primary" href="Registro.php">Registrarme</a>
+        <a class="btn btn-large btn-block" href="Login.php">Iniciar Sesion</a><br><br>           
+    ';
 }
 
 function Regresa_Logeado(){
-    return $Cont_Logeado='
+    return '
                 <legend>Bienvenido'.' '.$_SESSION['UserName'].' </legend>
                 <a class="boton btn-link" style="color: #cf2020" href="Upload.php">Cargar foto de perfil</a><br><br>
                 <div class="image img-polaroid">
@@ -35,34 +33,31 @@ function Regresa_Logeado(){
                 <p><small><strong>Telefono: '.$_SESSION['UserTelefono'].'</strong></small></p>
                 
                 <a class="boton btn-link" style="color: #cf2020" href="M_Registro.php">Cambiar mi informacion</a><br><br>           
-                <button type="submit" class="btn" onsubmit="Cierra_Session();">Cerrar Sesion</button>';    
+                <a class="btn btn-primary" href="Logout.php" >Cerrar Sesion</a><br><br>           
+                ';    
 }
 
-function A_Logearse($Id){    
-  	$sql = sprintf("SELECT * FROM tblClientes where IdCliente=%d",(int)$Id);
-	$clie = mysql_query($sql);
-	$num_rs_clie= mysql_num_rows($clie);
-	
-        if ($num_rs_clie==0){
-		echo "Occurio un erro!, No se encontro ningun resultado con la clave".$Id;
-		Cierra_Session();
-	}else{	
-            $rs_clie = mysql_fetch_assoc($clie);  
+function A_Logearse($id){  
+            
+            $sql="select * from tblClientes where IdCliente=".$id;
+            $query= mysql_query($sql);
+            $row=  mysql_fetch_array($query);
 
-            $_SESSION['IdUser']=$rs_clie['IdCliente'];
-            $_SESSION['UserName']=$rs_clie['Nombre'];
-            $_SESSION['UserApellidos']=$rs_clie['Apellidos'];
-            $_SESSION['UserTelefono']=$rs_clie['Telefono'];
-            $_SESSION['UserEmail']=$rs_clie['Email'];
-            $_SESSION['UserNacimiento']=$rs_clie['Nacimiento'];
-            $_SESSION['UserUsuario']=$rs_clie['Usuario'];
-            $_SESSION['UserPass']=$rs_clie['Password'];                           
-            $_SESSION['UserRutaFoto']=$rs_clie['Ruta'];                           
-            $_SESSION['UserFoto']=$rs_clie['Foto'];                           
-        }
+  	    $_SESSION['IdUser']=$row['IdCliente'];
+            $_SESSION['UserName']=$row['Nombre'];
+            $_SESSION['UserApellidos']=$row['Apellidos'];
+            $_SESSION['UserTelefono']=$row['Telefono'];
+            $_SESSION['UserEmail']=$row['Email'];
+            $_SESSION['UserNacimiento']=$row['Nacimiento'];
+            $_SESSION['UserUsuario']=$row['Usuario'];
+            $_SESSION['UserPass']=$row['Password'];                           
+            $_SESSION['UserRutaFoto']=$row['Ruta'];                           
+            $_SESSION['UserFoto']=$row['Foto'];            
 }
+
 function Cierra_Session(){
-    session_destroy();    
+    session_destroy();  
+    unset($_SESSION['IdUser']);
 }
-
 ?>
+

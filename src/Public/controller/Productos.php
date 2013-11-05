@@ -1,5 +1,6 @@
 <?php
     include '../model/Productos.php';
+    include '../Controller_master.php';
 ?>
 <div style="background-color:white;">    
     <ul id="myTab" class="nav nav-tabs" style="color: #ad2525">
@@ -27,14 +28,27 @@
                                 <img data-src="holder.js/300x200" src="../../Admin/View/productos/<?php echo getImages($producto['IdProducto']);?>">
                                 <div class="caption">
                                 <h3><?php echo $producto['Nombre']; ?></h3>
-                                <div class="btn-group">
-                                  <a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> Acci&oacute;n</a>
-                                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                  <ul class="dropdown-menu">
-                                      <li><a href="#"><i class="icon-shopping-cart"></i>Agrega</a></li>
-                                      <li><a href="javascript: Ver_Detalle(<?php echo $producto['IdProducto']; ?>);"> <i class="icon-eye-open"></i>Ver mas..</a></li>
-                                 </ul>
-                                </div>
+
+                                    <?php if (isset($_SESSION['IdUser'])): ?>                                
+                                    <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> Acci&oacute;n</a>
+                                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="#"><i class="icon-shopping-cart"></i>Agrega</a></li>
+                                          <li><a href="javascript: Ver_Detalle(<?php echo $producto['IdProducto']; ?>);"> <i class="icon-eye-open"></i>Ver mas..</a></li>
+                                     </ul>
+                                    </div>
+                                    <?php else: ?>
+                                    <div class="btn-group">
+                                      <a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> Acci&oacute;n</a>
+                                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                                      <ul class="dropdown-menu">
+                                          <li><a href="javascript: Msj();"><i class="icon-shopping-cart"></i>Agrega</a></li>
+                                          <li><a href="javascript: Msj();"> <i class="icon-eye-open"></i>Ver mas..</a></li>
+                                     </ul>
+                                    </div>                                
+                                    <?php endif ?>
+
                                 </div>
                             </div>
                           </li>  
@@ -59,4 +73,8 @@ function Ver_Detalle($Id){
 		}); 
 	});   
 }
+
+    function Msj(){
+        alert('Inicia Session para ver el detalle del producto');
+    }
 </script>
