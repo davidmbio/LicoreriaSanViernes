@@ -21,6 +21,7 @@ if($_POST['tipo']=='login'){
             if($count!=0){
                 $id=$row['IdCliente'];
                 A_Logearse($id);
+                echo 'Su sesion se ha iniciado!';
                 exit;               
             }
              else

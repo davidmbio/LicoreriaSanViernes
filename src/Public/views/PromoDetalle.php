@@ -37,13 +37,13 @@ function ObtieneDetalles($query){
 ?>
 
 <div class="span12" style="background-color: white;">
-    <h2 class="min"><?=$RowProduct['Titulo'] ?></h2>
+    <h2 class="min"><?php echo $RowProduct['Titulo'] ?></h2>
                 <div class="image img-polaroid">
-                    <img src="../../Admin/View/promociones/<?=$RowProduct['Ruta'].$RowProduct['Imagen']?>">
+                    <img src="../../Admin/View/promociones/<?php echo $RowProduct['Ruta'].$RowProduct['Imagen']?>">
                 </div>
     
 
-                <p class="lead"><strong>Descripcion: </strong> <?=$RowProduct['Descripcion'] ?></p>               
+                <p class="lead"><strong>Descripcion: </strong> <?php echo $RowProduct['Descripcion'] ?></p>               
 <?
 if($ExisteC!=0 || $ExisteP!=0){    
     if($ExisteC!=0){

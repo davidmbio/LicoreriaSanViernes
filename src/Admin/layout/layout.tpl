@@ -26,6 +26,7 @@
     <script language="javascript" type="text/javascript" src="../Controller/Control_Gestion.js"></script>    
     <script language="javascript" type="text/javascript" src="../Controller/Control_Promocion.js"></script>
     <script language="javascript" type="text/javascript" src="../Controller/Control_Text.js"></script>
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Comentario.js"></script>
     
     
 </head>
@@ -50,6 +51,7 @@
                             <li class="active"><a href="../../Public/views/"><i class="icon-off icon-white"></i> Cerrar Sesion</a></li>
                             <li class=""><a href="Empleados.php"><i class="icon-user icon-white"></i> Empleados</a></li>
                             <li class=""><a href="Productos.php"><i class="icon-glass icon-white"></i> Productos</a></li>
+                            <li class=""><a href="Comentarios.php"><i class="icon-filter icon-white"></i>Comentarios</a></li>
                             <li class=""><a href="Promocion.php"><i class="icon-tag icon-white"></i> Promocion</a></li>
                             <li class=""><a href="Gestion.php"><i class="icon-comment icon-white"></i> Gestion</a></li>
                             <li class=""><a href="Clientes.php"><i class="icon-filter icon-white"></i>Clientes</a></li>

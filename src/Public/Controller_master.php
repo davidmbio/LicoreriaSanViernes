@@ -12,19 +12,20 @@ function Verificador(){
 
 function Regresa_Logeo(){
     return '
-        <div class="">
             <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
             <legend>Acceso</legend>
         </div><br>
-        <a class="btn btn-large btn-block btn-primary" href="Registro.php">Registrarme</a>
-        <a class="btn btn-large btn-block" href="Login.php">Iniciar Sesion</a><br><br>           
-    ';
+<div style="text-align: center">        
+<a class="btn btn-large btn-primary" href="Registro.php">Registrarme</a><p style="padding: 3px;"> </p>
+        <a class="btn btn-large" href="Login.php">Iniciar Sesion</a><br></div>';
 }
 
 function Regresa_Logeado(){
-    return '
-                <legend>Bienvenido'.' '.$_SESSION['UserName'].' </legend>
-                <a class="boton btn-link" style="color: #cf2020" href="Upload.php">Cargar foto de perfil</a><br><br>
+    return '            <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
+<legend>Bienvenido'.' '.$_SESSION['UserName'].' </legend>
+                        </div><br>
+<div style="text-align: center">                
+<a class="boton btn-link" style="color: #cf2020" href="Upload.php">Cargar foto de perfil</a><br><br>
                 <div class="image img-polaroid">
                     <img src="../'.$_SESSION['UserRutaFoto'].$_SESSION['UserFoto'].'">
 		</div>
@@ -34,7 +35,7 @@ function Regresa_Logeado(){
                 
                 <a class="boton btn-link" style="color: #cf2020" href="M_Registro.php">Cambiar mi informacion</a><br><br>           
                 <a class="btn btn-primary" href="Logout.php" >Cerrar Sesion</a><br><br>           
-                ';    
+                </div>';    
 }
 
 function A_Logearse($id){  
@@ -59,5 +60,30 @@ function Cierra_Session(){
     session_destroy();  
     unset($_SESSION['IdUser']);
 }
-?>
 
+function En_Promocion(){
+    return '<div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
+                <legend>En Promocion</legend>
+            </div><br>                
+            <ul class="nav nav-list">'.obtn_Lista().'    
+             </ul>';
+}
+
+
+
+function obtn_Lista(){
+    $Con;
+    $dat=  mysql_query("select * from tblCategorias 
+where IdCategoria in(select IdCategoria from tblProm_Detalle pd 
+inner join tblPromocion p on pd.IdPromocion = p.IdPromocion)
+");
+    
+    while ($row=  mysql_fetch_array($dat)){
+        if($Con=="")
+            $Con='<i class="icon-shopping-cart"></i>Categoria de '.$row['Categoria'].'<br>';
+        else
+            $Con=$Con.'<i class="icon-shopping-cart"></i>Categoria de '.$row['Categoria'].'<br>';
+    }
+    return $Con;
+}
+?>

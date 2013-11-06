@@ -21,3 +21,8 @@ function getImages($Producto){
         return $path['Ruta'].$path['Imagen'];
     }
 }
+
+function getComentarios($producto){
+    return mysql_query("select * from tblComentarios as co inner join tblClientes as cl
+on co.IdCliente=cl.IdCliente where co.IdProducto={$producto} and co.Aprobado='Aprobado'");
+}

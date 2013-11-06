@@ -47,7 +47,7 @@ echo $temp->output();
 			type: 'post',
 			success: function(data){
 				if(data != "")
-					//alert(data);
+					alert(data);
                                 Accedido();
 			}
 		});

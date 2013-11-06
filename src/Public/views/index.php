@@ -11,6 +11,7 @@ $temp->set('content','
 
 <div id="divConsulta"></div>');
 $temp->set('Tipo_Sesion', Verificador());
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();
 
 ?>

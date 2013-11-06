@@ -71,9 +71,11 @@
                 </div>
            </div>
 
-           <div class="span3" style="text-align: left; border-left:#696262 solid; padding-top: 55px; padding-left: 15px;"><br>               
-               
-               <div class="">
+           <div class="span3" style="text-align: left; border-left:#696262 solid;  padding-left: 15px;"><br>               
+               <div class="Bordeado">
+                [Tipo_Sesion]
+               </div><br>
+               <div class="Bordeado">
                    <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
                         <legend>Redes Sociales</legend>
                    </div> 
@@ -83,19 +85,10 @@
                     <p><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://licoreria.sanviernes/" data-text="Licoreria" data-lang="es">Twittear</a></p>
                     <p>Google Plus</p>
                     <p><div class="g-plusone" data-size="tall" data-annotation="inline" data-width="300" data-href="http://licoreria.sanviernes/"></div></p>               
-               </div>               
-               <div class="">
-                [Tipo_Sesion]
-               </div>
+               </div>              <br> 
 
-               <div class="">
-                                              <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
-                        <legend>En Promocion</legend>
-                   </div>                
-            <ul class="nav nav-list">
-                <li><a href="#"><i class="icon-star"></i>Torres</a></li>
-                <li><a href="#"><i class="icon-star"></i>Jose Cuervo</a></li>
-            </ul>
+               <div class="Bordeado">
+                   [En_Promocion] 
                </div>
           </div>
        </div>

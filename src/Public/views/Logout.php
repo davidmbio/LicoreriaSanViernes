@@ -28,25 +28,6 @@ echo $temp->output();
 
 
 <script language="javascript" type="text/javascript">
-	$(document).ready(function(){
-		$("#FCliente").validate({
-			rules:{
-				usu_per:{
-					required: true,
-					remote: "../Model/cliente/Clie_verificar_usu_per.php"
-				}
-			},
-			messages: {
-				usu_per: "x"
-			},
-			onkeyup: false,
-			submitHandler: function(form) {
-				var respuesta = confirm('\xBFRegistrar ahora?')
-				if (respuesta)
-					form.submit();
-			}
-		});
-	});
 	
 	function Agregar_Clie(){
 		var str = $("#FCliente").serialize();
@@ -55,9 +36,9 @@ echo $temp->output();
 			data: str,
 			type: 'post',
 			success: function(data){
-				if(data != "")
-					alert(data);
-                                 Accedido();
+                            if(data != "")
+                                //alert(data);
+                            Accedido();      
 			}
 		});
 	};
