@@ -28,4 +28,5 @@ $temp->set('content','
 </form>
 </ul>
 ');
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();

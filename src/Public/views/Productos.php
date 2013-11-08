@@ -16,6 +16,7 @@ $temp->set('title','Productos');
 $temp->set('header', 'Lista de productos');
 $temp->set('Tipo_Sesion', $Contenido);
 $temp->set('content','<div id="divConsulta"></div>');
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();
 ?>
 

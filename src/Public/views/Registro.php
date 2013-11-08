@@ -32,6 +32,7 @@ $temp->set('content','
     </div>
 </form>  
 ');
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();
 ?>
 

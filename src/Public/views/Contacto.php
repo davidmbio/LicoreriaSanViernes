@@ -13,6 +13,7 @@ $temp->set('title','Directorio');
 $temp->set('header', 'Nuestra Empresa');
 $temp->set('Tipo_Sesion', $Contenido);
 $temp->set('content','<div id="divConsulta"></div>');
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();
 ?>
 

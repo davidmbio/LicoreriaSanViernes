@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="vots/style.css">
+
 <?php
 include '../model/Config.php';
 include '../Controller_master.php';
 include '../model/Productos.php';
-
 
 if (isset($_SESSION['IdUser']))
     $Contenido = Regresa_Logeado();
@@ -89,26 +90,37 @@ function ObtieneDetalles($query) {
     ?>
     
     <p>Puntuar</p>
-    <div class="btn-toolbar">
-        <div class="btn-group">
-          <a class="btn" href="#"><i class="icon-star"></i></a>
-          <a class="btn" href="#"><i class="icon-star"></i></a>
-          <a class="btn" href="#"><i class="icon-star"></i></a>
-          <a class="btn" href="#"><i class="icon-star"></i></a>
-          <a class="btn" href="#"><i class="icon-star"></i></a>
-        </div>
-    </div>
-    <p>Hacer un comentario</p>
+<div class="contenedor">
+    <?php
+    require_once("vots/config.php");
+    $posts=$db->query("select * from posts where id={$_POST['Id']}");
+    if ($filas=$posts->fetch_array()){
+        do{
+        ?>
+        <h3><?php echo utf8_encode($filas["titulo"]); ?></h3>
+        <ul class="votos">
+            <li class="voting_btn up_button" data-voto="likes" data-id="<?php echo $filas["id"]; ?>"><span><?php echo $filas["likes"]; ?></span></li>
+            <li class="voting_btn dw_button" data-voto="hates" data-id="<?php echo $filas["id"]; ?>"><span><?php echo $filas["hates"]; ?></span></li>
+        </ul>
+        <p>
+            <form action="javascript: Agregar_Comentario();" method="POST" id="FComentario" >
+                <input type="hidden" name="producto" value="<?php echo $_POST['Id'];?>" />
+                <input type="hidden" name="usuario" value="<?php echo $_SESSION['IdUser']?>" />
+                <div class="field">
+                    <textarea class="input textarea" name="comentario" placeholder="Escribe tu comentario" rows="3">
+                </textarea></div>
+                <input name="agregar" type="submit" class="btn btn-primary" value="Comentar" /> 
+            </form>
+            <?php echo utf8_encode($filas["resumen"]); ?></p>
+        <?php
+        }
+        while($filas=$posts->fetch_array());
+    }
+    else
+        echo "<h3>No hay entradas disponibles.</h3>";
+    ?>
     
-<form action="javascript: Agregar_Comentario();" method="POST" id="FComentario" >
-    <input type="hidden" name="producto" value="<?php echo $_POST['Id'];?>" />
-    <input type="hidden" name="usuario" value="<?php echo $_SESSION['IdUser']?>" />
-    <div class="field">
-        <textarea class="input textarea" name="comentario" placeholder="Escribe tu comentario" rows="3">
-    </textarea></div>
-    <input name="agregar" type="submit" class="btn btn-primary" value="Comentar" /> 
-</form>
-    
+</div>    
     <div class="page-header">
         <h1><small>Comentarios</small></h1>
     </div>
@@ -136,5 +148,31 @@ function ObtieneDetalles($query) {
                         }
 		});
 	};    
+        
+        
+$(document).ready(function() 
+{
+    $(".votos .voting_btn").click(function (e) 
+    {
+         e.preventDefault();
+        var voto_hecho = $(this).data('voto');
+        var id = $(this).data("id"); 
+        var li = $(this);
+        
+        if(voto_hecho && id)
+        {
+            $.post('vots/ajax_voto.php', {'id':id, 'voto':voto_hecho}, function(data) 
+            {
+                if (data!="voto_duplicado") 
+                {
+                    li.addClass(voto_hecho+"_votado").find("span").text(data);
+                    li.closest("ul").append("<span class='votado'>Gracias!</span>");
+                }
+                else li.closest("ul").append("<span class='votado'>Ya has votado!</span>");
+            });
+            setTimeout(function() {$('.votado').fadeOut('fast');}, 3000);
+        }
+    });
+});
         
 </script>

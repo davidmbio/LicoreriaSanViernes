@@ -22,8 +22,14 @@
 		fn_filtro(substr($_POST['Precio'], 0, 70)),
                 fn_filtro(substr($_POST['Caducidad'], 0, 70))
 	);
+        $votacion=  sprintf("INSERT INTO posts VALUES (%d, 0, 0, 'Votacion y/o comentario', 'hola mundo');", 
+                fn_filtro((int)$ide_pro));
 
 	if(!mysql_query($query))
-		echo "Error al insertar el nuevo producto:\n$query";        
+		echo "Error al insertar el nuevo producto:\n$query";
+        else{
+            if(!mysql_query($votacion))
+                echo 'Ocurrio un error de tipo '+  mysql_error();
+        }
         exit;
 ?>

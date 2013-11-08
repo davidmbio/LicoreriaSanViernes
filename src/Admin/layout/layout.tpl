@@ -61,7 +61,6 @@
                </div>
           </div>
         </div>            
-</div>
     
 <div class="container-fluid" style="background-color: white; border-color: #dfa195; border-style: ridge; border-width: 1px; border-radius: 10px; ">
        <div class="row-fluid">

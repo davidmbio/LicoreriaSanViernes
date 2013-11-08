@@ -32,6 +32,7 @@ $temp->set('content','
     </div>
 </form>  
 ');
+$temp->set('En_Promocion', En_Promocion());
 echo $temp->output();
 ?>
 
@@ -47,8 +48,13 @@ echo $temp->output();
 			type: 'post',
 			success: function(data){
 				if(data != "")
-					alert(data);
-                                Accedido();
+                                    {
+                                        if(data==1)
+                                            Accedido();
+                                        else
+                                            alert(data);
+                                    }
+                                //Accedido();
 			}
 		});
 	};
