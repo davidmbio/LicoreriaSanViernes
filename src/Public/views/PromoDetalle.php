@@ -44,7 +44,7 @@ function ObtieneDetalles($query){
     
 
                 <p class="lead"><strong>Descripcion: </strong> <?php echo $RowProduct['Descripcion'] ?></p>               
-<?
+<?php
 if($ExisteC!=0 || $ExisteP!=0){    
     if($ExisteC!=0){
         echo '    <strong class="small">Categorias en promocion</strong><br>';
@@ -70,12 +70,11 @@ echo ' <div class="row"><br></div>';
 
 ?>
                 
-                <script>
-        function Accedido() 
-        {
+ <script>
+    function Accedido() {
             location.href='index.php';
-        } 
-        setTimeout ("Accedido()", 20000);
-                </script>
+    } 
+    //setTimeout ("Accedido()", 20000);
+ </script>
 
 </div>

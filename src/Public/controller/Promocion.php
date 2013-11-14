@@ -36,8 +36,8 @@
  </div>
 
 <script type="text/javascript">
-    function Detallazo($Id){
-        $("#divConsulta").load("../views/PromoDetalle.php", {Id: $Id}, function(){
+    function Detallazo(Id){
+        $("#divConsulta").load("../views/PromoDetalle.php", {Id: Id}, function(){
             $.blockUI({
                 message: $('#divConsulta'),
                 css:{

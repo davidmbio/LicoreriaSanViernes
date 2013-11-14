@@ -1,18 +1,3 @@
-body {
-  position: relative;
-  padding-top: 0px;
-  margin-left: 7%;
-  margin-right: 7%;
-}
-
-/* Code in headings */
-h3 code {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-
-
 /* Tweak navbar brand link to be super sleek
 -------------------------------------------------- */
 
@@ -22,10 +7,6 @@ body > .navbar {
 
 /* Change the docs' brand */
 body > .navbar .brand {
-  padding-right: 0;
-  padding-left: 0;
-  
-    
   float: right;
   font-weight: bold;
   color: #000;
@@ -293,7 +274,6 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 
 .footer {
   text-align: center;
-  padding: 30px 0;
   margin-top: 0px;
   border-top: 1px solid #e5e5e5;
   background-color: #f5f5f5;
@@ -847,7 +827,12 @@ form.bs-docs-example {
 
 /* Desktop large
 ------------------------- */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) {   
+  body{
+    margin-left: 7%;      
+    margin-right: 7%;      
+    margin-top: 1%;              
+  }
   .bs-docs-container {
     max-width: 970px;
   }
@@ -861,19 +846,15 @@ form.bs-docs-example {
 
 /* Desktop
 ------------------------- */
-@media (max-width: 980px) {
-  /* Unfloat brand */
-  body > .navbar-fixed-top .brand {
-    float: left;
-    margin-left: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
+@media (min-width: 980px) and (max-width: 1199px){
+    body{
+    margin-left: 3%;      
+    margin-right: 3%;      
+    margin-top: 1%;
+    }
   /* Inline-block quick links for more spacing */
   .quick-links li {
     display: inline-block;
-    margin: 5px;
   }
 
   /* When affixed, space properly */
@@ -885,33 +866,13 @@ form.bs-docs-example {
   }
 }
 
-/* Tablet to desktop
-------------------------- */
-@media (min-width: 768px) and (max-width: 979px) {
-  /* Remove any padding from the body */
-  body {
-    padding-top: 0;
-  }
-  /* Widen masthead and social buttons to fill body padding */
-  .jumbotron {
-    margin-top: -20px; /* Offset bottom margin on .navbar */
-  }
-  /* Adjust sidenav width */
-  .bs-docs-sidenav {
-    width: 166px;
-    margin-top: 20px;
-  }
-  .bs-docs-sidenav.affix {
-    top: 0;
-  }
-}
-
 /* Tablet
 ------------------------- */
 @media (max-width: 767px) {
   /* Remove any padding from the body */
   body {
-    padding-top: 0;
+    padding-top: 0%;
+    background-color: white;
   }
 
   /* Widen masthead and social buttons to fill body padding */
@@ -969,11 +930,26 @@ form.bs-docs-example {
   /* Remove padding above jumbotron */
   body {
     padding-top: 0;
+    background-color: #ccc;
   }
+  
+  .btn-primary, .btn-large{
+  padding: 2px 10px;
+  font-size: 11.9px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  }
+  
 
   /* Change up some type stuff */
-  h2 small {
+  h2,h3{
     display: block;
+    font-size: 15px;
+  }
+  .lead{
+      font-size: 15px;
+      padding: 0px;
   }
 
   /* Downsize the jumbotrons */

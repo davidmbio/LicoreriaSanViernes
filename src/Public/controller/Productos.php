@@ -57,20 +57,20 @@
                 <?php endwhile; ?>
             </div>
         </div>
-    <?php  endwhile;?>  
+    <?php  endwhile; ?>  
     </div>
 </div>      
 </div><br>
 
 <script>
-function Ver_Detalle($Id){
-    $("#divConsulta").load("../views/PDetalle.php", {Id: $Id}, function(){
+function Ver_Detalle(Id){
+    $("#divConsulta").load("../views/PDetalle.php", {Id: Id}, function(){
 		$.blockUI({
 			message: $('#divConsulta'),
 			css:{
 				top: '20%'
 			}
-		}); 
+		}) ;
 	});   
 }
 

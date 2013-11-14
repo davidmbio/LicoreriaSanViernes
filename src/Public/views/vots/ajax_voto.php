@@ -1,6 +1,8 @@
 <?php
 /* ARCHIVO AJAX_VOTO.PHP */
 require_once("config.php");
+//require '../../../Admin/Model/conexion.php';
+
 if($_POST){
 	$voto = trim($_POST["voto"]);
 	$id = filter_var(trim($_POST["id"]),FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH);
@@ -8,8 +10,7 @@ if($_POST){
 	if (isset($_COOKIE["votado_".$id])){
 		echo "voto_duplicado";
 	}
-	else
-	{
+	else{
 		$total_votos=$db->query("select ".$voto." from posts WHERE id='$id' limit 1");
 		if ($fila=$total_votos->fetch_array()) $numero=$fila[$voto];
 		
