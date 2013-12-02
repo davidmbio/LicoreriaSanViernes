@@ -1,18 +1,17 @@
 <?php
 	
-include "../../../Admin/Model/conexion.php";
-include "../../../Admin/Model/basico.php";
-include "../../../Admin/Model/Encriptation.php";
+include "../../Admin/Model/conexion.php";
+include "../../Admin/Model/basico.php";
 
-include '../../Controller_master.php';
+include '../Controller_master.php';
 	
 if($_POST['tipo']=='login'){
 	if(empty($_POST['user']) || empty($_POST['pass'])){
 		echo "Introduce e nombre usuario y la contraseña";
 	}
         else{
-            $user= getEncripted(mysql_real_escape_string($_POST['user']));
-            $pass= getEncripted(mysql_real_escape_string($_POST['pass']));
+            $user=  mysql_real_escape_string($_POST['user']);
+            $pass=  mysql_real_escape_string($_POST['pass']);
 
             $sql="select * from tblClientes where Usuario='$user' and Password='$pass'";
             $query= mysql_query($sql);
@@ -26,7 +25,7 @@ if($_POST['tipo']=='login'){
                 exit;               
             }
              else
-                 echo 'Datos incorrectos, vuelve a intentar!';            
+                 echo 'Los datos no estan registrados!';            
        }
 }
 else

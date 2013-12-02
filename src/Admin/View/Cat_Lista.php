@@ -21,7 +21,7 @@
 	$Paginacion->ejecutar();
 ?>
 
-<div class="row-fluid show-grid" id=grilla"">        
+<div class="row-fluid show-grid" id="grilla">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
@@ -54,3 +54,4 @@
     <div class="lead">
                   <?php echo $Paginacion->fetchNavegacion()?>
     </div>
+</div>

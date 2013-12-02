@@ -2,6 +2,7 @@
 	
 include "../../../Admin/Model/conexion.php";
 include "../../../Admin/Model/basico.php";
+include "../../../Admin/Model/Encriptation.php";
 
 include '../../Controller_master.php';
 
@@ -28,14 +29,13 @@ else{
                 fn_filtro(substr($_POST['Apellidos'], 0, 60)),
                 fn_filtro(substr($_POST['Telefono'], 0, 60)),
                 fn_filtro(substr($_POST['Email'], 0, 70)),
-                fn_filtro(substr($_POST['Nacimiento'], 0, 70)),
-                fn_filtro(substr($_POST['Usuario'], 0, 70)),
-                fn_filtro(substr($_POST['Password'], 0, 70))
+                fn_filtro(substr($_POST['Nacimiento'], 0, 10)),
+                fn_filtro(substr(getEncripted($_POST['Usuario']), 0, 100)),
+                fn_filtro(substr(getEncripted($_POST['Password']), 0, 100))
                 );
-
                 if(!mysql_query($query))
                     echo "Error al insertar a la nueva persona:\n$query";       
-                
+                echo '1';
                 A_Logearse($ide_clie);
                 exit;        
        }else
@@ -44,5 +44,5 @@ else{
                 echo "El nombre de usuario {$_POST['Usuario']} ya esta ocupado!, Disponibles {$_POST['Usuario']}".$ide_clie;
                 Cierra_Session();
             }
-        }
+        }  
 ?>

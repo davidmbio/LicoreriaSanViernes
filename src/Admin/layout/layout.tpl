@@ -26,9 +26,7 @@
     <script language="javascript" type="text/javascript" src="../Controller/Control_Gestion.js"></script>    
     <script language="javascript" type="text/javascript" src="../Controller/Control_Promocion.js"></script>
     <script language="javascript" type="text/javascript" src="../Controller/Control_Text.js"></script>
-    <script language="javascript" type="text/javascript" src="../Controller/Control_Comentario.js"></script>
-    
-    
+    <script language="javascript" type="text/javascript" src="../Controller/Control_Comentario.js"></script>    
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -45,10 +43,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="brand" href="index.php">Principal</a>
+                    <a class="brand" href="index.php">Bienvenida</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav">
-                            <li class="active"><a href="../../Public/views/"><i class="icon-off icon-white"></i> Cerrar Sesion</a></li>
+                            <li class=""><a href="Cerrar.php"><i class="icon-off icon-white"></i> Cerrar Sesion</a></li>
                             <li class=""><a href="Empleados.php"><i class="icon-user icon-white"></i> Empleados</a></li>
                             <li class=""><a href="Productos.php"><i class="icon-glass icon-white"></i> Productos</a></li>
                             <li class=""><a href="Comentarios.php"><i class="icon-filter icon-white"></i>Comentarios</a></li>

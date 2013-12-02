@@ -23,7 +23,7 @@
 ?>
 <form action="javascript: Modificar_Cat();" method="post" id="FCategoria" class="modal fade in" >  
     <input type="hidden" id="IdCategoria" name="IdCategoria" value="<?php echo $rs_cate['IdCategoria']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
+    <div class="alert alert-info"><h4>Modicar informaci&oacute;n  de categor&iacute;a</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Categoria:</label>
@@ -40,7 +40,7 @@
 	$(document).ready(function(){
 		$("#FCategoria").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar esta categoria?')
+				var respuesta = confirm('\xBFDesea realmente modificar esta categoría?')
 				if (respuesta)
 					form.submit();
 			}

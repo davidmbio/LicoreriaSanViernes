@@ -66,18 +66,16 @@ echo $temp->output();
 			type: 'post',
 			success: function(data){
 				if(data != "")
-					//alert(data);
-                                 Logeado_user();
+					if(data==1)
+                                            Logeado_user();
+                                        else
+                                            alert(data);
 			}
 		});
-	};
-        
-        
-            function Logeado_user() 
-            {
-                location.href='index.php';
-            } 
-            setTimeout ("Logeado_user()", 20000);
+	};        
+        function Logeado_user() {
+            location.href='index.php';
+        } 
 </script>
 
 <script language="javascript" type="text/javascript" src="../../../../web/js/lib/jquery-1.3.2.min.js"></script>

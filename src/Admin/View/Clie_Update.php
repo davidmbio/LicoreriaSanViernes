@@ -6,6 +6,7 @@
 
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
+        include '../Model/Encriptation.php';
 
 	$query = sprintf("select * from tblClientes where IdCliente=%d",
 		(int)$_POST['IdCliente']
@@ -23,7 +24,7 @@
 ?>
 <form action="javascript: Modificar_Clie();" method="post" id="FCliente" class="modal fade in" >  
     <input type="hidden" id="IdCliente" name="IdCliente" value="<?php echo $rs_clie['IdCliente']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
+    <div class="alert alert-info"><h4>Modificar datos del cliente</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
@@ -48,12 +49,12 @@
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>
-            <input type="text"  placeholder="<?php echo $rs_clie['Usuario']?>" class="required wide input" disabled="disabled"/>
+            <input type="text"  placeholder="<?php echo getDecrypted($rs_clie['Usuario'])?>" class="required wide input" disabled="disabled"/>
 
         </li>
         <li class="field">
             <label class="inline">Contrase&ntilde;a:</label>
-            <input name="Password" type="text" id="Password" placeholder="Nombre de usuario del empleado" class="required wide input" value="<?=$rs_clie['Password']?>" />
+            <input name="Password" type="password" id="Password" placeholder="Contrase&ntilde;a para el cliente" class="required wide input" value="<?=getDecrypted($rs_clie['Password'])?>" />
         </li>
       </ul>
     <div class="modal-footer">
@@ -66,7 +67,7 @@
 	$(document).ready(function(){
 		$("#FCliente").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar este empleado?')
+				var respuesta = confirm('\xBFREsta seguro de modificar la informacion del cliente?')
 				if (respuesta)
 					form.submit();
 			}

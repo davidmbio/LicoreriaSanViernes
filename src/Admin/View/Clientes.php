@@ -1,5 +1,7 @@
 <?php
 require '../template/tamplates.php';
+require '../flat_controller.php';
+getState();
 
 $temp= new Template('../layout/layout.tpl');
 $temp->set('title','Clientes');

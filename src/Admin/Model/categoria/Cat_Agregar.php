@@ -24,7 +24,7 @@
 	);
 
 	if(!mysql_query($query))
-		echo "Error al insertar a la nueva persona:\n$query";
+		echo "Error al registrar la informacion de la nueva categoria:\n$query";
 
 	exit;
 ?>

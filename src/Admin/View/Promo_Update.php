@@ -24,14 +24,14 @@
 ?>
 <form action="javascript: Modificar_Promo();" method="post" id="FPromocion" class="modal fade in" >  
     <input type="hidden" id="IdPromocion" name="IdPromocion" value="<?php echo $rs_promo['IdPromocion']?>" />
-    <div class="alert alert-info"><h4>Modificar Promocion</h4></div>
+    <div class="alert alert-info"><h4>Modificar datos de la Promoci&oacute;n</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
-            <label class="inline">Titulo:</label>
+            <label class="inline">T&iacute;tulo:</label>
             <input name="Titulo" value="<?php echo $rs_promo['Titulo']; ?>" type="text" id="Titulo" placeholder="Titulo de la promocion" class="required wide text input" />
         </li>        
         <li class="field">
-            <label class="inline">Descripcion:</label>
+            <label class="inline">Descripci&oacute;n:</label>
             <input name="Descripcion" type="text" id="Descripcion" value="<?php echo $rs_promo['Descripcion']; ?>" placeholder="Descripcion de la promocion" class="required wide input textarea" />
         </li>       
         <li class="field">
@@ -53,7 +53,7 @@
 	$(document).ready(function(){
 		$("#FPromocion").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar a esta nueva persona?')
+				var respuesta = confirm('\xBFRealmente desea modificar la información de la promoción?')
 				if (respuesta)
 					form.submit();
 			}

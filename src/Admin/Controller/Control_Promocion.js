@@ -60,7 +60,7 @@ function Paginar(var_div, url){
 }
 
 function Eliminar_Promocion(ide_promocion){
-	var respuesta = confirm("Desea eliminar a esta persona?");
+	var respuesta = confirm("¿Realmente esta seguro de eliminar la información de la promoción?");
 	if (respuesta){
 		$.ajax({
 			url: '../Model/promocion/Promo_Eliminar.php',

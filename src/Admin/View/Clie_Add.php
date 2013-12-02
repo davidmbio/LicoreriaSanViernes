@@ -3,15 +3,15 @@
 ?>
 
 <form action="javascript: Agregar_Clie();" method="post" id="FCliente" class="modal fade in" >  
-    <div class="alert alert-info"><h4>Agregar nuevo Empleado</h4></div>
+    <div class="alert alert-info"><h4>Registrar un nuevo cliente</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
-            <input name="Nombre" type="text" id="Nombre" placeholder="Nombre del empleado" class="required wide text input" />
+            <input name="Nombre" type="text" id="Nombre" placeholder="Nombre del cliente" class="required wide text input" />
         </li>        
         <li class="field">
             <label class="inline">Apellidos:</label>
-            <input name="Apellidos" type="text" id="Apellidos" placeholder="Apellidos del empleado" class="required wide text input" />
+            <input name="Apellidos" type="text" id="Apellidos" placeholder="Apellidos del cliente" class="required wide text input" />
         </li>
         
         <li class="field">
@@ -28,11 +28,11 @@
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>
-            <input name="Usuario" type="text" id="Usuario" placeholder="Nombre de usuario del empleado" class="required wide input" />
+            <input name="Usuario" type="text" id="Usuario" placeholder="Nombre de usuario para el cliente" class="required wide input" />
         </li>
         <li class="field">
             <label class="inline">Contrase&ntilde;a:</label>
-            <input name="Password" type="text" id="Password" placeholder="Contrase&ntilde;a del empleado" class="required wide input" />
+            <input name="Password" type="password" id="Password" placeholder="Contrase&ntilde;a para el cliente" class="required wide input" />
         </li>
       </ul>
     <div class="modal-footer">
@@ -55,7 +55,7 @@
 			},
 			onkeyup: false,
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente agregar este nuevo empleado?')
+				var respuesta = confirm('\xBFDesea realmente registrar este nuevo cliente?')
 				if (respuesta)
 					form.submit();
 			}

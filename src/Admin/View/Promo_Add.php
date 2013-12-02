@@ -3,23 +3,23 @@
 ?>
 
 <form action="javascript: Agregar_Promo();" method="post" id="FPromocion" class="modal fade in" >  
-    <div class="alert alert-info"><h4>Agregar nueva promocion</h4></div>
+    <div class="alert alert-info"><h4>Registrar nueva promoci&oacute;n</h4></div>
     <ul style="padding-right: 50px; text-align: right;">        
         <li class="field">
-            <label class="inline">Titulo:</label>
-            <input name="Titulo" type="text" id="Titulo" placeholder="Titulo de la promocion" class="required wide text input" />
+            <label class="inline">T&iacute;tulo:</label>
+            <input name="Titulo" type="text" id="Titulo" placeholder="T&iacute;tulo de la promoci&oacute;n" class="required wide text input" />
         </li>        
         <li class="field">
-            <label class="inline">Descripcion:</label>
-            <input name="Descripcion" type="text" id="Descripcion" placeholder="Descripcion de la promocion" class="required wide input textarea" />
+            <label class="inline">Descripci&oacute;n:</label>
+            <input name="Descripcion" type="text" id="Descripcion" placeholder="Descripci&oacute;n de la promoci&oacute;n" class="required wide input textarea" />
         </li>       
         <li class="field">
             <label class="inline">F. Final:</label>
-            <input name="FFinal" type="text" id="FFinal" placeholder="Final de la promocion" class="required wide text input" />
+            <input name="FFinal" type="text" id="FFinal" placeholder="Final de la promoci&oacute;n" class="required wide text input" />
         </li>
         <li class="field">
             <label class="inline">Descuento:</label>
-            <input name="Descuento" type="text" id="Descuento" placeholder="Descuento de la promocion" class="required wide text input" />
+            <input name="Descuento" type="text" id="Descuento" placeholder="Descuento de la promoci&oacute;n" class="required wide text input" />
         </li>                
       </ul>
     <div class="modal-footer">
@@ -33,7 +33,7 @@
 		$("#FPromocion").validate({
 			onkeyup: false,
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente agregar a esta nueva persona?')
+				var respuesta = confirm('\xBFEsta seguro de registrar esta promoción?')
 				if (respuesta)
 					form.submit();
 			}

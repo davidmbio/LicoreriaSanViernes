@@ -2,6 +2,8 @@
 <?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
+        include '../Model/Encriptation.php';
+        
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
@@ -22,7 +24,7 @@
 	$Paginacion->ejecutar();
 ?>
 
-<div class="row-fluid show-grid" id=grilla"">        
+<div class="row-fluid show-grid" id="grilla">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
@@ -41,11 +43,11 @@
         while ($rs_per = $Paginacion->fetchResultado()){
     ?>
           <div class="row-fluid show-grid">
-            <div class="span1" id="<?php echo $rs_per['IdEmpleado']?>"><a href="1"><span class="badge"><?php echo $rs_per['IdEmpleado']?></span></a></div>
+              <div class="span1" id="<?php echo $rs_per['IdEmpleado']?>"><a href="1"><span class="badge"><?php echo $rs_per['IdEmpleado']?></span></a></div>
             <div class="span3"><?php echo $rs_per['Nombre']?>,<?php echo $rs_per['Apellidos']?></div>
             <div class="span2"><?php echo $rs_per['Email']?></div>
-            <div class="span2"><?php echo$rs_per['Telefono']?></div>
-            <div class="span2"><?php echo$rs_per['Usuario']?></div>
+            <div class="span2"><?php echo $rs_per['Telefono']?></div>
+            <div class="span2"><?php echo getDecrypted($rs_per['Usuario'])?></div>
             
             <div class="span2">
                <div class="btn-group">
@@ -62,3 +64,4 @@
     <div class="lead">
                   <?php echo $Paginacion->fetchNavegacion()?>
     </div>
+</div>

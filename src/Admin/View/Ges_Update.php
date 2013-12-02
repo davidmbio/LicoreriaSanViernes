@@ -14,7 +14,7 @@
 	$num_rs_gest= mysql_num_rows($gest);
 	
         if ($num_rs_gest==0){
-		echo "No existen personas con ese IDE";
+		echo "No existe ningun datos con ese identidad";
 		exit;
 	}
         
@@ -68,7 +68,7 @@
 	$(document).ready(function(){
 		$("#FGestion").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar esta categoria?')
+				var respuesta = confirm('\xBFDesea realmente modificar esta informacion?')
 				if (respuesta)
 					form.submit();
 			}

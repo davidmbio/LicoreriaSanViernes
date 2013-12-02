@@ -15,6 +15,6 @@
 		fn_filtro((int)$_POST['IdCategoria'])
 	);
 	if(!mysql_query($query))
-		echo "Error al modificar la categoria:\n$query";
+		echo "Error al modificar la informacion de la categoria:\n$query";
 	exit;
 ?>?>

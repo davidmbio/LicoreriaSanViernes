@@ -1,6 +1,7 @@
 <?php
 	include "../Model/conexion.php";
 	include "../Model/basico.php";
+        include '../Model/Encriptation.php';
 	include "../../../web/js/lib/PHPPaging.lib.php";
         
 	$Paginacion = new PHPPaging;
@@ -21,7 +22,7 @@
 	$Paginacion->ejecutar();
 ?>
 
-<div class="row-fluid show-grid" id=grilla"">        
+<div class="row-fluid show-grid" id="grilla">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
@@ -44,7 +45,7 @@
             <div class="span3"><?php echo $rs_clie['Nombre']?>, <?php echo $rs_clie['Apellidos']?></div>
             <div class="span2"><?php echo $rs_clie['Email']?></div>
             <div class="span2"><?php echo $rs_clie['Telefono']?></div>
-            <div class="span2"><?php echo $rs_clie['Usuario']?></div>
+            <div class="span2"><?php echo getDecrypted($rs_clie['Usuario'])?></div>
             
             <div class="span2">
                <div class="btn-group">
@@ -61,3 +62,4 @@
     <div class="lead">
                   <?php echo $Paginacion->fetchNavegacion()?>
     </div>
+</div>

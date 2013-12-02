@@ -47,7 +47,7 @@
                 <a class="brand" href="index.php">Principal</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class="active"><a href="index.php"><i class="icon-home icon-white"></i> Inicio</a></li>
+                        <li class=""><a href="index.php"><i class="icon-home icon-white"></i> Inicio</a></li>
                         <li class=""><a href="Productos.php"><i class="icon-glass icon-white"></i> Productos</a></li>
                         <li class=""><a href="Empresa.php"><i class="icon-eye-open icon-white"></i> Quienes somos</a></li>
                         <li class=""><a href="Contacto.php"><i class="icon-briefcase icon-white"></i> Conctactanos</a></li>

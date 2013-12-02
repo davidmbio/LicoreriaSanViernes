@@ -24,7 +24,7 @@ inner join tblProductos as pr on co.IdProducto=pr.IdProducto
 	$Paginacion->ejecutar();
 ?>
 
-<div class="row-fluid show-grid" id=grilla"">        
+<div class="row-fluid show-grid" id="grilla">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
@@ -68,3 +68,4 @@ inner join tblProductos as pr on co.IdProducto=pr.IdProducto
     <div class="lead">
                   <?php echo $Paginacion->fetchNavegacion()?>
     </div>
+</div>

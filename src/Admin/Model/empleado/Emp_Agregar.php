@@ -1,6 +1,7 @@
 <?php
 	include "../conexion.php";
 	include "../basico.php";
+        include '../Encriptation.php';
 	
 	/*verificamos si las variables se envian*/
         
@@ -26,12 +27,12 @@
 		fn_filtro(substr($_POST['Telefono'], 0, 60)),
 		fn_filtro(substr($_POST['Email'], 0, 70)),
                 fn_filtro(substr($_POST['Nacimiento'], 0, 70)),
-                fn_filtro(substr($_POST['Usuario'], 0, 70)),
-                fn_filtro(substr($_POST['Password'], 0, 70))
+                fn_filtro(substr(getEncripted($_POST['Usuario']), 0, 100)),
+                fn_filtro(substr(getEncripted($_POST['Password']), 0, 100))
 	);
 
 	if(!mysql_query($query))
-		echo "Error al insertar a la nueva persona:\n$query";
+		echo "Ocurri&oacute; un error al insertar el empleado:\n$query";
 
 	exit;
 ?>

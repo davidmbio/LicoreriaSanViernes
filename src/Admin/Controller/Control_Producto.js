@@ -47,7 +47,7 @@ function Paginar(var_div, url){
 }
 
 function Eliminar_Producto(ide_per){
-	var respuesta = confirm("¿Desea eliminar a esta persona?");
+	var respuesta = confirm("¿Realmente esta seguro de eliminar la información del producto?");
 	if (respuesta){
 		$.ajax({
 			url: '../Model/producto/Pro_Eliminar.php',

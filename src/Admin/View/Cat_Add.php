@@ -3,11 +3,11 @@
 ?>
 
 <form action="javascript: Agregar_Cat();" method="post" id="FCategoria" class="modal fade in" >  
-    <div class="alert alert-info"><h4>Agregar nuevo Empleado</h4></div>
+    <div class="alert alert-info"><h4>Registrar nueva categor&iacute;</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
-            <input name="Categoria" type="text" id="Categoria" placeholder="Nombre de la categoria" class="required wide text input" />
+            <input name="Categoria" type="text" id="Categoria" placeholder="Nombre de la categor&iacute;a" class="required wide text input" />
         </li>        
       </ul>
     <div class="modal-footer">
@@ -30,7 +30,7 @@
 			},
 			onkeyup: false,
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente agregar este nuevo empleado?')
+				var respuesta = confirm('\xBFDesea realmente agregar la nueva Categoría?')
 				if (respuesta)
 					form.submit();
 			}

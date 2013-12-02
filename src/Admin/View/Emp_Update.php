@@ -6,6 +6,7 @@
 
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
+        include '../Model/Encriptation.php';
 
 	$query = sprintf("select * from tblEmpleados where IdEmpleado=%d",
 		(int)$_POST['IdEmpleado']
@@ -23,7 +24,7 @@
 ?>
 <form action="javascript: Modificar_Emp();" method="post" id="FEmpleado" class="modal fade in" >  
     <input type="hidden" id="IdEmpleado" name="IdEmpleado" value="<?php echo $rs_per['IdEmpleado']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
+    <div class="alert alert-info"><h4>Modificaci&oacute;n de datos</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
@@ -48,11 +49,11 @@
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>
-            <input type="text"  placeholder="<?php echo $rs_per['Usuario']?>" class="required wide input" disabled="disabled"/>
+            <input type="text"  placeholder="<?php echo getDecrypted($rs_per['Usuario'])?>" class="required wide input" disabled="disabled"/>
         </li>
         <li class="field">
             <label class="inline">Contrase&ntilde;a:</label>
-            <input name="Password" type="text" id="Password" placeholder="Nombre de usuario del empleado" class="required wide input" value="<?php echo $rs_per['Password']?>" />
+            <input name="Password" type="password" id="Password" placeholder="Nombre de usuario del empleado" class="required wide input" value="<?php echo getDecrypted($rs_per['Password'])?>" />
         </li>
       </ul>
     <div class="modal-footer">
@@ -65,7 +66,7 @@
 	$(document).ready(function(){
 		$("#FEmpleado").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar este empleado?')
+				var respuesta = confirm('\xBFDesea realmente modificar los datos del Empleado?')
 				if (respuesta)
 					form.submit();
 			}

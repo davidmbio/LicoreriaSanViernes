@@ -1,6 +1,7 @@
 <?php
 	include "../conexion.php";
 	include "../basico.php";
+        include '../Encriptation.php';
 	
 	/*verificamos si las variables se envian*/
 	if(empty($_POST['IdEmpleado']) || empty($_POST['Nombre']) || empty($_POST['Apellidos']) || empty($_POST['Telefono']) ||
@@ -18,10 +19,10 @@
 		fn_filtro(substr($_POST['Telefono'], 0, 60)),
 		fn_filtro(substr($_POST['Email'], 0, 70)),
 		fn_filtro(substr($_POST['Nacimiento'], 0, 70)),
-		fn_filtro(substr($_POST['Password'], 0, 70)),
+		fn_filtro(substr(getEncripted($_POST['Password']), 0, 100)),
 		fn_filtro((int)$_POST['IdEmpleado'])
 	);
 	if(!mysql_query($query))
-		echo "Error al modificar al empleado:\n$query";
+		echo "Ocurri&oacute; un error al modificar los datos del empleado:\n$query";
 	exit;
 ?>?>

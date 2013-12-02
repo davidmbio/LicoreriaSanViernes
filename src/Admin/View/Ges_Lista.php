@@ -23,7 +23,7 @@
         $rs_gest=$Paginacion->fetchResultado()
 ?>
 
-        <div class="row-fluid show-grid" id=grilla"">        
+        <div class="row-fluid show-grid" id="grilla">        
           <div class="span12">
             <div class="row-fluid show-grid">
               <div class="row-fluid show-grid">
@@ -40,24 +40,25 @@
                 <a class="btn" href="javascript: Modificar_Gestion(2);"><i class="icon-pencil"></i> Modificar</a></div>
         </div>
 
-        <div class="row-fluid show-grid" id=grilla"">        
-          <div class="span12">
-            <div class="row-fluid show-grid">
+        <div class="row-fluid show-grid" id="grilla">        
+            <div class="span12">
               <div class="row-fluid show-grid">
-                <div class="span3">Email</div>                 
-                <div class="span2">Telefono</div>                                                                                    
-                <div class="span4">Direccion</div>                                                                                    
-                <div class="span3">Valores</div>                                                                                    
-              </div>                 
-           </div>
-        </div>
-        <div class="row-fluid show-grid">
-            <div class="span3"><?php echo $rs_gest['Email']?> <br> 
-                <a class="btn" href="javascript: Modificar_Gestion(3);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span2"><?php echo $rs_gest['Telefono']?> <br>
-                <a class="btn" href="javascript: Modificar_Gestion(4);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span4"><?php echo $rs_gest['Direccion']?> <br>
-                <a class="btn" href="javascript: Modificar_Gestion(5);"><i class="icon-pencil"></i> Modificar</a></div>
-            <div class="span3"><?php echo $rs_gest['Valores']?> <br>
-                <a class="btn" href="javascript: Modificar_Gestion(6);"><i class="icon-pencil"></i> Modificar</a></div>
+                <div class="row-fluid show-grid">
+                  <div class="span3">Email</div>                 
+                  <div class="span2">Telefono</div>                                                                                    
+                  <div class="span4">Direccion</div>                                                                                    
+                  <div class="span3">Valores</div>                                                                                    
+                </div>                 
+             </div>
+          </div>
+          <div class="row-fluid show-grid">
+              <div class="span3"><?php echo $rs_gest['Email']?> <br> 
+                  <a class="btn" href="javascript: Modificar_Gestion(3);"><i class="icon-pencil"></i> Modificar</a></div>
+              <div class="span2"><?php echo $rs_gest['Telefono']?> <br>
+                  <a class="btn" href="javascript: Modificar_Gestion(4);"><i class="icon-pencil"></i> Modificar</a></div>
+              <div class="span4"><?php echo $rs_gest['Direccion']?> <br>
+                  <a class="btn" href="javascript: Modificar_Gestion(5);"><i class="icon-pencil"></i> Modificar</a></div>
+              <div class="span3"><?php echo $rs_gest['Valores']?> <br>
+                  <a class="btn" href="javascript: Modificar_Gestion(6);"><i class="icon-pencil"></i> Modificar</a></div>
+          </div>
         </div>

@@ -3,7 +3,7 @@
 ?>
 
 <form action="javascript: Agregar_Emp();" method="post" id="FEmpleado" class="modal fade in" >  
-    <div class="alert alert-info"><h4>Agregar nuevo Empleado</h4></div>
+    <div class="alert alert-info"><h4>Registrar nuevo Empleado</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Nombre:</label>
@@ -16,23 +16,24 @@
         
         <li class="field">
             <label class="inline">Telefono:</label>
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Numero del telefono" />
+            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Numero de tel&eacute;fono" />
         </li>
         <li class="field">
             <label class="inline">Email:</label>
-            <input name="Email" type="text" id="Email" placeholder="Correo electronico" class="required email wide input" />
+            <input name="Email" type="text" id="Email" placeholder="Correo electr&oacute;nico" class="required email wide input" />
         </li>
         <li class="field">
             <label class="inline">Nacimiento:</label>
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" />
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" /> 
+            
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>
-            <input name="Usuario" type="text" id="Usuario" placeholder="Nombre de usuario del empleado" class="required wide input" />
+            <input name="Usuario" type="text" id="Usuario" placeholder="Nombre de usuario para el empleado" class="required wide input" />
         </li>
         <li class="field">
             <label class="inline">Contrase&ntilde;a:</label>
-            <input name="Password" type="text" id="Password" placeholder="Contrase&ntilde;a del empleado" class="required wide input" />
+            <input name="Password" type="password" id="Password" placeholder="Contrase&ntilde;a para el empleado" class="required wide input" />
         </li>
       </ul>
     <div class="modal-footer">
@@ -55,7 +56,7 @@
 			},
 			onkeyup: false,
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente agregar este nuevo empleado?')
+				var respuesta = confirm('\xBFDesea realmente registrar un nuevo Empleado?')
 				if (respuesta)
 					form.submit();
 			}

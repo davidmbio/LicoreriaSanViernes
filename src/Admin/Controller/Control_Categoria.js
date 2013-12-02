@@ -36,7 +36,7 @@ function Paginar(var_div, url){
 }
 
 function Eliminar_Categoria(ide_ccategoria){
-	var respuesta = confirm("Desea eliminar a esta persona?");
+	var respuesta = confirm("¿Esta seguro de eliminar la información de la categoría?");
 	if (respuesta){
 		$.ajax({
 			url: '../Model/categoria/Cat_Eliminar.php',
@@ -44,7 +44,7 @@ function Eliminar_Categoria(ide_ccategoria){
 			type: 'post',
 			success: function(data){
 				if(data!="")
-					alert('No se puede eliminar, Hay producto con esta categoria');
+					alert('No se puede eliminar, Hay productos en esta categoría');
 				Buscar_Categoria();
 			}
 		});

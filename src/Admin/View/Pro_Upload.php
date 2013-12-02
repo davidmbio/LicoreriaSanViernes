@@ -6,7 +6,8 @@
     <ul style="padding-right: 50px; text-align: center;">     
         <?php  
         $pro=$_POST['IdProducto'];
-        $images = getImages($_POST['IdProducto']);?>
+        $images = getImages($_POST['IdProducto']);
+        ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -18,7 +19,7 @@
                         </th>                    
                     <?php } ?>
                     </tr>
-                </thead>>
+                </thead>
             </table>
         
         <form action="productos/src/upload.php" name="form" method="POST" enctype="multipart/form-data">

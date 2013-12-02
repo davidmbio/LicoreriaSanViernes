@@ -26,16 +26,7 @@
 
 <div class="alert alert-info"><h4>Lista de <?php echo $Colum;?></h4></div>
 <?php
-        
-        
-        /*if(strtotime('2013-10-28')>=strtotime('2013-10-27'))
-            echo 'aun falta la fecha';
-        else
-            echo 'fecha caducada';         
-          */
-        
-        
-        while ($row = mysql_fetch_array($Respue)) {?>            
+   while ($row = mysql_fetch_array($Respue)) {?>            
     <div class="span6">
             <div class="row-fluid show-grid">               
                 <div class="span3"><?php echo $row[$Colum]?></div>

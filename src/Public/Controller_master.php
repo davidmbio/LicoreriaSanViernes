@@ -1,5 +1,6 @@
 <?php
 include '../../Admin/Model/conexion.php';
+include '../Admin/Model/Encriptation.php';
 
 session_start();
             
@@ -50,7 +51,7 @@ function A_Logearse($id){
             $_SESSION['UserTelefono']=$row['Telefono'];
             $_SESSION['UserEmail']=$row['Email'];
             $_SESSION['UserNacimiento']=$row['Nacimiento'];
-            $_SESSION['UserUsuario']=$row['Usuario'];
+            $_SESSION['UserUsuario']=  getDecrypted($row['Usuario']);
             $_SESSION['UserPass']=$row['Password'];                           
             $_SESSION['UserRutaFoto']=$row['Ruta'];                           
             $_SESSION['UserFoto']=$row['Foto'];            

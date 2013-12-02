@@ -36,7 +36,7 @@ function Paginar(var_div, url){
 }
 
 function Eliminar_Empleado(ide_per){
-	var respuesta = confirm("Desea eliminar a esta persona?");
+	var respuesta = confirm("¿Realmente esta seguro de eliminar la información del empleado?");
 	if (respuesta){
 		$.ajax({
 			url: '../Model/empleado/Emp_Eliminar.php',

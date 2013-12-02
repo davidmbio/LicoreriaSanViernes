@@ -1,12 +1,13 @@
 <?php
 	include "../../../Admin/Model/conexion.php";
 	include "../../../Admin/Model/basico.php";
+	include "../../../Admin/Model/Encriptation.php";
         include '../../Controller_master.php';
 	        
-        $_Contra=$_SESSION['UserPass'];
+        $_Contra=  getEncripted($_SESSION['UserPass']);
         
         if(!empty($_POST['Password2']))
-            $_Contra= $_POST['Password2'];           
+            $_Contra= getEncripted($_POST['Password2']);           
         
 	$query = sprintf("UPDATE tblClientes SET  Nombre='%s', Apellidos='%s', Telefono='%s', Email='%s' 
             , Nacimiento='%s', Password='%s'  where IdCliente=%d;",

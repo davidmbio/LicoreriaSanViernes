@@ -3,7 +3,7 @@
 ?>
 
 <form action="javascript: Agregar_Pro();" method="POST" id="FProducto" class="modal fade in" enctype="multipart/form-data" >  
-    <div class="alert alert-info"><h4>Agregar nuevo Producto</h4></div>
+    <div class="alert alert-info"><h4>Registrar nuevo producto</h4></div>
     <ul style="padding-right: 50px; text-align: right;">
        <li class="field">
          <label class="inline">Categoria:</label>
@@ -54,7 +54,7 @@
 			},
 			onkeyup: false,
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente agregar a esta nueva persona?')
+				var respuesta = confirm('\xBFDesea realmente registrar el nuevo producto?')
 				if (respuesta)
 					form.submit();
 			}

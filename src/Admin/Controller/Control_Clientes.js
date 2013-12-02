@@ -36,7 +36,7 @@ function Paginar(var_div, url){
 }
 
 function Eliminar_Cliente(ide_cliente){
-	var respuesta = confirm("Desea eliminar a esta persona?");
+	var respuesta = confirm("¿Esta seguro de eliminar la información del cliente?");
 	if (respuesta){
 		$.ajax({
 			url: '../Model/cliente/Clie_Eliminar.php',

@@ -23,7 +23,7 @@
 ?>
 <form action="javascript: Modificar_Pro();" method="post" id="FProducto" class="modal fade in" >  
     <input type="hidden" id="IdProducto" name="IdProducto" value="<?php echo $rs_pro['IdProducto']?>" />
-    <div class="alert alert-info"><h4>Modificar producto</h4></div>
+    <div class="alert alert-info"><h4>Modificar informaci&oacute;n de producto</h4></div>
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Categoria:</label>
@@ -65,7 +65,7 @@
 	$(document).ready(function(){
 		$("#FProducto").validate({
 			submitHandler: function(form) {
-				var respuesta = confirm('\xBFDesea realmente modificar a esta nueva persona?')
+				var respuesta = confirm('\xBFDesea realmente modificar la información del producto?')
 				if (respuesta)
 					form.submit();
 			}
