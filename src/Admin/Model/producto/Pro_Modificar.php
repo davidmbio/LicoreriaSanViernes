@@ -15,10 +15,10 @@
 	$query = sprintf("UPDATE tblProductos SET  IdCategoria=%d, Nombre='%s', Descripcion='%s', Precio='%s',
             Caducidad='%s'where IdProducto=%d;",
 		fn_filtro((int)$_POST['IdCategoria']),
-		fn_filtro(substr($_POST['Nombre'], 0, 60)),
-		fn_filtro(substr($_POST['Descripcion'], 0, 60)),
-		fn_filtro(substr($_POST['Precio'], 0, 70)),
-		fn_filtro(substr($_POST['Caducidad'], 0, 70)),
+		fn_filtro(substr($_POST['Nombre'], 0, 100)),
+		fn_filtro(substr($_POST['Descripcion'], 0, 300)),
+		fn_filtro(substr($_POST['Precio'], 0, 10)),
+		fn_filtro(substr($_POST['Caducidad'], 0, 10)),
 		fn_filtro((int)$_POST['IdProducto'])
 	);
 	if(!mysql_query($query))

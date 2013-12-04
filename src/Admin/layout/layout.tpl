@@ -6,6 +6,8 @@
     <title>Licoreria - [title]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     
+    <link rel="shortcut icon" href="../../../web/ico/icono.ico" type="image/x-icon">
+    
     <link href="../../../web/css/bootstrap.css" rel="stylesheet">
     <link href="../../../web/css/style.css" rel="stylesheet">
     <link href="../../../web/css/bootstrap-responsive.css" rel="stylesheet">

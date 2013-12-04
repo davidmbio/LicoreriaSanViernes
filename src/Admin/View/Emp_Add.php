@@ -16,7 +16,7 @@
         
         <li class="field">
             <label class="inline">Telefono:</label>
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Numero de tel&eacute;fono" />
+            <input name="Telefono" type="text" id="Telefono" class="required number wide text input" maxlength="10" placeholder="N&uacute;mero de tel&eacute;fono" />
         </li>
         <li class="field">
             <label class="inline">Email:</label>
@@ -24,7 +24,7 @@
         </li>
         <li class="field">
             <label class="inline">Nacimiento:</label>
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" /> 
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="F. Nacimiento (1992-12-12)" class="required dateISO wide input" /> 
             
         </li>
         <li class="field">

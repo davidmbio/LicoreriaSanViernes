@@ -49,5 +49,5 @@ function deleteImage($id){
     
     //Redirecciona al index: con este ejemplo puedes usar otro archivo .php para 
     //insertar o eliminar y despues redireccionar al index.php para regrsarte al listado
-    header('Location: index.php');
+    //header('Location: index.php');
 }

@@ -37,7 +37,7 @@
         
         <li class="field">
             <label class="inline">Telefono:</label>
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" value="<?php echo $rs_clie['Telefono']?>" placeholder="Numero de telefono" />
+            <input name="Telefono" type="text" id="Telefono" maxlength="10" class="required number wide text input" value="<?php echo $rs_clie['Telefono']?>" placeholder="Numero de telefono" />
         </li>
         <li class="field">
             <label class="inline">Email:</label>
@@ -45,7 +45,7 @@
         </li>
         <li class="field">
             <label class="inline">Nacimiento:</label>
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" value="<?php echo $rs_clie['Nacimiento']?>" />
+            <input name="Nacimiento" type="text" id="Nacimiento" maxlength="10" placeholder="Fecha de nacimiento" class="required dateISO wide input" value="<?php echo $rs_clie['Nacimiento']?>" />
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>

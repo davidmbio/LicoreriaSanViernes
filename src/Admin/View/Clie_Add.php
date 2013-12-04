@@ -16,15 +16,15 @@
         
         <li class="field">
             <label class="inline">Telefono:</label>
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Numero del telefono" />
+            <input name="Telefono" type="text" id="Telefono" class="required number maxlength wide text input" maxlength="10" placeholder="Teléfono con 10 digitos" />
         </li>
         <li class="field">
             <label class="inline">Email:</label>
-            <input name="Email" type="text" id="Email" placeholder="Correo electronico" class="required email wide input" />
+            <input name="Email" type="text" id="Email" placeholder="Correo electronico (ejemplo@gmil.com)" class="required email wide input" />
         </li>
         <li class="field">
             <label class="inline">Nacimiento:</label>
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" />
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="F. Nacimiento ejem: 1992-12-12" class="required dateISO wide input" />
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>

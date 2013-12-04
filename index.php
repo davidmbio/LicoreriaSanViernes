@@ -7,8 +7,8 @@
 
   <title>Licoreria - San Viernes</title>
 
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<link rel="shortcut icon" href="web/ico/icono.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="stylesheet" href="web/css/gumby.css">    
   <style>
         h3, h2,h4 {
@@ -44,11 +44,11 @@
 </head>		
 <body>    
     <div class="container">
-        <h1 id="fittext2">Licoreria<br> San Viernes</h1>
-        <h4 id="fittext3">¿Eres mayor de edad?</h4>
+        <h1 id="fittext2">!Bienvenido¡ <br>Licoreria<br> San Viernes</h1>
+        <h4 id="fittext3">Para prevenir a menores de edad la venta de alcohol,<br> te pedimos contestar con responsabilidad.</h4>
         <div class="row" align="center">
-            <div class="pretty medium danger btn"><a href="#">Soy menor</a></div>
-            <div class="pretty medium danger btn "><a href="src/Public/views/">Soy mayor</a></div>
+            <div class="pretty medium danger btn"><a href="build/politica.html">Salir<br>Soy menor de 18 a&ntilde;os</a></div>
+            <div class="pretty medium danger btn "><a href="src/Public/views/">Entrar<br>Soy mayor de 18 a&ntilde;os</a></div>
         </div>		
    </div>
 	
@@ -57,7 +57,7 @@
 	<script type="text/javascript">
 		$("#fittext1").fitText();
 		$("#fittext2").fitText(1.2);
-		$("#fittext3").fitText(1.1, { minFontSize: '25px', maxFontSize: '75px' });
+		$("#fittext3").fitText(1.1, { minFontSize: '15px', maxFontSize: '35px' });
 	</script>
     
 </body>

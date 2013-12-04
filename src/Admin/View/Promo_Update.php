@@ -2,8 +2,7 @@
 	if(empty($_POST['IdPromocion'])){
 		echo "Por favor no altere el fuente";
 		exit;
-	}
-        
+	}        
 
 	include "../Model/basico.php";
 	include "../Model/conexion.php";
@@ -36,11 +35,11 @@
         </li>       
         <li class="field">
             <label class="inline">F. Final:</label>
-            <input name="FFinal" value="<?php echo $rs_promo['Fin']; ?>" type="text" id="FFinal" placeholder="Final de la promocion" class="required wide text input" />
+            <input name="FFinal" value="<?php echo $rs_promo['Fin']; ?>" type="text" id="FFinal" placeholder="Final de la promocion" maxlength="10" class="required dateISO wide text input" />
         </li>
         <li class="field">
             <label class="inline">Descuento:</label>
-            <input name="Descuento" value="<?php echo $rs_promo['Descuento']; ?>" type="text" id="Descuento" placeholder="Descuento de la promocion" class="required wide text input" />
+            <input name="Descuento" value="<?php echo $rs_promo['Descuento']; ?>" type="text" id="Descuento" placeholder="Descuento de la promocion" maxlength="3" class="required number wide text input" />
         </li>
       </ul>
     <div class="modal-footer">

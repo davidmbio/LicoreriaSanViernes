@@ -17,10 +17,10 @@
         $query = sprintf("INSERT INTO tblProductos VALUES (%d, %d, '%s', '%s', '%s', '%s');",		
                 fn_filtro((int)$ide_pro),
 		fn_filtro((int)$_POST['IdCategoria']),
-		fn_filtro(substr($_POST['Nombre'], 0, 60)),
-		fn_filtro(substr($_POST['Descripcion'], 0, 250)),
-		fn_filtro(substr($_POST['Precio'], 0, 70)),
-                fn_filtro(substr($_POST['Caducidad'], 0, 70))
+		fn_filtro(substr($_POST['Nombre'], 0, 100)),
+		fn_filtro(substr($_POST['Descripcion'], 0, 300)),
+		fn_filtro(substr($_POST['Precio'], 0, 10)),
+                fn_filtro(substr($_POST['Caducidad'], 0, 10))
 	);
         $votacion=  sprintf("INSERT INTO posts VALUES (%d, 0, 0, 'Votacion y/o comentario', 'hola mundo');", 
                 fn_filtro((int)$ide_pro));

@@ -15,11 +15,11 @@
         </li>       
         <li class="field">
             <label class="inline">F. Final:</label>
-            <input name="FFinal" type="text" id="FFinal" placeholder="Final de la promoci&oacute;n" class="required wide text input" />
+            <input name="FFinal" type="text" id="FFinal" maxlength="10" placeholder="Fin de la promoci&oacute;n (2015-12-12)" class="required dateISO wide text input" />
         </li>
         <li class="field">
             <label class="inline">Descuento:</label>
-            <input name="Descuento" type="text" id="Descuento" placeholder="Descuento de la promoci&oacute;n" class="required wide text input" />
+            <input name="Descuento" type="text" id="Descuento" placeholder="Descuento de la promoci&oacute;n" maxlength="3" class="required number wide text input" />
         </li>                
       </ul>
     <div class="modal-footer">

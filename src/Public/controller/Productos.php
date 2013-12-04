@@ -27,26 +27,12 @@
                             <div class="thumbnail">
                                 <img data-src="holder.js/300x200" src="../../Admin/View/productos/<?php echo getImages($producto['IdProducto']);?>">
                                 <div class="caption">
-                                <h3><?php echo $producto['Nombre']; ?></h3>
+                                    <h2><small><?php echo strtoupper($producto['Nombre']); ?></small></h2>
 
                                     <?php if (isset($_SESSION['IdUser'])): ?>                                
-                                    <div class="btn-group">
-                                      <a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> Acci&oacute;n</a>
-                                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="#"><i class="icon-shopping-cart"></i>Agrega</a></li>
-                                          <li><a href="javascript: Ver_Detalle(<?php echo $producto['IdProducto']; ?>);"> <i class="icon-eye-open"></i>Ver mas..</a></li>
-                                     </ul>
-                                    </div>
+                                <a class="btn btn-primary" href="javascript: Ver_Detalle(<?php echo $producto['IdProducto']; ?>);"><i class="icon-eye-open icon-white"></i>&nbsp;<small> MAS SOBRE EL PRODUCTO</small> </a>                                    
                                     <?php else: ?>
-                                    <div class="btn-group">
-                                      <a class="btn btn-primary" href="#"><i class="icon-star icon-white"></i> Acci&oacute;n</a>
-                                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                                      <ul class="dropdown-menu">
-                                          <li><a href="javascript: Msj();"><i class="icon-shopping-cart"></i>Agrega</a></li>
-                                          <li><a href="javascript: Msj();"> <i class="icon-eye-open"></i>Ver mas..</a></li>
-                                     </ul>
-                                    </div>                                
+                                            <a class="btn btn-primary" href="javascript: Msj();"><i class="icon-eye-open"></i>&nbsp;&nbsp; Ver Detalle</a>                                                                    
                                     <?php endif ?>
 
                                 </div>

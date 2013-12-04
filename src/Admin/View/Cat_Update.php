@@ -27,7 +27,7 @@
     <ul style="padding-right: 50px; text-align: right;">                
         <li class="field">
             <label class="inline">Categoria:</label>
-            <input name="Categoria" value="<?php echo $rs_cate['Categoria']?>" type="text" id="Categoria" placeholder="Nombre de la categoria" class="requisssred wide text input" />
+            <input name="Categoria" value="<?php echo $rs_cate['Categoria']?>" type="text" id="Categoria" placeholder="Nombre de la categoria" class="required wide text input" />
         </li>           
       </ul>
     <div class="modal-footer">

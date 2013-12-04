@@ -236,24 +236,24 @@ $.extend($.validator, {
 
 	messages: {
 		required: "This field is required.",
-		required: '<li class="warning alert">Campo vacio!!</li>',
+		required: '<div class="warning alert">Es necesario que se llene este campo!!</div>',
 
 		remote: "Please fix this field.",
-		email: '<li class="danger alert">Correo invalido!!</li>',
+		email: '<div class="danger alert">Correo no valido ejem(ejemplo@gmail.com)</div>',
 		url: "Please enter a valid URL.",
-		date: "dd/mm/yyyy",
-		dateISO: "Please enter a valid date (ISO).",
+		date: 'Fecha invalida',
+		dateISO: '<div class="danger alert">Introduce una fecha válida (1992-12-12). </div>',
 		dateDE: "Bitte geben Sie ein gültiges Datum ein.",
 
-		number: "Please enter a valid number.",
-		number: "º",
+		number: "Introduce valores numéricos.",
+		number: '<div class="danger alert">Introduce numeros validos(1234567890)!. </div>',
 
 		numberDE: "Bitte geben Sie eine Nummer ein.",
 		digits: "Please enter only digits",
 		creditcard: "Please enter a valid credit card number.",
 		equalTo: "Please enter the same value again.",
 		accept: "Please enter a value with a valid extension.",
-		maxlength: $.format("Please enter no more than {0} characters."),
+		maxlength: $.format("Please enter no more than {10} characters."),
 
 		minlength: $.format("Please enter at least {0} characters."),
 		minlength: $.format("+{0}"),

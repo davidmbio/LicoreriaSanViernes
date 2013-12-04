@@ -35,6 +35,7 @@ function ObtieneDetalles($query) {
 ?>
 
 <div class="span12" style="background-color: white;">
+    <a href="Productos.php" class="btn btn-large btn-block ">Regresar</a>
     <h2 class="min"><?php echo $RowProduct['Nombre'] ?></h2>    
     <div class="span2" ></div>            
     <div style="background-color: #bc5454; padding: 10px;" class="span8" >            
@@ -117,7 +118,7 @@ function ObtieneDetalles($query) {
                     <input type="hidden" name="producto" value="<?php echo $_POST['Id'];?>" />
                     <input type="hidden" name="usuario" value="<?php echo $_SESSION['IdUser']?>" />
                     <div class="field">
-                        <textarea class="" name="comentario" placeholder="Escribe tu comentario" rows="3"></textarea>
+                        <textarea class="com" id="com" name="comentario" placeholder="Escribe tu comentario" rows="3"></textarea>
                     </div>
                     <input name="agregar" type="submit" class="btn btn-primary" value="Comentar" /> 
                 </form>
@@ -153,6 +154,7 @@ function ObtieneDetalles($query) {
                                  //Logeado_user();
                         }
 		});
+                $('#com').val('');
 	};
         
 $(document).ready(function() {

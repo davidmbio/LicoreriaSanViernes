@@ -23,7 +23,7 @@ function Regresa_Logeo(){
 
 function Regresa_Logeado(){
     return '            <div style="height: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; background-color: #8b7d7d; text-align: center">
-<legend>Bienvenido'.' '.$_SESSION['UserName'].' </legend>
+<legend><small style="color:white;">Bienvenido'.' '.$_SESSION['UserName'].'</small> </legend>
                         </div><br>
 <div style="text-align: center">                
 <a class="boton btn-link" style="color: #cf2020" href="Upload.php">Cargar foto de perfil</a><br><br>

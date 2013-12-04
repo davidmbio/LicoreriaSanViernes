@@ -48,11 +48,11 @@
         
         <li class="field">
             <label class="inline">Precio:</label>
-            <input name="Precio" type="text" id="Precio" class="required wide text input" value="<?php echo $rs_pro['Precio']?>" placeholder="Precio del producto" />           
+            <input name="Precio" type="text" id="Precio" class="required number wide text input" maxlength="5" value="<?php echo $rs_pro['Precio']?>" placeholder="Precio del producto" />           
         </li>        
         <li class="field">
             <label class="inline">Caducidad:</label>
-            <input name="Caducidad" type="text" id="Caducidad" placeholder="Caducidad del producto" class="required wide input" value="<?php echo $rs_pro['Caducidad']?>" />
+            <input name="Caducidad" type="text" id="Caducidad" placeholder="Caducidad del producto" maxlength="10" class="required dateISO wide input" value="<?php echo $rs_pro['Caducidad']?>" />
         </li>
       </ul>
     <div class="modal-footer">

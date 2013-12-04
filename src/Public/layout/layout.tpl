@@ -53,6 +53,7 @@
                         <li class=""><a href="Empresa.php"><i class="icon-eye-open icon-white"></i> Quienes somos</a></li>
                         <li class=""><a href="Contacto.php"><i class="icon-briefcase icon-white"></i> Conctactanos</a></li>
                         <li class=""><a href="Registro.php"><i class="icon-user icon-white"></i> Registro</a></li>
+                        <li class=""><a href="Registro.php"><i class="icon-user icon-white"></i> Efren</a></li>
                      </ul>
                 </div>
            </div>
@@ -98,10 +99,9 @@
 <!-- Footer
 ================================================== -->
 <footer class="footer">
-      <div class="container">
-        <p>Todos los derechos reservados</p>
-        <p>licoreria San Viernes 2013</p>
-      </div>
+      <div>
+          <img class="img-full" src="../../../web/img/background/footer.png"/>
+    </div>
 </footer>
 
 <!-- Librerias incluido

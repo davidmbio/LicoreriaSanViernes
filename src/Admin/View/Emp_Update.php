@@ -37,7 +37,7 @@
         
         <li class="field">
             <label class="inline">Telefono:</label>
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" value="<?php echo $rs_per['Telefono']?>" placeholder="Numero de telefono" />
+            <input name="Telefono" type="text" id="Telefono" class="required number wide text input" maxlength="10" value="<?php echo $rs_per['Telefono']?>" placeholder="Numero de telefono" />
         </li>
         <li class="field">
             <label class="inline">Email:</label>
@@ -45,7 +45,7 @@
         </li>
         <li class="field">
             <label class="inline">Nacimiento:</label>
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" class="required wide input" value="<?php echo $rs_per['Nacimiento']?>" />
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Fecha de nacimiento" maxlength="10" class="required dateISO wide input" value="<?php echo $rs_per['Nacimiento']?>" />
         </li>
         <li class="field">
             <label class="inline">Usuario:</label>

@@ -19,9 +19,9 @@ $temp->set('content','
     <ul style="padding-right: 50px; text-align: center;">                
             <input name="Nombre" type="text" id="Nombre" placeholder="Nombre" class="input text" />
             <input name="Apellidos" type="text" id="Apellidos" placeholder="Tus apellidos" class="required wide text input" />
-            <input name="Telefono" type="text" id="Telefono" class="required wide text input" placeholder="Tu numero de telefono" />
-            <input name="Email" type="text" id="Email" placeholder="Tu correo electronico" class="required email wide input" />
-            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Tu fecha de nacimiento" class="required wide input" />
+            <input name="Telefono" type="text" id="Telefono" class="required number wide text input" maxlength="10" placeholder="Tu telefono con 10 digitos" />
+            <input name="Email" type="text" id="Email" placeholder="Tu email (ejemplo@gmail.com)" class="required email wide input" />
+            <input name="Nacimiento" type="text" id="Nacimiento" placeholder="Tu F. Nacimiento ej: 1990-02-12" maxlength="10" class="required dateISO wide input" />
             <input name="Usuario" type="text" id="Usuario" placeholder="Un nombre de usuario " class="required wide input" />
             <input name="Password" type="password" id="Password" placeholder="Una contrase&ntilde;a" class="required wide input" />        
             <input name="Password2" type="password" id="Password2" placeholder="Repite la contrase&ntilde;a" class="required wide input" />        

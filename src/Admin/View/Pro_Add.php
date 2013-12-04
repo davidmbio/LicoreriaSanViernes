@@ -27,11 +27,11 @@
         
         <li class="field">
             <label class="inline">Precio:</label>
-            <input name="Precio" type="text" id="Precio" class="required wide text input" placeholder="Precio del producto" />
+            <input name="Precio" type="text" id="Precio" class="required number wide text input" placeholder="Precio del producto" />
         </li>        
         <li class="field">
             <label class="inline">Caducidad:</label>
-            <input name="Caducidad" type="text" id="Caducidad" placeholder="Fecha de caducidad" class="required wide input" />
+            <input name="Caducidad" type="text" id="Caducidad" placeholder="Fecha de Caducidad (2020-12-12)" class="required dateISO wide input" />
         </li>
       </ul>
     <div class="modal-footer">
